@@ -1,23 +1,26 @@
 /* mathjax-loader.js  file */
 /* ref: http://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/ */
 (function (win, doc) {
-    win.MathJax = {
-      config: ["MMLorHTML.js"],
-      extensions: ["tex2jax.js"],
-      jax: ["input/TeX"],
-      TeX: {
-        TagSide: "right",
-        TagIndent: ".8em",
-        MultLineWidth: "85%",
-        equationNumbers: {
-          autoNumber: "AMS",
+    window.MathJax = {
+        loader: {
+          load: ['[tex]/tagformat']
         },
-        unicode: {
-          fonts: "STIXGeneral,'Arial Unicode MS'"
+        startup: {
+          pageReady: () => {
+            alert('Running MathJax');
+            return MathJax.startup.defaultPageReady();
+          }
+        },
+        tex: {
+          packages: {'[+]': ['tagformat']},
+          tagSide: 'left',
+          macros: {
+            RR: '{\\bf R}',
+            bold: ['{\\bf #1}',1]
+          },
+          tagformat: {
+             tag: (n) => '[' + n + ']'
+          }
         }
-      },
-      displayAlign: 'center',
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
+      };
   })(window, document);
