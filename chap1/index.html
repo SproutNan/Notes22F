@@ -614,34 +614,55 @@ $$
 </ul>
 <h4 id="_6">伴随矩阵</h4>
 <p>设矩阵 <span class="arithmatex"><span class="MathJax_Preview">A=\left(a_{i j}\right)_{n \times n}</span><script type="math/tex">A=\left(a_{i j}\right)_{n \times n}</script></span> ，将矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的元素 <span class="arithmatex"><span class="MathJax_Preview">a_{i j}</span><script type="math/tex">a_{i j}</script></span> 所在的第 i 行第 j 列元素划去后，剩余的各元素按原来的排列顺序组成的 <span class="arithmatex"><span class="MathJax_Preview">\mathrm{n}-1</span><script type="math/tex">\mathrm{n}-1</script></span> 阶矩阵所确定的行列式称为元素 <span class="arithmatex"><span class="MathJax_Preview">a_{i j}</span><script type="math/tex">a_{i j}</script></span> 的余子式，记为 <span class="arithmatex"><span class="MathJax_Preview">M_{i j}</span><script type="math/tex">M_{i j}</script></span> ，称 <span class="arithmatex"><span class="MathJax_Preview">A_{i j}=(-1)^{i+j} M_{i j}</span><script type="math/tex">A_{i j}=(-1)^{i+j} M_{i j}</script></span> 为元素 <span class="arithmatex"><span class="MathJax_Preview">a_{i j}</span><script type="math/tex">a_{i j}</script></span> 的代数余子式。</p>
-<p>方阵 <span class="arithmatex"><span class="MathJax_Preview">A=\left(a_{i j}\right)_{n \times n}</span><script type="math/tex">A=\left(a_{i j}\right)_{n \times n}</script></span> 的各元素的代数余子式 <span class="arithmatex"><span class="MathJax_Preview">A_{i j}</span><script type="math/tex">A_{i j}</script></span> 所构成的如下矩阵 <span class="arithmatex"><span class="MathJax_Preview">A^*</span><script type="math/tex">A^*</script></span> :
-$$
+<p>方阵 <span class="arithmatex"><span class="MathJax_Preview">A=\left(a_{i j}\right)_{n \times n}</span><script type="math/tex">A=\left(a_{i j}\right)_{n \times n}</script></span> 的各元素的代数余子式 <span class="arithmatex"><span class="MathJax_Preview">A_{i j}</span><script type="math/tex">A_{i j}</script></span> 所构成的如下矩阵 <span class="arithmatex"><span class="MathJax_Preview">A^*</span><script type="math/tex">A^*</script></span> :</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{array}{cccc}
-A_{11} &amp; A_{21} &amp; \cdots &amp; A_{n 1} \
-A_{12} &amp; A_{22} &amp; \cdots &amp; A_{n 2} \
-\vdots &amp; \vdots &amp; &amp; \vdots \
+A_{11} &amp; A_{21} &amp; \cdots &amp; A_{n 1} \\
+A_{12} &amp; A_{22} &amp; \cdots &amp; A_{n 2} \\
+\vdots &amp; \vdots &amp; &amp; \vdots \\
 A_{1 n} &amp; A_{2 n} &amp; \cdots &amp; A_{n n}
 \end{array}
-$$
-该矩阵 <span class="arithmatex"><span class="MathJax_Preview">A^*</span><script type="math/tex">A^*</script></span> 称为矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的伴随矩阵。</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{cccc}
+A_{11} & A_{21} & \cdots & A_{n 1} \\
+A_{12} & A_{22} & \cdots & A_{n 2} \\
+\vdots & \vdots & & \vdots \\
+A_{1 n} & A_{2 n} & \cdots & A_{n n}
+\end{array}
+</script>
+</div>
+<p>该矩阵 <span class="arithmatex"><span class="MathJax_Preview">A^*</span><script type="math/tex">A^*</script></span> 称为矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的伴随矩阵。</p>
 <ul>
 <li><span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 可逆当且仅当 <span class="arithmatex"><span class="MathJax_Preview">A^*</span><script type="math/tex">A^*</script></span> 可逆；</li>
 <li>如果 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 可逆，则 <span class="arithmatex"><span class="MathJax_Preview">A^*=|A| A^{-1}</span><script type="math/tex">A^*=|A| A^{-1}</script></span> ；（<strong>重要</strong>，下面 <span class="arithmatex"><span class="MathJax_Preview">|A|:=det(A)</span><script type="math/tex">|A|:=det(A)</script></span>）</li>
 <li>对于 <span class="arithmatex"><span class="MathJax_Preview">A^*</span><script type="math/tex">A^*</script></span> 的秩有:</li>
 </ul>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
-&amp;\operatorname{rank}\left(A^<em>\right)=n, \operatorname{rank}(A)=n \
-&amp;\operatorname{rank}\left(A^</em>\right)=1, \operatorname{rank}(A)=n-1 \
+&amp;\operatorname{rank}\left(A^*\right)=n, \operatorname{rank}(A)=n \\
+&amp;\operatorname{rank}\left(A^*\right)=1, \operatorname{rank}(A)=n-1 \\
 &amp;\operatorname{rank}\left(A^*\right)=0, \operatorname{rank}(A)&lt;n-1
 \end{aligned}
-$$
-- <span class="arithmatex"><span class="MathJax_Preview">\left|A^*\right|=|A|^{n-1}</span><script type="math/tex">\left|A^*\right|=|A|^{n-1}</script></span>;
-- <span class="arithmatex"><span class="MathJax_Preview">(k A)^*=k^{n-1} A^*</span><script type="math/tex">(k A)^*=k^{n-1} A^*</script></span>
-- 若 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 可逆，则 <span class="arithmatex"><span class="MathJax_Preview">\left(A^{-1}\right)^*=\left(A^*\right)^{-1}</span><script type="math/tex">\left(A^{-1}\right)^*=\left(A^*\right)^{-1}</script></span> ；
-- <span class="arithmatex"><span class="MathJax_Preview">\left(A^T\right)^*=\left(A^*\right)^T</span><script type="math/tex">\left(A^T\right)^*=\left(A^*\right)^T</script></span>
-- <span class="arithmatex"><span class="MathJax_Preview">(A B)^*=B^* A^*</span><script type="math/tex">(A B)^*=B^* A^*</script></span> 。
-- <span class="arithmatex"><span class="MathJax_Preview">\mathrm{AA}^*=\mathrm{A}^* \mathrm{~A}=det(\mathrm{A}) I</span><script type="math/tex">\mathrm{AA}^*=\mathrm{A}^* \mathrm{~A}=det(\mathrm{A}) I</script></span></p>
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\operatorname{rank}\left(A^*\right)=n, \operatorname{rank}(A)=n \\
+&\operatorname{rank}\left(A^*\right)=1, \operatorname{rank}(A)=n-1 \\
+&\operatorname{rank}\left(A^*\right)=0, \operatorname{rank}(A)<n-1
+\end{aligned}
+</script>
+</div>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\left|A^*\right|=|A|^{n-1}</span><script type="math/tex">\left|A^*\right|=|A|^{n-1}</script></span>;</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">(k A)^*=k^{n-1} A^*</span><script type="math/tex">(k A)^*=k^{n-1} A^*</script></span></li>
+<li>若 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 可逆，则 <span class="arithmatex"><span class="MathJax_Preview">\left(A^{-1}\right)^*=\left(A^*\right)^{-1}</span><script type="math/tex">\left(A^{-1}\right)^*=\left(A^*\right)^{-1}</script></span> ；</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\left(A^T\right)^*=\left(A^*\right)^T</span><script type="math/tex">\left(A^T\right)^*=\left(A^*\right)^T</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">(A B)^*=B^* A^*</span><script type="math/tex">(A B)^*=B^* A^*</script></span> 。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\mathrm{AA}^*=\mathrm{A}^* \mathrm{~A}=det(\mathrm{A}) I</span><script type="math/tex">\mathrm{AA}^*=\mathrm{A}^* \mathrm{~A}=det(\mathrm{A}) I</script></span></li>
+</ul>
 <h4 id="_7">矩阵的迹</h4>
 <p>在线性代数中，一个 <span class="arithmatex"><span class="MathJax_Preview">n \times n</span><script type="math/tex">n \times n</script></span> 的矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的迹 (或迹数)，是指 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的主对角线 (从左上方至右下方的对角线) 上各个元素的总和，一般记作 <span class="arithmatex"><span class="MathJax_Preview">\operatorname{tr}(\mathbf{A})</span><script type="math/tex">\operatorname{tr}(\mathbf{A})</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\operatorname{Sp}(\mathbf{A})</span><script type="math/tex">\operatorname{Sp}(\mathbf{A})</script></span> :
 $$
@@ -665,25 +686,34 @@ $$
 <p>迹数拥有相似不变性。如果矩阵 <strong>A</strong> 和 <strong>B</strong> 的话，它们会有相同的迹。</p>
 </li>
 <li>
-<p>一个 <span class="arithmatex"><span class="MathJax_Preview">n \times n</span><script type="math/tex">n \times n</script></span> 的方形矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的特征多项式 <span class="arithmatex"><span class="MathJax_Preview">P_A(\lambda)</span><script type="math/tex">P_A(\lambda)</script></span> 如下：
-  $$
-  P_A(\lambda)=\operatorname{det}(\mathbf{A}-\lambda \mathbf{I})
-  $$
-  特征多项式是一个关于 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{n}</span><script type="math/tex">\mathbf{n}</script></span> 次多项式，它的常数项是 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的行列式的值，最高次项是 <span class="arithmatex"><span class="MathJax_Preview">(-1)^n \lambda^n</span><script type="math/tex">(-1)^n \lambda^n</script></span> ，而接下来的 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{n}-1</span><script type="math/tex">\mathbf{n}-1</script></span> 次项就是 <span class="arithmatex"><span class="MathJax_Preview">(-1)^{n-1} \operatorname{tr}(\mathbf{A}) \lambda^{n-1}</span><script type="math/tex">(-1)^{n-1} \operatorname{tr}(\mathbf{A}) \lambda^{n-1}</script></span> ，也就是说:
-  $$
-  P_A(\lambda)=(-1)^n \lambda^n+(-1)^{n-1} \operatorname{tr}(\mathbf{A}) \lambda^{n-1}+\cdots+\operatorname{det}(\mathbf{A})
-  $$</p>
+<p>一个 <span class="arithmatex"><span class="MathJax_Preview">n \times n</span><script type="math/tex">n \times n</script></span> 的方形矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的特征多项式 <span class="arithmatex"><span class="MathJax_Preview">P_A(\lambda)</span><script type="math/tex">P_A(\lambda)</script></span> 如下：</p>
 </li>
 </ul>
+<p>$$
+  P_A(\lambda)=\operatorname{det}(\mathbf{A}-\lambda \mathbf{I})
+  $$</p>
+<p>特征多项式是一个关于 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{n}</span><script type="math/tex">\mathbf{n}</script></span> 次多项式，它的常数项是 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的行列式的值，最高次项是 <span class="arithmatex"><span class="MathJax_Preview">(-1)^n \lambda^n</span><script type="math/tex">(-1)^n \lambda^n</script></span> ，而接下来的 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{n}-1</span><script type="math/tex">\mathbf{n}-1</script></span> 次项就是 <span class="arithmatex"><span class="MathJax_Preview">(-1)^{n-1} \operatorname{tr}(\mathbf{A}) \lambda^{n-1}</span><script type="math/tex">(-1)^{n-1} \operatorname{tr}(\mathbf{A}) \lambda^{n-1}</script></span> ，也就是说:</p>
+<p>$$
+  P_A(\lambda)=(-1)^n \lambda^n+(-1)^{n-1} \operatorname{tr}(\mathbf{A}) \lambda^{n-1}+\cdots+\operatorname{det}(\mathbf{A})
+  $$</p>
 <h4 id="_8">矩阵范数</h4>
-<p>衡量一个矩阵 “大小” 的函数 <span class="arithmatex"><span class="MathJax_Preview">f(\mathbf{A})</span><script type="math/tex">f(\mathbf{A})</script></span>，满足三个条件：
-$$
+<p>衡量一个矩阵 “大小” 的函数 <span class="arithmatex"><span class="MathJax_Preview">f(\mathbf{A})</span><script type="math/tex">f(\mathbf{A})</script></span>，满足三个条件：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
-&amp;f(\boldsymbol{A}) \geq \mathbf{0} ， \text { 等号成立当且仅当 } \boldsymbol{A}=0 \
-&amp;f(\alpha \boldsymbol{A})=|\alpha| f(\boldsymbol{A})，\alpha\in \mathbf{A}的数域 \
+&amp;f(\boldsymbol{A}) \geq \mathbf{0} ， \text { 等号成立当且仅当 } \boldsymbol{A}=0 \\
+&amp;f(\alpha \boldsymbol{A})=|\alpha| f(\boldsymbol{A})，\alpha\in \mathbf{A}的数域 \\
 &amp;f(\boldsymbol{A}+\boldsymbol{B}) \leq f(\boldsymbol{A})+f(\boldsymbol{B})
 \end{aligned}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&f(\boldsymbol{A}) \geq \mathbf{0} ， \text { 等号成立当且仅当 } \boldsymbol{A}=0 \\
+&f(\alpha \boldsymbol{A})=|\alpha| f(\boldsymbol{A})，\alpha\in \mathbf{A}的数域 \\
+&f(\boldsymbol{A}+\boldsymbol{B}) \leq f(\boldsymbol{A})+f(\boldsymbol{B})
+\end{aligned}
+</script>
+</div>
 <ul>
 <li><strong>Frobenius norm（弗罗贝尼乌斯范数）</strong></li>
 </ul>
@@ -707,29 +737,39 @@ $$</p>
 <ul>
 <li><strong>梯度</strong></li>
 </ul>
-<p>对向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{x}</span><script type="math/tex">\mathbf{x}</script></span> 来说，其函数的梯度是一个向量：
-  $$
+<p>对向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{x}</span><script type="math/tex">\mathbf{x}</script></span> 来说，其函数的梯度是一个向量：</p>
+<p>$$
   (\mathbf{grad}f(\mathbf{x}))<em>i=\left(\nabla f(\boldsymbol{x})\right)</em>{i}=\frac{\partial f(\mathbf{x})}{\partial x_i}
-  $$
-  二阶导是一个矩阵（称之为海森矩阵）：
-  $$
+  $$</p>
+<p>二阶导是一个矩阵（称之为海森矩阵）：</p>
+<p>$$
   \left(\nabla^2 f(\boldsymbol{x})\right)_{i j}=\frac{\partial^2 f(\boldsymbol{x})}{\partial x_i \partial x_j}
-  $$
-  类似单变量微积分：<span class="arithmatex"><span class="MathJax_Preview">f(\mathbf{x})≈f(\mathbf{x}_0)+\text{grad}f(\mathbf{x}_0)·(\mathbf{x-x}_0)</span><script type="math/tex">f(\mathbf{x})≈f(\mathbf{x}_0)+\text{grad}f(\mathbf{x}_0)·(\mathbf{x-x}_0)</script></span></p>
+  $$</p>
+<p>类似单变量微积分：<span class="arithmatex"><span class="MathJax_Preview">f(\mathbf{x})≈f(\mathbf{x}_0)+\text{grad}f(\mathbf{x}_0)·(\mathbf{x-x}_0)</span><script type="math/tex">f(\mathbf{x})≈f(\mathbf{x}_0)+\text{grad}f(\mathbf{x}_0)·(\mathbf{x-x}_0)</script></span></p>
 <ul>
 <li>
 <p><strong>从各种求导规则引出矩阵函数求导规则</strong></p>
 </li>
 <li>
-<p>向量对标量求导 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{y}=(y_1\quad y_2 \quad...\quad y_m)^T</span><script type="math/tex">\mathbf{y}=(y_1\quad y_2 \quad...\quad y_m)^T</script></span>
-    $$
-    \frac{\partial \mathbf{y}}{\partial x}=\left[\begin{array}{c}
-    \frac{\partial y_1}{\partial x} \
-    \frac{\partial y_2}{\partial x} \
-    \vdots \
-    \frac{\partial y_m}{\partial x}
-    \end{array}\right]
-    $$</p>
+<p>向量对标量求导 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{y}=(y_1\quad y_2 \quad...\quad y_m)^T</span><script type="math/tex">\mathbf{y}=(y_1\quad y_2 \quad...\quad y_m)^T</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{\partial \mathbf{y}}{\partial x}=\left[\begin{array}{c}
+\frac{\partial y_1}{\partial x} \\
+\frac{\partial y_2}{\partial x} \\
+\vdots \\
+\frac{\partial y_m}{\partial x}
+\end{array}\right]
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial \mathbf{y}}{\partial x}=\left[\begin{array}{c}
+\frac{\partial y_1}{\partial x} \\
+\frac{\partial y_2}{\partial x} \\
+\vdots \\
+\frac{\partial y_m}{\partial x}
+\end{array}\right]
+</script>
+</div>
 </li>
 <li>
 <p>标量对向量求导 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{x}=(x_1\quad x_2 \quad...\quad x_n)^T</span><script type="math/tex">\mathbf{x}=(x_1\quad x_2 \quad...\quad x_n)^T</script></span>
@@ -741,32 +781,57 @@ $$</p>
 </li>
 <li>
 <p>向量对向量求导 —— 正好是雅可比矩阵</p>
-<p>近似公式：<span class="arithmatex"><span class="MathJax_Preview">\mathbf{f}(\mathbf{x})-\mathbf{f}(\mathbf{p})=\mathbf{J}_{\mathbf{f}}(\mathbf{p})(\mathbf{x}-\mathbf{p})+o(\|\mathbf{x}-\mathbf{p}\|) \quad(</span><script type="math/tex">\mathbf{f}(\mathbf{x})-\mathbf{f}(\mathbf{p})=\mathbf{J}_{\mathbf{f}}(\mathbf{p})(\mathbf{x}-\mathbf{p})+o(\|\mathbf{x}-\mathbf{p}\|) \quad(</script></span>as <span class="arithmatex"><span class="MathJax_Preview">\mathbf{x} \rightarrow \mathbf{p})</span><script type="math/tex">\mathbf{x} \rightarrow \mathbf{p})</script></span>
-$$
+<p>近似公式：<span class="arithmatex"><span class="MathJax_Preview">\mathbf{f}(\mathbf{x})-\mathbf{f}(\mathbf{p})=\mathbf{J}_{\mathbf{f}}(\mathbf{p})(\mathbf{x}-\mathbf{p})+o(\|\mathbf{x}-\mathbf{p}\|) \quad(</span><script type="math/tex">\mathbf{f}(\mathbf{x})-\mathbf{f}(\mathbf{p})=\mathbf{J}_{\mathbf{f}}(\mathbf{p})(\mathbf{x}-\mathbf{p})+o(\|\mathbf{x}-\mathbf{p}\|) \quad(</script></span>as <span class="arithmatex"><span class="MathJax_Preview">\mathbf{x} \rightarrow \mathbf{p})</span><script type="math/tex">\mathbf{x} \rightarrow \mathbf{p})</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \frac{\partial \mathbf{y}}{\partial \mathbf{x}}=\left[\begin{array}{cccc}
-\frac{\partial y_1}{\partial x_1} &amp; \frac{\partial y_1}{\partial x_2} &amp; \cdots &amp; \frac{\partial y_1}{\partial x_n} \
-\frac{\partial y_2}{\partial x_1} &amp; \frac{\partial y_2}{\partial x_2} &amp; \cdots &amp; \frac{\partial y_2}{\partial x_n} \
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \
+\frac{\partial y_1}{\partial x_1} &amp; \frac{\partial y_1}{\partial x_2} &amp; \cdots &amp; \frac{\partial y_1}{\partial x_n} \\
+\frac{\partial y_2}{\partial x_1} &amp; \frac{\partial y_2}{\partial x_2} &amp; \cdots &amp; \frac{\partial y_2}{\partial x_n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 \frac{\partial y_m}{\partial x_1} &amp; \frac{\partial y_m}{\partial x_2} &amp; \cdots &amp; \frac{\partial y_m}{\partial x_n}
 \end{array}\right]
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial \mathbf{y}}{\partial \mathbf{x}}=\left[\begin{array}{cccc}
+\frac{\partial y_1}{\partial x_1} & \frac{\partial y_1}{\partial x_2} & \cdots & \frac{\partial y_1}{\partial x_n} \\
+\frac{\partial y_2}{\partial x_1} & \frac{\partial y_2}{\partial x_2} & \cdots & \frac{\partial y_2}{\partial x_n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial y_m}{\partial x_1} & \frac{\partial y_m}{\partial x_2} & \cdots & \frac{\partial y_m}{\partial x_n}
+\end{array}\right]
+</script>
+</div>
 </li>
 <li>
-<p>矩阵对标量求导 ——即结果的 <span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span> 元等于矩阵的 <span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span> 元对标量求导
-    $$
-    \frac{\partial \mathbf{Y}}{\partial x}=\left[\begin{array}{cccc}\frac{\partial y_{11}}{\partial x} &amp; \frac{\partial y_{12}}{\partial x} &amp; \cdots &amp; \frac{\partial y_{1 n}}{\partial x} \ \frac{\partial y_{21}}{\partial x} &amp; \frac{\partial y_{22}}{\partial x} &amp; \cdots &amp; \frac{\partial y_{2 n}}{\partial x} \ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \ \frac{\partial y_{m 1}}{\partial x} &amp; \frac{\partial y_{m 2}}{\partial x} &amp; \cdots &amp; \frac{\partial y_{m n}}{\partial x}\end{array}\right]
-    $$</p>
+<p>矩阵对标量求导 ——即结果的 <span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span> 元等于矩阵的 <span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span> 元对标量求导</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{\partial \mathbf{Y}}{\partial x}=\left[\begin{array}{cccc}\frac{\partial y_{11}}{\partial x} &amp; \frac{\partial y_{12}}{\partial x} &amp; \cdots &amp; \frac{\partial y_{1 n}}{\partial x} \\ \frac{\partial y_{21}}{\partial x} &amp; \frac{\partial y_{22}}{\partial x} &amp; \cdots &amp; \frac{\partial y_{2 n}}{\partial x} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial y_{m 1}}{\partial x} &amp; \frac{\partial y_{m 2}}{\partial x} &amp; \cdots &amp; \frac{\partial y_{m n}}{\partial x}\end{array}\right]
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial \mathbf{Y}}{\partial x}=\left[\begin{array}{cccc}\frac{\partial y_{11}}{\partial x} & \frac{\partial y_{12}}{\partial x} & \cdots & \frac{\partial y_{1 n}}{\partial x} \\ \frac{\partial y_{21}}{\partial x} & \frac{\partial y_{22}}{\partial x} & \cdots & \frac{\partial y_{2 n}}{\partial x} \\ \vdots & \vdots & \ddots & \vdots \\ \frac{\partial y_{m 1}}{\partial x} & \frac{\partial y_{m 2}}{\partial x} & \cdots & \frac{\partial y_{m n}}{\partial x}\end{array}\right]
+</script>
+</div>
 </li>
 <li>
-<p>标量对矩阵求导 ——即结果的 <span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span> 元等于标量对矩阵的 <span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span> 元求导
-    $$
-    \frac{\partial y}{\partial \mathbf{X}}=\left[\begin{array}{cccc}
-    \frac{\partial y}{\partial x_{11}} &amp; \frac{\partial y}{\partial x_{12}} &amp; \cdots &amp; \frac{\partial y}{\partial x_{1 q}} \
-    \frac{\partial y}{\partial x_{21}} &amp; \frac{\partial y}{\partial x_{22}} &amp; \cdots &amp; \frac{\partial y}{\partial x_{2 q}} \
-    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \
-    \frac{\partial y}{\partial x_{p 1}} &amp; \frac{\partial y}{\partial x_{p 2}} &amp; \cdots &amp; \frac{\partial y}{\partial x_{p q}}
-    \end{array}\right]
-    $$</p>
+<p>标量对矩阵求导 ——即结果的 <span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span> 元等于标量对矩阵的 <span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span> 元求导</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{\partial y}{\partial \mathbf{X}}=\left[\begin{array}{cccc}
+\frac{\partial y}{\partial x_{11}} &amp; \frac{\partial y}{\partial x_{12}} &amp; \cdots &amp; \frac{\partial y}{\partial x_{1 q}} \\
+\frac{\partial y}{\partial x_{21}} &amp; \frac{\partial y}{\partial x_{22}} &amp; \cdots &amp; \frac{\partial y}{\partial x_{2 q}} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\frac{\partial y}{\partial x_{p 1}} &amp; \frac{\partial y}{\partial x_{p 2}} &amp; \cdots &amp; \frac{\partial y}{\partial x_{p q}}
+\end{array}\right]
+</div>
+<script type="math/tex; mode=display">
+\frac{\partial y}{\partial \mathbf{X}}=\left[\begin{array}{cccc}
+\frac{\partial y}{\partial x_{11}} & \frac{\partial y}{\partial x_{12}} & \cdots & \frac{\partial y}{\partial x_{1 q}} \\
+\frac{\partial y}{\partial x_{21}} & \frac{\partial y}{\partial x_{22}} & \cdots & \frac{\partial y}{\partial x_{2 q}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial y}{\partial x_{p 1}} & \frac{\partial y}{\partial x_{p 2}} & \cdots & \frac{\partial y}{\partial x_{p q}}
+\end{array}\right]
+</script>
+</div>
 </li>
 <li>
 <p><strong>矩阵导数</strong></p>
@@ -890,17 +955,27 @@ D_{K L}(P \| Q)=\mathbb{E}_{x \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb
 <h3 id="_14">优化</h3>
 <h4 id="_15">凸集和凸函数</h4>
 <p><strong>凸集</strong></p>
-<p>给定集合 <span class="arithmatex"><span class="MathJax_Preview">C \subseteq \mathbb{R}^n</span><script type="math/tex">C \subseteq \mathbb{R}^n</script></span> 。若 <span class="arithmatex"><span class="MathJax_Preview">\forall x, y \in C</span><script type="math/tex">\forall x, y \in C</script></span> 满足
-$$
+<p>给定集合 <span class="arithmatex"><span class="MathJax_Preview">C \subseteq \mathbb{R}^n</span><script type="math/tex">C \subseteq \mathbb{R}^n</script></span> 。若 <span class="arithmatex"><span class="MathJax_Preview">\forall x, y \in C</span><script type="math/tex">\forall x, y \in C</script></span> 满足</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \forall t \in[0,1], t x+(1-t) y \in C
-$$
-那么集合 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 为凸集。</p>
+</div>
+<script type="math/tex; mode=display">
+\forall t \in[0,1], t x+(1-t) y \in C
+</script>
+</div>
+<p>那么集合 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 为凸集。</p>
 <p><strong>凸函数</strong></p>
-<p>给定一个函数 <span class="arithmatex"><span class="MathJax_Preview">f:\R^n→\R</span><script type="math/tex">f:\R^n→\R</script></span>，如果 domain(f) 是凸集，且任意 <span class="arithmatex"><span class="MathJax_Preview">x,y\in domain(f),</span><script type="math/tex">x,y\in domain(f),</script></span>
-$$
+<p>给定一个函数 <span class="arithmatex"><span class="MathJax_Preview">f:\R^n→\R</span><script type="math/tex">f:\R^n→\R</script></span>，如果 domain(f) 是凸集，且任意 <span class="arithmatex"><span class="MathJax_Preview">x,y\in domain(f),</span><script type="math/tex">x,y\in domain(f),</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \forall t \in[0,1], f(t x+(1-t) y) \leq t f(x)+(1-t) f(y)
-$$
-那么函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是凸函数。</p>
+</div>
+<script type="math/tex; mode=display">
+\forall t \in[0,1], f(t x+(1-t) y) \leq t f(x)+(1-t) f(y)
+</script>
+</div>
+<p>那么函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是凸函数。</p>
 <p><strong>凸函数例子</strong>：</p>
 <ul>
 <li>
@@ -930,8 +1005,8 @@ $$
 $$
  即 —— 海森矩阵半正定。</p>
 <h4 id="_16">优化问题</h4>
-<p><strong>优化问题</strong>
-$$
+<p><strong>优化问题</strong></p>
+<p>$$
 \begin{array}{cl} 
 &amp; \min _x f(x) \
 \text { s.t. } &amp; g_i(x) \leq 0, i=1,2, \ldots, m \
@@ -939,8 +1014,8 @@ $$
 \end{array}
 $$
 这里的 <span class="arithmatex"><span class="MathJax_Preview">s.t.</span><script type="math/tex">s.t.</script></span> 是 subject to，意为 “在……的约束下”。</p>
-<p><strong>凸优化问题</strong>
-$$
+<p><strong>凸优化问题</strong></p>
+<p>$$
 \begin{gathered}
 \min _x f(\boldsymbol{x}) \
 \text { s.t. } g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \
@@ -952,29 +1027,29 @@ $$
 <li>凸优化中，局部最优等价于全局最优。假设函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 可微凸函数，那么 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 的全局最优当且仅当 <span class="arithmatex"><span class="MathJax_Preview">∇f(\mathbf{x})=0</span><script type="math/tex">∇f(\mathbf{x})=0</script></span>。</li>
 </ul>
 <p><strong>无约束优化：梯度下降</strong></p>
-<p>目标： <span class="arithmatex"><span class="MathJax_Preview">\min _x f(x)</span><script type="math/tex">\min _x f(x)</script></span>
-$$
+<p>目标： <span class="arithmatex"><span class="MathJax_Preview">\min _x f(x)</span><script type="math/tex">\min _x f(x)</script></span></p>
+<p>$$
 \begin{aligned}
 &amp;\text { while }\left|\nabla f\left(x_t\right)\right|&gt;\delta \text { do } \
-&amp;\quad \boldsymbol{x}<em>{t+1} \leftarrow \boldsymbol{x}_t-\alpha \nabla f\left(\boldsymbol{x}_t\right) \
+&amp;\quad \boldsymbol{x}_{t+1} \leftarrow \boldsymbol{x}_t-\alpha \nabla f\left(\boldsymbol{x}_t\right) \
 &amp;\text { end while }
 \end{aligned}
 $$
-<strong>有约束优化：KKT条件（拉格朗日乘子法）</strong>
-$$
+<strong>有约束优化：KKT条件（拉格朗日乘子法）</strong></p>
+<p>$$
 \begin{array}{cc} 
-&amp; \min </em>{\boldsymbol{x}} f(\boldsymbol{x}) \
+&amp; \min _{\boldsymbol{x}} f(\boldsymbol{x}) \
 \text { s.t. } &amp; g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \
 &amp; h_j(\boldsymbol{x})=0, j=1,2, \cdots, n
 \end{array}
 $$
-引入拉格朗日函数：
-$$
+引入拉格朗日函数：</p>
+<p>$$
 L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=f(\boldsymbol{x})+\sum_i u_i g_i(\boldsymbol{x})+\sum_j v_j h_j(\boldsymbol{x})
 $$
 其中 <span class="arithmatex"><span class="MathJax_Preview">u_i \geq 0</span><script type="math/tex">u_i \geq 0</script></span>。</p>
-<p>最优解的<strong>必要条件：KKT条件</strong>
-$$
+<p>最优解的<strong>必要条件：KKT条件</strong></p>
+<p>$$
 \begin{gathered}
 \boldsymbol{\nabla}_{\mathbf{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=\mathbf{0} \
 g_i(\boldsymbol{x}) \leq 0 \
@@ -986,39 +1061,55 @@ $$
 最后一个式子表明只有 <span class="arithmatex"><span class="MathJax_Preview">\mu_i=0</span><script type="math/tex">\mu_i=0</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">g_i(x)=0</span><script type="math/tex">g_i(x)=0</script></span>。</p>
 <p><strong>取一个简单的示例做解释</strong>：</p>
 <p>令 <span class="arithmatex"><span class="MathJax_Preview">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</span><script type="math/tex">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</script></span>，因为 <span class="arithmatex"><span class="MathJax_Preview">\mu g(x)\le0</span><script type="math/tex">\mu g(x)\le0</script></span>，所以 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle\max_\mu L(x,\mu)=f(x)</span><script type="math/tex">\displaystyle\max_\mu L(x,\mu)=f(x)</script></span>（🤑）。</p>
-<p>所以目标函数变为（称之为 <span class="arithmatex"><span class="MathJax_Preview">x\mu</span><script type="math/tex">x\mu</script></span> 问题）
-$$
+<p>所以目标函数变为（称之为 <span class="arithmatex"><span class="MathJax_Preview">x\mu</span><script type="math/tex">x\mu</script></span> 问题）</p>
+<p>$$
 \min <em>x f(x)=\min _x \max </em>\mu L(x, \mu)
 $$
-如果对等号右边那一项交换顺序（称之为 <span class="arithmatex"><span class="MathJax_Preview">\mu x</span><script type="math/tex">\mu x</script></span> 问题）
-$$
+如果对等号右边那一项交换顺序（称之为 <span class="arithmatex"><span class="MathJax_Preview">\mu x</span><script type="math/tex">\mu x</script></span> 问题）</p>
+<p>$$
 \begin{aligned}
-\max <em>\mu \min _x L(x, \mu)&amp;=\max </em>\mu\left[\min <em>x f(x)+\min _x \mu g(x)\right]（按定义展开）\&amp;=\max </em>\mu \min <em>x f(x)+\max </em>\mu \min <em>x \mu g(x)（分配算子，这一步可略）\&amp;=\min _x f(x)+\max </em>\mu \min <em>x \mu g(x)（第一项不受\mu约束）
+\max <em>\mu \min _x L(x, \mu)&amp;=\max </em>\mu\left[\min <em>x f(x)+\min _x \mu g(x)\right]（按定义展开）\&amp;=\max </em>\mu \min <em>x f(x)+\max </em>\mu \min <em>x \mu g(x)（分配算子，这一步可略）\&amp;=\min _x f(x)+\max </em>\mu \min _x \mu g(x)（第一项不受\mu约束）
 \end{aligned}
 $$
-然后我们观察
-$$
+然后我们观察</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \left.\begin{array}{c}
-\mu_k \geq 0 \
+\mu_k \geq 0 \\
 g_k(x) \leq 0
-\end{array}\right}=&gt;\min _x \mu g(x)=\left{\begin{array}{cc}
-0 &amp; \text { if } \mu=0 \text { or } g(x)=0 \
+\end{array}\right\}=&gt;\min _x \mu g(x)=\left\{\begin{array}{cc}
+0 &amp; \text { if } \mu=0 \text { or } g(x)=0 \\
 -\infty &amp; \text { if } \mu&gt;0 \text { and } g(x)&lt;0
 \end{array}\right.
-$$
-说明 
-$$
-\max </em>\mu \min <em>x \mu g(x)=0 \text { 此时 } \mu=0 \text { or } g(x)=0
+</div>
+<script type="math/tex; mode=display">
+\left.\begin{array}{c}
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=>\min _x \mu g(x)=\left\{\begin{array}{cc}
+0 & \text { if } \mu=0 \text { or } g(x)=0 \\
+-\infty & \text { if } \mu>0 \text { and } g(x)<0
+\end{array}\right.
+</script>
+</div>
+<p>说明 </p>
+<p>$$
+\max _\mu \min _x \mu g(x)=0 \text { 此时 } \mu=0 \text { or } g(x)=0
 （😄）
 $$
-就是说 
-$$
-\max </em>\mu \min <em>x L(x, \mu)=\min _x f(x)+\max </em>\mu \min <em>x \mu g(x)=\min _x f(x)（😟）
-$$
-这说明 <span class="arithmatex"><span class="MathJax_Preview">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</span><script type="math/tex">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</script></span>，两个算子可以交换顺序
+就是说 </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（😟）
+</div>
+<script type="math/tex; mode=display">
+\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（😟）
+</script>
+</div>
+<p>这说明 <span class="arithmatex"><span class="MathJax_Preview">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</span><script type="math/tex">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</script></span>，两个算子可以交换顺序
 $$
 \left.\begin{array}{c}
-L(x, \mu)=f(x)+\sum</em>{k=1}^q \mu_k g_k(x) \
+L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \
 \mu_k \geq 0 \
 g_k(x) \leq 0
 \end{array}\right}=&gt;\min <em>x \max </em>\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)
