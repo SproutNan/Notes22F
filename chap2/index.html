@@ -857,11 +857,11 @@ E(f ; D, \cos t)=\frac{1}{m}\left(\sum_{x_i \in D^{+}} \mathbb{I}\left(f\left(x_
 <p>对泛化误差分解：
 $$
 \begin{aligned}
-E(f, D) &amp;=\mathbb{E}_D\left[\left(f(\boldsymbol{x} ; D)-y_D\right)^2\right] \
-&amp;=\mathbb{E}_D\left[\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})+\bar{f}(\boldsymbol{x})-y_D\right)^2\right] \
-&amp;=\mathbb{E}_D\left[(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x}))^2\right]+\mathbb{E}_D\left[\left(\bar{f}(\boldsymbol{x})-y_D\right)^2\right] \
-&amp;=\mathbb{E}_D\left[(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x}))^2\right]+\mathbb{E}_D\left[\left(\bar{f}(\boldsymbol{x})-y+y-y_D\right)^2\right] \
-&amp;=\mathbb{E}_D\left[(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x}))^2\right]+\mathbb{E}_D\left[(\bar{f}(\boldsymbol{x})-y)^2\right]+\mathbb{E}_D\left[\left(y-y_D\right)^2\right] \
+E(f, D) &amp;=\mathbb{E}_D\left[\left(f(\boldsymbol{x} ; D)-y_D\right)^2\right] \newline
+&amp;=\mathbb{E}_D\left[\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})+\bar{f}(\boldsymbol{x})-y_D\right)^2\right] \newline
+&amp;=\mathbb{E}_D\left[(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x}))^2\right]+\mathbb{E}_D\left[\left(\bar{f}(\boldsymbol{x})-y_D\right)^2\right] \newline
+&amp;=\mathbb{E}_D\left[(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x}))^2\right]+\mathbb{E}_D\left[\left(\bar{f}(\boldsymbol{x})-y+y-y_D\right)^2\right] \newline
+&amp;=\mathbb{E}_D\left[(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x}))^2\right]+\mathbb{E}_D\left[(\bar{f}(\boldsymbol{x})-y)^2\right]+\mathbb{E}_D\left[\left(y-y_D\right)^2\right] \newline
 &amp;=\text{Var}(\boldsymbol{x})+\text{bias}(\boldsymbol{x})+\varepsilon^2
 \end{aligned}
 $$</p>
