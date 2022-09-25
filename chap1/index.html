@@ -639,29 +639,20 @@ A_{1 n} & A_{2 n} & \cdots & A_{n n}
 <li>如果 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 可逆，则 <span class="arithmatex"><span class="MathJax_Preview">A^*=|A| A^{-1}</span><script type="math/tex">A^*=|A| A^{-1}</script></span> ；（<strong>重要</strong>，下面 <span class="arithmatex"><span class="MathJax_Preview">|A|:=det(A)</span><script type="math/tex">|A|:=det(A)</script></span>）</li>
 <li>对于 <span class="arithmatex"><span class="MathJax_Preview">A^*</span><script type="math/tex">A^*</script></span> 的秩有:</li>
 </ul>
-<!-- $$
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{aligned}
+&amp;\operatorname{rank}\left(A^*\right)=n, \operatorname{rank}(A)=n \\
+&amp;\operatorname{rank}\left(A^*\right)=1, \operatorname{rank}(A)=n-1 \\
+&amp;\operatorname{rank}\left(A^*\right)=0, \operatorname{rank}(A)&lt;n-1
+\end{aligned}
+</div>
+<script type="math/tex; mode=display">
 \begin{aligned}
 &\operatorname{rank}\left(A^*\right)=n, \operatorname{rank}(A)=n \\
 &\operatorname{rank}\left(A^*\right)=1, \operatorname{rank}(A)=n-1 \\
 &\operatorname{rank}\left(A^*\right)=0, \operatorname{rank}(A)<n-1
 \end{aligned}
-$$ -->
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\begin{array}{cccc}
-A_{11} &amp; A_{21} &amp; \cdots &amp; A_{n 1} \\
-A_{12} &amp; A_{22} &amp; \cdots &amp; A_{n 2} \\
-\vdots &amp; \vdots &amp; &amp; \vdots \\
-A_{1 n} &amp; A_{2 n} &amp; \cdots &amp; A_{n n}
-\end{array}
-</div>
-<script type="math/tex; mode=display">
-\begin{array}{cccc}
-A_{11} & A_{21} & \cdots & A_{n 1} \\
-A_{12} & A_{22} & \cdots & A_{n 2} \\
-\vdots & \vdots & & \vdots \\
-A_{1 n} & A_{2 n} & \cdots & A_{n n}
-\end{array}
 </script>
 </div>
 <ul>
@@ -673,11 +664,16 @@ A_{1 n} & A_{2 n} & \cdots & A_{n n}
 <li><span class="arithmatex"><span class="MathJax_Preview">\mathrm{AA}^*=\mathrm{A}^* \mathrm{~A}=det(\mathrm{A}) I</span><script type="math/tex">\mathrm{AA}^*=\mathrm{A}^* \mathrm{~A}=det(\mathrm{A}) I</script></span></li>
 </ul>
 <h4 id="_7">矩阵的迹</h4>
-<p>在线性代数中，一个 <span class="arithmatex"><span class="MathJax_Preview">n \times n</span><script type="math/tex">n \times n</script></span> 的矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的迹 (或迹数)，是指 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的主对角线 (从左上方至右下方的对角线) 上各个元素的总和，一般记作 <span class="arithmatex"><span class="MathJax_Preview">\operatorname{tr}(\mathbf{A})</span><script type="math/tex">\operatorname{tr}(\mathbf{A})</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\operatorname{Sp}(\mathbf{A})</span><script type="math/tex">\operatorname{Sp}(\mathbf{A})</script></span> :
-$$
-\operatorname{tr}(\mathbf{A})=\mathbf{A}<em>{1,1}+\mathbf{A}</em>{2,2}+\cdots+\mathbf{A}_{n, n}
-$$
-其中 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}_{i, j}</span><script type="math/tex">\mathbf{A}_{i, j}</script></span> 代表矩阵的第i行列上的元素的值。</p>
+<p>在线性代数中，一个 <span class="arithmatex"><span class="MathJax_Preview">n \times n</span><script type="math/tex">n \times n</script></span> 的矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的迹 (或迹数)，是指 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> 的主对角线 (从左上方至右下方的对角线) 上各个元素的总和，一般记作 <span class="arithmatex"><span class="MathJax_Preview">\operatorname{tr}(\mathbf{A})</span><script type="math/tex">\operatorname{tr}(\mathbf{A})</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\operatorname{Sp}(\mathbf{A})</span><script type="math/tex">\operatorname{Sp}(\mathbf{A})</script></span> :</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\operatorname{tr}(\mathbf{A})=\mathbf{A}_{1,1}+\mathbf{A}_{2,2}+\cdots+\mathbf{A}_{n, n}
+</div>
+<script type="math/tex; mode=display">
+\operatorname{tr}(\mathbf{A})=\mathbf{A}_{1,1}+\mathbf{A}_{2,2}+\cdots+\mathbf{A}_{n, n}
+</script>
+</div>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A}_{i, j}</span><script type="math/tex">\mathbf{A}_{i, j}</script></span> 代表矩阵的第i行列上的元素的值。</p>
 <ul>
 <li>
 <p>一个矩阵的迹是其特征值的总和 (按代数重数计算) 。</p>
@@ -735,13 +731,16 @@ $$
 <p>矩阵的p-诱导范数：</p>
 <p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\|A\|_p=\max _{x \neq 0} \frac{\|A x\|_p}{\|x\|_p}=\max _{x \neq 0} \frac{\left(\sum_{i=1}^m\left|\sum_{j=1}^n a_{i j} x_j\right|^p\right)^{1 / p}}{\left(\sum_{j=1}^n\left|x_j\right|^p\right)^{1 / p}}</span><script type="math/tex">\displaystyle\|A\|_p=\max _{x \neq 0} \frac{\|A x\|_p}{\|x\|_p}=\max _{x \neq 0} \frac{\left(\sum_{i=1}^m\left|\sum_{j=1}^n a_{i j} x_j\right|^p\right)^{1 / p}}{\left(\sum_{j=1}^n\left|x_j\right|^p\right)^{1 / p}}</script></span></p>
 <ul>
-<li>
-<p>当 <span class="arithmatex"><span class="MathJax_Preview">p=2</span><script type="math/tex">p=2</script></span> (欧几里德范数) 时，诱导的矩阵范数就是谱范数。矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱范数是 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 最大的奇异值或半正定矩阵 <span class="arithmatex"><span class="MathJax_Preview">A^* A</span><script type="math/tex">A^* A</script></span> 的最大特征值的平方根：</p>
-<p>$$
-  |A|<em>2=\sqrt{\lambda</em>{\max }\left(A^* A\right)}
-  $$</p>
-</li>
+<li>当 <span class="arithmatex"><span class="MathJax_Preview">p=2</span><script type="math/tex">p=2</script></span> (欧几里德范数) 时，诱导的矩阵范数就是谱范数。矩阵 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱范数是 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 最大的奇异值或半正定矩阵 <span class="arithmatex"><span class="MathJax_Preview">A^* A</span><script type="math/tex">A^* A</script></span> 的最大特征值的平方根：</li>
 </ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\|A\|_2=\sqrt{\lambda_{\max }\left(A^* A\right)}
+</div>
+<script type="math/tex; mode=display">
+\|A\|_2=\sqrt{\lambda_{\max }\left(A^* A\right)}
+</script>
+</div>
 <h4 id="_9">矩阵导数</h4>
 <ul>
 <li><strong>梯度</strong></li>
@@ -975,7 +974,7 @@ D_{K L}(P \| Q)=\mathbb{E}_{x \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb
 </div>
 <p>那么集合 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 为凸集。</p>
 <p><strong>凸函数</strong></p>
-<p>给定一个函数 <span class="arithmatex"><span class="MathJax_Preview">f:\R^n→\R</span><script type="math/tex">f:\R^n→\R</script></span>，如果 domain(f) 是凸集，且任意 <span class="arithmatex"><span class="MathJax_Preview">x,y\in domain(f),</span><script type="math/tex">x,y\in domain(f),</script></span></p>
+<p>给定一个函数 <span class="arithmatex"><span class="MathJax_Preview">f:\mathbb{R}^n→\mathbb{R}</span><script type="math/tex">f:\mathbb{R}^n→\mathbb{R}</script></span>，如果 domain(f) 是凸集，且任意 <span class="arithmatex"><span class="MathJax_Preview">x,y\in domain(f),</span><script type="math/tex">x,y\in domain(f),</script></span></p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
 \forall t \in[0,1], f(t x+(1-t) y) \leq t f(x)+(1-t) f(y)
@@ -1037,50 +1036,96 @@ $$
 </ul>
 <p><strong>无约束优化：梯度下降</strong></p>
 <p>目标： <span class="arithmatex"><span class="MathJax_Preview">\min _x f(x)</span><script type="math/tex">\min _x f(x)</script></span></p>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
-&amp;\text { while }\left|\nabla f\left(x_t\right)\right|&gt;\delta \text { do } \
-&amp;\quad \boldsymbol{x}_{t+1} \leftarrow \boldsymbol{x}_t-\alpha \nabla f\left(\boldsymbol{x}_t\right) \
+&amp;\text { while }\left\|\nabla f\left(x_t\right)\right\|&gt;\delta \text { do } \\
+&amp;\quad \boldsymbol{x}_{t+1} \leftarrow \boldsymbol{x}_t-\alpha \nabla f\left(\boldsymbol{x}_t\right) \\
 &amp;\text { end while }
 \end{aligned}
-$$
-<strong>有约束优化：KKT条件（拉格朗日乘子法）</strong></p>
-<p>$$
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\text { while }\left\|\nabla f\left(x_t\right)\right\|>\delta \text { do } \\
+&\quad \boldsymbol{x}_{t+1} \leftarrow \boldsymbol{x}_t-\alpha \nabla f\left(\boldsymbol{x}_t\right) \\
+&\text { end while }
+\end{aligned}
+</script>
+</div>
+<p><strong>有约束优化：KKT条件（拉格朗日乘子法）</strong></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{array}{cc} 
-&amp; \min _{\boldsymbol{x}} f(\boldsymbol{x}) \
-\text { s.t. } &amp; g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \
+&amp; \min _{\boldsymbol{x}} f(\boldsymbol{x}) \\
+\text { s.t. } &amp; g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
 &amp; h_j(\boldsymbol{x})=0, j=1,2, \cdots, n
 \end{array}
-$$
-引入拉格朗日函数：</p>
-<p>$$
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{cc} 
+& \min _{\boldsymbol{x}} f(\boldsymbol{x}) \\
+\text { s.t. } & g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
+& h_j(\boldsymbol{x})=0, j=1,2, \cdots, n
+\end{array}
+</script>
+</div>
+<p>引入拉格朗日函数：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=f(\boldsymbol{x})+\sum_i u_i g_i(\boldsymbol{x})+\sum_j v_j h_j(\boldsymbol{x})
-$$
-其中 <span class="arithmatex"><span class="MathJax_Preview">u_i \geq 0</span><script type="math/tex">u_i \geq 0</script></span>。</p>
+</div>
+<script type="math/tex; mode=display">
+L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=f(\boldsymbol{x})+\sum_i u_i g_i(\boldsymbol{x})+\sum_j v_j h_j(\boldsymbol{x})
+</script>
+</div>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">u_i \geq 0</span><script type="math/tex">u_i \geq 0</script></span>。</p>
 <p>最优解的<strong>必要条件：KKT条件</strong></p>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{gathered}
-\boldsymbol{\nabla}_{\mathbf{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=\mathbf{0} \
-g_i(\boldsymbol{x}) \leq 0 \
-h_j(\boldsymbol{x})=0 \
-\mu_i \geq 0 \
+\boldsymbol{\nabla}_{\mathbf{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=\mathbf{0} \\
+g_i(\boldsymbol{x}) \leq 0 \\
+h_j(\boldsymbol{x})=0 \\
+\mu_i \geq 0 \\
 \mu_i g_i(\boldsymbol{x})=0
 \end{gathered}
-$$
-最后一个式子表明只有 <span class="arithmatex"><span class="MathJax_Preview">\mu_i=0</span><script type="math/tex">\mu_i=0</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">g_i(x)=0</span><script type="math/tex">g_i(x)=0</script></span>。</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\boldsymbol{\nabla}_{\mathbf{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=\mathbf{0} \\
+g_i(\boldsymbol{x}) \leq 0 \\
+h_j(\boldsymbol{x})=0 \\
+\mu_i \geq 0 \\
+\mu_i g_i(\boldsymbol{x})=0
+\end{gathered}
+</script>
+</div>
+<p>最后一个式子表明只有 <span class="arithmatex"><span class="MathJax_Preview">\mu_i=0</span><script type="math/tex">\mu_i=0</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">g_i(x)=0</span><script type="math/tex">g_i(x)=0</script></span>。</p>
 <p><strong>取一个简单的示例做解释</strong>：</p>
-<p>令 <span class="arithmatex"><span class="MathJax_Preview">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</span><script type="math/tex">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</script></span>，因为 <span class="arithmatex"><span class="MathJax_Preview">\mu g(x)\le0</span><script type="math/tex">\mu g(x)\le0</script></span>，所以 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle\max_\mu L(x,\mu)=f(x)</span><script type="math/tex">\displaystyle\max_\mu L(x,\mu)=f(x)</script></span>（🤑）。</p>
+<p>令 <span class="arithmatex"><span class="MathJax_Preview">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</span><script type="math/tex">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</script></span>，因为 <span class="arithmatex"><span class="MathJax_Preview">\mu g(x)\le0</span><script type="math/tex">\mu g(x)\le0</script></span>，所以 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle\max_\mu L(x,\mu)=f(x)</span><script type="math/tex">\displaystyle\max_\mu L(x,\mu)=f(x)</script></span>（1）。</p>
 <p>所以目标函数变为（称之为 <span class="arithmatex"><span class="MathJax_Preview">x\mu</span><script type="math/tex">x\mu</script></span> 问题）</p>
-<p>$$
-\min <em>x f(x)=\min _x \max </em>\mu L(x, \mu)
-$$
-如果对等号右边那一项交换顺序（称之为 <span class="arithmatex"><span class="MathJax_Preview">\mu x</span><script type="math/tex">\mu x</script></span> 问题）</p>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\min _x f(x)=\min _x \max _\mu L(x, \mu)
+</div>
+<script type="math/tex; mode=display">
+\min _x f(x)=\min _x \max _\mu L(x, \mu)
+</script>
+</div>
+<p>如果对等号右边那一项交换顺序（称之为 <span class="arithmatex"><span class="MathJax_Preview">\mu x</span><script type="math/tex">\mu x</script></span> 问题）</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
-\max <em>\mu \min _x L(x, \mu)&amp;=\max </em>\mu\left[\min <em>x f(x)+\min _x \mu g(x)\right]（按定义展开）\&amp;=\max </em>\mu \min <em>x f(x)+\max </em>\mu \min <em>x \mu g(x)（分配算子，这一步可略）\&amp;=\min _x f(x)+\max </em>\mu \min _x \mu g(x)（第一项不受\mu约束）
+\max _\mu \min _x L(x, \mu)&amp;=\max _\mu\left[\min _x f(x)+\min _x \mu g(x)\right]（按定义展开）\\&amp;=\max _\mu \min _x f(x)+\max _\mu \min _x \mu g(x)（分配算子，这一步可略）\\&amp;=\min _x f(x)+\max _\mu \min _x \mu g(x)（第一项不受\mu约束）
 \end{aligned}
-$$
-然后我们观察</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\max _\mu \min _x L(x, \mu)&=\max _\mu\left[\min _x f(x)+\min _x \mu g(x)\right]（按定义展开）\\&=\max _\mu \min _x f(x)+\max _\mu \min _x \mu g(x)（分配算子，这一步可略）\\&=\min _x f(x)+\max _\mu \min _x \mu g(x)（第一项不受\mu约束）
+\end{aligned}
+</script>
+</div>
+<p>然后我们观察</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
 \left.\begin{array}{c}
@@ -1102,68 +1147,126 @@ g_k(x) \leq 0
 </script>
 </div>
 <p>说明 </p>
-<p>$$
-\max _\mu \min _x \mu g(x)=0 \text { 此时 } \mu=0 \text { or } g(x)=0
-（😄）
-$$
-就是说 </p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（😟）
+\max _\mu \min _x \mu g(x)=0 \text { 此时 } \mu=0 \text { or } g(x)=0
+（2）
 </div>
 <script type="math/tex; mode=display">
-\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（😟）
+\max _\mu \min _x \mu g(x)=0 \text { 此时 } \mu=0 \text { or } g(x)=0
+（2）
 </script>
 </div>
-<p>这说明 <span class="arithmatex"><span class="MathJax_Preview">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</span><script type="math/tex">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</script></span>，两个算子可以交换顺序
-$$
+<p>就是说 </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（3）
+</div>
+<script type="math/tex; mode=display">
+\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（3）
+</script>
+</div>
+<p>这说明 <span class="arithmatex"><span class="MathJax_Preview">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</span><script type="math/tex">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</script></span>，两个算子可以交换顺序</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \left.\begin{array}{c}
-L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \
-\mu_k \geq 0 \
+L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\mu_k \geq 0 \\
 g_k(x) \leq 0
-\end{array}\right}=&gt;\min <em>x \max </em>\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)
-$$
-这就说明如果满足条件（😄），互为对偶的两个问题 <span class="arithmatex"><span class="MathJax_Preview">x\mu,\mu x</span><script type="math/tex">x\mu,\mu x</script></span> 的解和 <span class="arithmatex"><span class="MathJax_Preview">\min_x f(x)</span><script type="math/tex">\min_x f(x)</script></span> 是相同的。</p>
-<p>设这个最优解是 <span class="arithmatex"><span class="MathJax_Preview">\xi</span><script type="math/tex">\xi</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">x=\xi</span><script type="math/tex">x=\xi</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">\mu=0</span><script type="math/tex">\mu=0</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">g(\xi)=0</span><script type="math/tex">g(\xi)=0</script></span>。带入（🤑）中，有 
-$$
+\end{array}\right\}=&gt;\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)
+</div>
+<script type="math/tex; mode=display">
+\left.\begin{array}{c}
+L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=>\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)
+</script>
+</div>
+<p>这就说明如果满足条件（2），互为对偶的两个问题 <span class="arithmatex"><span class="MathJax_Preview">x\mu,\mu x</span><script type="math/tex">x\mu,\mu x</script></span> 的解和 <span class="arithmatex"><span class="MathJax_Preview">\min_x f(x)</span><script type="math/tex">\min_x f(x)</script></span> 是相同的。</p>
+<p>设这个最优解是 <span class="arithmatex"><span class="MathJax_Preview">\xi</span><script type="math/tex">\xi</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">x=\xi</span><script type="math/tex">x=\xi</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">\mu=0</span><script type="math/tex">\mu=0</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">g(\xi)=0</span><script type="math/tex">g(\xi)=0</script></span>。带入（1）中，有 </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \max_\mu L(\xi,\mu)=f(\xi)
-$$
-又由（😟）得【注意到 <span class="arithmatex"><span class="MathJax_Preview">f(\xi)=\min_xf(x)</span><script type="math/tex">f(\xi)=\min_xf(x)</script></span>】
-$$
+</div>
+<script type="math/tex; mode=display">
+\max_\mu L(\xi,\mu)=f(\xi)
+</script>
+</div>
+<p>又由（3）得【注意到 <span class="arithmatex"><span class="MathJax_Preview">f(\xi)=\min_xf(x)</span><script type="math/tex">f(\xi)=\min_xf(x)</script></span>】</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \max _\mu \min _x L(x, \mu)=f(\xi)
-$$
-所以
-$$
+</div>
+<script type="math/tex; mode=display">
+\max _\mu \min _x L(x, \mu)=f(\xi)
+</script>
+</div>
+<p>所以</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 L(\xi,\mu)=\min_xL(x,\mu)
-$$
-说明 <span class="arithmatex"><span class="MathJax_Preview">\xi</span><script type="math/tex">\xi</script></span> 也是 <span class="arithmatex"><span class="MathJax_Preview">L(x,\mu)</span><script type="math/tex">L(x,\mu)</script></span> 的极值点，后者在这点的偏 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 导数为 0。</p>
-<p>结论就是：
-$$
+</div>
+<script type="math/tex; mode=display">
+L(\xi,\mu)=\min_xL(x,\mu)
+</script>
+</div>
+<p>说明 <span class="arithmatex"><span class="MathJax_Preview">\xi</span><script type="math/tex">\xi</script></span> 也是 <span class="arithmatex"><span class="MathJax_Preview">L(x,\mu)</span><script type="math/tex">L(x,\mu)</script></span> 的极值点，后者在这点的偏 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 导数为 0。</p>
+<p>结论就是：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \left.\begin{array}{c}
-L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \
-\mu_k \geq 0 \
+L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\mu_k \geq 0 \\
 g_k(x) \leq 0
-\end{array}\right}=&gt;\left{\begin{array}{c}
-\min <em>x \max </em>\mu L(x, \mu)=\max <em>\mu \min _x L(x, \mu)=\min _x f(x)=f\left(\xi\right) \
-\mu_k g_k\left(\xi\right)=0 \
-\left.\frac{\partial L(x, \mu)}{\partial x}\right|</em>{x=\xi}=0
+\end{array}\right\}=&gt;\left\{\begin{array}{c}
+\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)=f\left(\xi\right) \\
+\mu_k g_k\left(\xi\right)=0 \\
+\left.\frac{\partial L(x, \mu)}{\partial x}\right|_{x=\xi}=0
 \end{array}\right.
-$$
-KKT 条件总结起来就是：
-$$
+</div>
+<script type="math/tex; mode=display">
 \left.\begin{array}{c}
-L(x, \lambda, \mu)=f(x)+\sum_{i=1}^n \lambda_i h_i(x)+\sum_{k=1}^q \mu_k g_k(x) \
-\lambda_i \neq 0 \
-h_i(x)=0 \
-\mu_k \geq 0 \
+L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\mu_k \geq 0 \\
 g_k(x) \leq 0
-\end{array}\right}=&gt;\left{\begin{array}{c}
-\min <em>x \max </em>\mu L(x, \lambda, \mu)=\max <em>\mu \min _x L(x, \lambda, \mu)=\min _x f(x)=f\left(\xi\right) \
-\mu_k g_k\left(\xi\right)=0 \
-\left.\frac{\partial L(x, \lambda, \mu)}{\partial x}\right|</em>{x=\xi}=0
+\end{array}\right\}=>\left\{\begin{array}{c}
+\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)=f\left(\xi\right) \\
+\mu_k g_k\left(\xi\right)=0 \\
+\left.\frac{\partial L(x, \mu)}{\partial x}\right|_{x=\xi}=0
 \end{array}\right.
-$$
-注: <span class="arithmatex"><span class="MathJax_Preview">x, \lambda, \mu</span><script type="math/tex">x, \lambda, \mu</script></span> 都是向量。</p>
+</script>
+</div>
+<p>KKT 条件总结起来就是：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\left.\begin{array}{c}
+L(x, \lambda, \mu)=f(x)+\sum_{i=1}^n \lambda_i h_i(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\lambda_i \neq 0 \\
+h_i(x)=0 \\
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=&gt;\left\{\begin{array}{c}
+\min _x \max _\mu L(x, \lambda, \mu)=\max _\mu \min _x L(x, \lambda, \mu)=\min _x f(x)=f\left(\xi\right) \\
+\mu_k g_k\left(\xi\right)=0 \\
+\left.\frac{\partial L(x, \lambda, \mu)}{\partial x}\right|_{x=\xi}=0
+\end{array}\right.
+</div>
+<script type="math/tex; mode=display">
+\left.\begin{array}{c}
+L(x, \lambda, \mu)=f(x)+\sum_{i=1}^n \lambda_i h_i(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\lambda_i \neq 0 \\
+h_i(x)=0 \\
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=>\left\{\begin{array}{c}
+\min _x \max _\mu L(x, \lambda, \mu)=\max _\mu \min _x L(x, \lambda, \mu)=\min _x f(x)=f\left(\xi\right) \\
+\mu_k g_k\left(\xi\right)=0 \\
+\left.\frac{\partial L(x, \lambda, \mu)}{\partial x}\right|_{x=\xi}=0
+\end{array}\right.
+</script>
+</div>
+<p>注: <span class="arithmatex"><span class="MathJax_Preview">x, \lambda, \mu</span><script type="math/tex">x, \lambda, \mu</script></span> 都是向量。</p>
 
 
 
