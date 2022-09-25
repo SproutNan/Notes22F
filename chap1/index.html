@@ -1031,23 +1031,41 @@ $$
  即 —— 海森矩阵半正定。</p>
 <h4 id="_16">优化问题</h4>
 <p><strong>优化问题</strong></p>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{array}{cl} 
-&amp; \min _x f(x) \
-\text { s.t. } &amp; g_i(x) \leq 0, i=1,2, \ldots, m \
+&amp; \min _x f(x) \\
+\text { s.t. } &amp; g_i(x) \leq 0, i=1,2, \ldots, m \\
 &amp; h_j(x)=0, j=1,2, \cdots, n
 \end{array}
-$$
-这里的 <span class="arithmatex"><span class="MathJax_Preview">s.t.</span><script type="math/tex">s.t.</script></span> 是 subject to，意为 “在……的约束下”。</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{cl} 
+& \min _x f(x) \\
+\text { s.t. } & g_i(x) \leq 0, i=1,2, \ldots, m \\
+& h_j(x)=0, j=1,2, \cdots, n
+\end{array}
+</script>
+</div>
+<p>这里的 <span class="arithmatex"><span class="MathJax_Preview">s.t.</span><script type="math/tex">s.t.</script></span> 是 subject to，意为 “在……的约束下”。</p>
 <p><strong>凸优化问题</strong></p>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{gathered}
-\min _x f(\boldsymbol{x}) \
-\text { s.t. } g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \
+\min _x f(\boldsymbol{x}) \\
+\text { s.t. } g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
 \boldsymbol{a}_i^{\top} \boldsymbol{x}=b, j=1,2, \cdots, n
 \end{gathered}
-$$
-其中 <span class="arithmatex"><span class="MathJax_Preview">f(\boldsymbol{x}), g_i(\boldsymbol{x})</span><script type="math/tex">f(\boldsymbol{x}), g_i(\boldsymbol{x})</script></span> 是凸函数。</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\min _x f(\boldsymbol{x}) \\
+\text { s.t. } g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
+\boldsymbol{a}_i^{\top} \boldsymbol{x}=b, j=1,2, \cdots, n
+\end{gathered}
+</script>
+</div>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">f(\boldsymbol{x}), g_i(\boldsymbol{x})</span><script type="math/tex">f(\boldsymbol{x}), g_i(\boldsymbol{x})</script></span> 是凸函数。</p>
 <ul>
 <li>凸优化中，局部最优等价于全局最优。假设函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 可微凸函数，那么 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 的全局最优当且仅当 <span class="arithmatex"><span class="MathJax_Preview">∇f(\mathbf{x})=0</span><script type="math/tex">∇f(\mathbf{x})=0</script></span>。</li>
 </ul>
