@@ -384,8 +384,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mcnemar" class="md-nav__link">
+    McNemar 检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#friedman" class="md-nav__link">
+    Friedman 检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nemenyi" class="md-nav__link">
+    Nemenyi 后续检验
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    泛化性能解释
+  </a>
   
 </li>
         
@@ -568,8 +596,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mcnemar" class="md-nav__link">
+    McNemar 检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#friedman" class="md-nav__link">
+    Friedman 检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nemenyi" class="md-nav__link">
+    Nemenyi 后续检验
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    泛化性能解释
+  </a>
   
 </li>
         
@@ -793,6 +849,40 @@ E(f ; D, \cos t)=\frac{1}{m}\left(\sum_{x_i \in D^{+}} \mathbb{I}\left(f\left(x_
 <h4 id="tt"><span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 检验</h4>
 <p>多次留出法或交叉验证法进行训练/测试时可使用 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 检验。</p>
 <h4 id="tt_1">交叉验证 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 检验（成对）</h4>
+<h4 id="mcnemar">McNemar 检验</h4>
+<h4 id="friedman">Friedman 检验</h4>
+<h4 id="nemenyi">Nemenyi 后续检验</h4>
+<h3 id="_13">泛化性能解释</h3>
+<p>假设噪声的期望为 0，即 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{E}_D(y_D-y)=0</span><script type="math/tex">\mathbb{E}_D(y_D-y)=0</script></span>。</p>
+<p>对泛化误差分解：
+$$
+\begin{aligned}
+E(f, D) &amp;=\mathbb{E}_D\left[\left(f(\boldsymbol{x} ; D)-y_D\right)^2\right] \
+&amp;=\mathbb{E}_D\left[\left(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x})+\bar{f}(\boldsymbol{x})-y_D\right)^2\right] \
+&amp;=\mathbb{E}_D\left[(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x}))^2\right]+\mathbb{E}_D\left[\left(\bar{f}(\boldsymbol{x})-y_D\right)^2\right] \
+&amp;=\mathbb{E}_D\left[(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x}))^2\right]+\mathbb{E}_D\left[\left(\bar{f}(\boldsymbol{x})-y+y-y_D\right)^2\right] \
+&amp;=\mathbb{E}_D\left[(f(\boldsymbol{x} ; D)-\bar{f}(\boldsymbol{x}))^2\right]+\mathbb{E}_D\left[(\bar{f}(\boldsymbol{x})-y)^2\right]+\mathbb{E}_D\left[\left(y-y_D\right)^2\right] \
+&amp;=\text{Var}(\boldsymbol{x})+\text{bias}(\boldsymbol{x})+\varepsilon^2
+\end{aligned}
+$$</p>
+<ul>
+<li>方差度量了同样大小训练集的变动所导致的学习性能的变化；即刻画了数据扰动所造成的影响</li>
+<li>偏差度量了学习算法期望预测与真实结果的偏离程度；即刻画了学习算法本身的拟合能力</li>
+<li>噪声表达了在当前任务上任何学习算法所能达到的期望泛化误差的下界；即刻画了学习问题本身的难度</li>
+</ul>
+<p>泛化性能是由学习算法的能力、数据的充分性以及学习任务本身的难度所共同决定的。给定学习任务为了取得好的泛化性能，需要使偏差小（充分拟合数据）而且方差较小（减少数据扰动产生的影响）。</p>
+<p>一般来说，偏差与方差是有冲突的，称为偏差-方差窘境。</p>
+<ul>
+<li>
+<p>在训练不足时，学习器拟合能力不强，训练数据的扰动不足以使学习器的拟合能力产生显著变化，此时偏差主导泛化错误率</p>
+</li>
+<li>
+<p>随着训练程度加深，学习器拟合能力逐渐增强，方差逐渐主导泛化错误率</p>
+</li>
+<li>
+<p>训练充足后，学习器的拟合能力非常强，训练数据的轻微扰动都会导致学习器的显著变化，若训练数据自身非全局特性被学到则会发生过拟合。</p>
+</li>
+</ul>
 
 
 
