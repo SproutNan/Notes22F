@@ -746,13 +746,23 @@ A_{1 n} & A_{2 n} & \cdots & A_{n n}
 <li><strong>梯度</strong></li>
 </ul>
 <p>对向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{x}</span><script type="math/tex">\mathbf{x}</script></span> 来说，其函数的梯度是一个向量：</p>
-<p>$$
-  (\mathbf{grad}f(\mathbf{x}))<em>i=\left(\nabla f(\boldsymbol{x})\right)</em>{i}=\frac{\partial f(\mathbf{x})}{\partial x_i}
-  $$</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(\mathbf{grad}f(\mathbf{x}))_i=\left(\nabla f(\boldsymbol{x})\right)_{i}=\frac{\partial f(\mathbf{x})}{\partial x_i}
+</div>
+<script type="math/tex; mode=display">
+(\mathbf{grad}f(\mathbf{x}))_i=\left(\nabla f(\boldsymbol{x})\right)_{i}=\frac{\partial f(\mathbf{x})}{\partial x_i}
+</script>
+</div>
 <p>二阶导是一个矩阵（称之为海森矩阵）：</p>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
   \left(\nabla^2 f(\boldsymbol{x})\right)_{i j}=\frac{\partial^2 f(\boldsymbol{x})}{\partial x_i \partial x_j}
-  $$</p>
+</div>
+<script type="math/tex; mode=display">
+  \left(\nabla^2 f(\boldsymbol{x})\right)_{i j}=\frac{\partial^2 f(\boldsymbol{x})}{\partial x_i \partial x_j}
+</script>
+</div>
 <p>类似单变量微积分：<span class="arithmatex"><span class="MathJax_Preview">f(\mathbf{x})≈f(\mathbf{x}_0)+\text{grad}f(\mathbf{x}_0)·(\mathbf{x-x}_0)</span><script type="math/tex">f(\mathbf{x})≈f(\mathbf{x}_0)+\text{grad}f(\mathbf{x}_0)·(\mathbf{x-x}_0)</script></span></p>
 <ul>
 <li>
@@ -865,73 +875,80 @@ A_{1 n} & A_{2 n} & \cdots & A_{n n}
 <li><strong>奇异值分解</strong> ——类似特征值分解，但是对任意矩阵都成立</li>
 </ul>
 <p>对于任意大小为 <span class="arithmatex"><span class="MathJax_Preview">m \times n</span><script type="math/tex">m \times n</script></span> 的矩阵 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{A}, \boldsymbol{A}^{\top} \boldsymbol{A} \boldsymbol{v}=\lambda \boldsymbol{v}</span><script type="math/tex">\boldsymbol{A}, \boldsymbol{A}^{\top} \boldsymbol{A} \boldsymbol{v}=\lambda \boldsymbol{v}</script></span></p>
+<blockquote>
 <ul>
 <li>令 <span class="arithmatex"><span class="MathJax_Preview">\mathbf A \mathbf v=\sigma \mathbf u</span><script type="math/tex">\mathbf A \mathbf v=\sigma \mathbf u</script></span> ，那么 <span class="arithmatex"><span class="MathJax_Preview">\mathbf A^T \sigma \mathbf u=\lambda \mathbf v</span><script type="math/tex">\mathbf A^T \sigma \mathbf u=\lambda \mathbf v</script></span> ，分别左乘 <span class="arithmatex"><span class="MathJax_Preview">\mathbf A</span><script type="math/tex">\mathbf A</script></span> 得到 <span class="arithmatex"><span class="MathJax_Preview">\mathbf A \mathbf A^{\top} \mathbf u=\displaystyle\frac{\lambda}{\sigma} \mathbf A \mathbf v=\lambda \mathbf u</span><script type="math/tex">\mathbf A \mathbf A^{\top} \mathbf u=\displaystyle\frac{\lambda}{\sigma} \mathbf A \mathbf v=\lambda \mathbf u</script></span></li>
 <li><span class="arithmatex"><span class="MathJax_Preview">\mathbf u</span><script type="math/tex">\mathbf u</script></span> 对应 <span class="arithmatex"><span class="MathJax_Preview">\mathbf A\mathbf A^T</span><script type="math/tex">\mathbf A\mathbf A^T</script></span> 的特征值为 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的特征向量。</li>
 <li>在 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{Av}=\sigma \mathbf u</span><script type="math/tex">\mathbf{Av}=\sigma \mathbf u</script></span> 两边分别乘以 <span class="arithmatex"><span class="MathJax_Preview">\mathbf u^T</span><script type="math/tex">\mathbf u^T</script></span> ，那么 <span class="arithmatex"><span class="MathJax_Preview">\mathbf u^{\top} \mathbf A \mathbf v=\sigma</span><script type="math/tex">\mathbf u^{\top} \mathbf A \mathbf v=\sigma</script></span> </li>
 <li>在 <span class="arithmatex"><span class="MathJax_Preview">\mathbf A^T \sigma \mathbf u=\lambda \mathbf v</span><script type="math/tex">\mathbf A^T \sigma \mathbf u=\lambda \mathbf v</script></span> 两边分别乘以 <span class="arithmatex"><span class="MathJax_Preview">\mathbf v</span><script type="math/tex">\mathbf v</script></span> ，那么 <span class="arithmatex"><span class="MathJax_Preview">\mathbf v^T \mathbf A^T \mathbf u=\frac{\lambda}{\sigma}</span><script type="math/tex">\mathbf v^T \mathbf A^T \mathbf u=\frac{\lambda}{\sigma}</script></span></li>
-<li>所以 <span class="arithmatex"><span class="MathJax_Preview">\sigma^2=\lambda</span><script type="math/tex">\sigma^2=\lambda</script></span></li>
+<li>所以 <span class="arithmatex"><span class="MathJax_Preview">\sigma^2=\lambda</span><script type="math/tex">\sigma^2=\lambda</script></span>
+</li>
 </ul>
+</blockquote>
 <p>将 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{Av}=\sigma\mathbf{u}</span><script type="math/tex">\mathbf{Av}=\sigma\mathbf{u}</script></span> 写成矩阵形式 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{AV=U\Sigma}</span><script type="math/tex">\mathbf{AV=U\Sigma}</script></span></p>
+<blockquote>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\mathbf{U,V}</span><script type="math/tex">\mathbf{U,V}</script></span> 是正交矩阵，<span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{A}=\boldsymbol{A} \boldsymbol{V} \boldsymbol{V}^{\top}=\boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top}</span><script type="math/tex">\boldsymbol{A}=\boldsymbol{A} \boldsymbol{V} \boldsymbol{V}^{\top}=\boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top}</script></span><ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\mathbf{U,V}</span><script type="math/tex">\mathbf{U,V}</script></span> 是正交矩阵，<span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{A}=\boldsymbol{A} \boldsymbol{V} \boldsymbol{V}^{\top}=\boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top}</span><script type="math/tex">\boldsymbol{A}=\boldsymbol{A} \boldsymbol{V} \boldsymbol{V}^{\top}=\boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top}</script></span></li>
 <li>广义逆 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{A^+=V\Sigma^{-1}U^T}</span><script type="math/tex">\mathbf{A^+=V\Sigma^{-1}U^T}</script></span></li>
 <li><span class="arithmatex"><span class="MathJax_Preview">\Sigma^{-1}</span><script type="math/tex">\Sigma^{-1}</script></span> 的定义见<a href="https://blog.csdn.net/a15779627836/article/details/116804713">这里</a></li>
-</ul>
-</li>
 <li><strong>U</strong> 的列向量为左奇异向量，<strong>V</strong> 的列向量为右奇异向量</li>
 <li><strong>Σ</strong> 的大小为m×n，<strong>U</strong>的大小为m×m，<strong>V</strong>的大小为n×n</li>
 </ul>
+</blockquote>
 <h3 id="_11">概率论与数理统计</h3>
 <h4 id="_12">概率分布</h4>
 <ul>
-<li>
-<p>高斯分布、正态分布</p>
-</li>
+<li>高斯分布、正态分布</li>
+</ul>
+<blockquote>
+<ul>
 <li>
 <p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}\left(x ; \mu, \sigma^2\right)=\sqrt{\frac{1}{2 \pi \sigma^2}} \exp \left(-\frac{1}{2 \sigma^2}(x-\mu)^2\right) \quad</span><script type="math/tex">\displaystyle\mathcal{N}\left(x ; \mu, \sigma^2\right)=\sqrt{\frac{1}{2 \pi \sigma^2}} \exp \left(-\frac{1}{2 \sigma^2}(x-\mu)^2\right) \quad</script></span> 均值 <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> 标准差 <span class="arithmatex"><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span></p>
 </li>
 <li>
 <p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}\left(x ; \mu, \beta^{-1}\right)=\sqrt{\frac{\beta}{2 \pi}} \exp \left(-\frac{\beta}{2}(x-\mu)^2\right) \quad</span><script type="math/tex">\displaystyle\mathcal{N}\left(x ; \mu, \beta^{-1}\right)=\sqrt{\frac{\beta}{2 \pi}} \exp \left(-\frac{\beta}{2}(x-\mu)^2\right) \quad</script></span> 均值 <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> Scale <span class="arithmatex"><span class="MathJax_Preview">\beta</span><script type="math/tex">\beta</script></span></p>
 </li>
-<li>
-<p>多元正态分布</p>
-</li>
-<li>
-<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\Sigma})=\frac{1}{\sqrt{(2 \pi)^n \operatorname{det}(\boldsymbol{\Sigma})}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \mathbf{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right)</span><script type="math/tex">\displaystyle\mathcal{N}(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\Sigma})=\frac{1}{\sqrt{(2 \pi)^n \operatorname{det}(\boldsymbol{\Sigma})}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \mathbf{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right)</script></span></p>
-</li>
-<li>
-<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}\left(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\beta}^{-1}\right)=\sqrt{\frac{\operatorname{det}(\boldsymbol{\beta})}{(2 \pi)^n}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \boldsymbol{\beta}(\boldsymbol{x}-\boldsymbol{\mu})\right)</span><script type="math/tex">\displaystyle\mathcal{N}\left(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\beta}^{-1}\right)=\sqrt{\frac{\operatorname{det}(\boldsymbol{\beta})}{(2 \pi)^n}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \boldsymbol{\beta}(\boldsymbol{x}-\boldsymbol{\mu})\right)</script></span></p>
-</li>
-<li>
-<p>贝塔分布 ——<span class="arithmatex"><span class="MathJax_Preview">\mu\in[0,1]</span><script type="math/tex">\mu\in[0,1]</script></span> </p>
-</li>
-<li>
-<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{Beta}(\mu \mid a, b)=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \mu^{a-1}(1-\mu)^{b-1}</span><script type="math/tex">\displaystyle\operatorname{Beta}(\mu \mid a, b)=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \mu^{a-1}(1-\mu)^{b-1}</script></span></p>
-</li>
+</ul>
+</blockquote>
+<ul>
+<li>多元正态分布</li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\Sigma})=\frac{1}{\sqrt{(2 \pi)^n \operatorname{det}(\boldsymbol{\Sigma})}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \mathbf{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right)</span><script type="math/tex">\displaystyle\mathcal{N}(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\Sigma})=\frac{1}{\sqrt{(2 \pi)^n \operatorname{det}(\boldsymbol{\Sigma})}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \mathbf{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right)</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}\left(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\beta}^{-1}\right)=\sqrt{\frac{\operatorname{det}(\boldsymbol{\beta})}{(2 \pi)^n}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \boldsymbol{\beta}(\boldsymbol{x}-\boldsymbol{\mu})\right)</span><script type="math/tex">\displaystyle\mathcal{N}\left(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\beta}^{-1}\right)=\sqrt{\frac{\operatorname{det}(\boldsymbol{\beta})}{(2 \pi)^n}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \boldsymbol{\beta}(\boldsymbol{x}-\boldsymbol{\mu})\right)</script></span></li>
+</ul>
+</blockquote>
+<ul>
+<li>贝塔分布 ——<span class="arithmatex"><span class="MathJax_Preview">\mu\in[0,1]</span><script type="math/tex">\mu\in[0,1]</script></span> </li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{Beta}(\mu \mid a, b)=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \mu^{a-1}(1-\mu)^{b-1}</span><script type="math/tex">\displaystyle\operatorname{Beta}(\mu \mid a, b)=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \mu^{a-1}(1-\mu)^{b-1}</script></span></li>
 <li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathbb{E}[\mu]=\frac{a}{a+b}</span><script type="math/tex">\displaystyle\mathbb{E}[\mu]=\frac{a}{a+b}</script></span></li>
-<li>
-<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{var}[\mu]=\frac{a b}{(a+b)^2(a+b+1)}</span><script type="math/tex">\displaystyle\operatorname{var}[\mu]=\frac{a b}{(a+b)^2(a+b+1)}</script></span></p>
-</li>
-<li>
-<p>狄利克雷分布 ——贝塔分布的多元扩展</p>
-</li>
-<li>
-<p>多个连续变量 <span class="arithmatex"><span class="MathJax_Preview">\mu_i \in[0,1]</span><script type="math/tex">\mu_i \in[0,1]</script></span> 的概率分布，满足 <span class="arithmatex"><span class="MathJax_Preview">\sum_i \mu_i=1</span><script type="math/tex">\sum_i \mu_i=1</script></span></p>
-</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{var}[\mu]=\frac{a b}{(a+b)^2(a+b+1)}</span><script type="math/tex">\displaystyle\operatorname{var}[\mu]=\frac{a b}{(a+b)^2(a+b+1)}</script></span></li>
+</ul>
+</blockquote>
+<ul>
+<li>狄利克雷分布 ——贝塔分布的多元扩展</li>
+</ul>
+<blockquote>
+<ul>
+<li>多个连续变量 <span class="arithmatex"><span class="MathJax_Preview">\mu_i \in[0,1]</span><script type="math/tex">\mu_i \in[0,1]</script></span> 的概率分布，满足 <span class="arithmatex"><span class="MathJax_Preview">\sum_i \mu_i=1</span><script type="math/tex">\sum_i \mu_i=1</script></span></li>
 <li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{Dir}(\boldsymbol{\mu} \mid \boldsymbol{\alpha})=\frac{\Gamma\left(\sum_i \alpha_i\right)}{\Pi_i \Gamma\left(\alpha_i\right)} \prod_i \mu_i^{\alpha_i-1}</span><script type="math/tex">\displaystyle\operatorname{Dir}(\boldsymbol{\mu} \mid \boldsymbol{\alpha})=\frac{\Gamma\left(\sum_i \alpha_i\right)}{\Pi_i \Gamma\left(\alpha_i\right)} \prod_i \mu_i^{\alpha_i-1}</script></span></li>
-<li>
-<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathbb{E}\left[\mu_i\right]=\frac{\alpha_i}{\sum_i \alpha_i}</span><script type="math/tex">\displaystyle\mathbb{E}\left[\mu_i\right]=\frac{\alpha_i}{\sum_i \alpha_i}</script></span></p>
-</li>
-<li>
-<p>伽马分布 ——<span class="arithmatex"><span class="MathJax_Preview">\tau&gt;0</span><script type="math/tex">\tau>0</script></span></p>
-</li>
-<li>
-<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{Gam}(\tau \mid a, b)=\frac{1}{\Gamma(a)} b^a \tau^{a-1} e^{-b \tau}</span><script type="math/tex">\displaystyle\operatorname{Gam}(\tau \mid a, b)=\frac{1}{\Gamma(a)} b^a \tau^{a-1} e^{-b \tau}</script></span></p>
-</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathbb{E}\left[\mu_i\right]=\frac{\alpha_i}{\sum_i \alpha_i}</span><script type="math/tex">\displaystyle\mathbb{E}\left[\mu_i\right]=\frac{\alpha_i}{\sum_i \alpha_i}</script></span></li>
+</ul>
+</blockquote>
+<ul>
+<li>伽马分布 ——<span class="arithmatex"><span class="MathJax_Preview">\tau&gt;0</span><script type="math/tex">\tau>0</script></span></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{Gam}(\tau \mid a, b)=\frac{1}{\Gamma(a)} b^a \tau^{a-1} e^{-b \tau}</span><script type="math/tex">\displaystyle\operatorname{Gam}(\tau \mid a, b)=\frac{1}{\Gamma(a)} b^a \tau^{a-1} e^{-b \tau}</script></span></li>
 <li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathbb{E}[\tau]=\frac{a}{b}</span><script type="math/tex">\displaystyle\mathbb{E}[\tau]=\frac{a}{b}</script></span></li>
 <li><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{var}[\tau]=\frac{a}{b^2}</span><script type="math/tex">\displaystyle\operatorname{var}[\tau]=\frac{a}{b^2}</script></span></li>
 </ul>
+</blockquote>
 <h4 id="_13">熵</h4>
 <p>当取自有限的样本时，熵的公式可以表示为：（注意负号）
 $$
