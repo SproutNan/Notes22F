@@ -343,6 +343,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    代价曲线
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    模型评估的比较方法
+  </a>
+  
+    <nav class="md-nav" aria-label="模型评估的比较方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    二项检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tt" class="md-nav__link">
+    tt 检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tt_1" class="md-nav__link">
+    交叉验证 tt 检验（成对）
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -482,6 +523,47 @@
           <li class="md-nav__item">
   <a href="#receiver-operating-characteristics" class="md-nav__link">
     受试者工作特征（Receiver Operating Characteristics）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    代价曲线
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    模型评估的比较方法
+  </a>
+  
+    <nav class="md-nav" aria-label="模型评估的比较方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    二项检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tt" class="md-nav__link">
+    tt 检验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tt_1" class="md-nav__link">
+    交叉验证 tt 检验（成对）
   </a>
   
 </li>
@@ -679,6 +761,33 @@ $$
 <li>将分类阈值设为每个样例的预测值</li>
 <li>若当前为真正例，则向 <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> 轴步进 <span class="arithmatex"><span class="MathJax_Preview">1/m^+</span><script type="math/tex">1/m^+</script></span>；若当前为假正例，则向 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 轴步进 <span class="arithmatex"><span class="MathJax_Preview">1/m^-</span><script type="math/tex">1/m^-</script></span></li>
 </ol>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>若某个学习器的ROC曲线被另一个学习器的曲线“包住”，则后者性能优于前者</li>
+<li>如果曲线交叉，可以根据ROC曲线下面积大小进行比较，也即AUC值（Area Under Curve）</li>
+<li>AUC衡量了样本预测的排序质量</li>
+</ol>
+<h4 id="_10">代价曲线</h4>
+<p>现实任务中不同类型的错误所造成的后果很可能不同，为了权衡<strong>不同类型错误</strong>所造成的<strong>不同损失</strong>，可为错误赋予“非均等代价”。</p>
+<p><img alt="image-20220925223225630" src="../chap1.assets/image-20220925223225630.png" /></p>
+<p><strong>平均代价（性能度量指标）</strong>：
+$$
+E(f ; D, \cos t)=\frac{1}{m}\left(\sum_{x_i \in D^{+}} \mathbb{I}\left(f\left(x_i\right) \neq y_i\right) \times \operatorname{cost}<em>{01}+\sum</em>{x_i \in D^{-}} \mathbb{I}\left(f\left(x_i\right) \neq y_i\right) \times \operatorname{cost}_{10}\right)
+$$
+在非均等代价下，ROC曲线不能直接反映出学习器的期望总体代价，而“代价曲线”可以。</p>
+<p><em>具体怎么做，我猜不考，就不学了吧：）</em></p>
+<h3 id="_11">模型评估的比较方法</h3>
+<p>做性能比较要考虑的事情：</p>
+<ol>
+<li>测试性能（测试集上表现的）并不等于泛化性能</li>
+<li>测试性能随着测试集的变化而变化</li>
+<li>很多机器学习算法本身有一定的随机性</li>
+</ol>
+<p>所以直接选取相应评估方法在相应度量下比大小的方法不可取。——<strong>假设检验</strong>！</p>
+<h4 id="_12">二项检验</h4>
+<h4 id="tt"><span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 检验</h4>
+<p>多次留出法或交叉验证法进行训练/测试时可使用 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 检验。</p>
+<h4 id="tt_1">交叉验证 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 检验（成对）</h4>
 
 
 
