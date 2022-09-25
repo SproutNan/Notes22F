@@ -7,7 +7,7 @@
       jax: ["input/TeX"],
       tex2jax: {
         inlineMath: [ ["\\(","\\)"] ],
-        displayMath: [ ["\\[","\\]"] ]
+        displayMath: [ ["\\$$","\\$$"] ]
       },
       TeX: {
         TagSide: "right",
