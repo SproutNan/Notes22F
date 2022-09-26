@@ -1,0 +1,932 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>3优化 - IML Notes Site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="IML Notes Site" class="md-header__button md-logo" aria-label="IML Notes Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IML Notes Site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3优化
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IML Notes Site" class="md-nav__button md-logo" aria-label="IML Notes Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IML Notes Site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          第一章 数学基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="第一章 数学基础" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          第一章 数学基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+        1线性代数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="md-nav__link">
+        2概率论与数理统计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3优化
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        3优化
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    凸集和凸函数
+  </a>
+  
+    <nav class="md-nav" aria-label="凸集和凸函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    凸集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    凸函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    优化问题
+  </a>
+  
+    <nav class="md-nav" aria-label="优化问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    优化问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    凸优化问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    无约束优化：梯度下降
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kkt" class="md-nav__link">
+    有约束优化：KKT条件（拉格朗日乘子法）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          第二章 模型评估
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="第二章 模型评估" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          第二章 模型评估
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E7%AB%A0_%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" class="md-nav__link">
+        模型评估与选择
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    凸集和凸函数
+  </a>
+  
+    <nav class="md-nav" aria-label="凸集和凸函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    凸集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    凸函数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    优化问题
+  </a>
+  
+    <nav class="md-nav" aria-label="优化问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    优化问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    凸优化问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    无约束优化：梯度下降
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kkt" class="md-nav__link">
+    有约束优化：KKT条件（拉格朗日乘子法）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>3优化</h1>
+
+<h2 id="_1">凸集和凸函数</h2>
+<h3 id="_2"><strong>凸集</strong></h3>
+<p>给定集合 <span class="arithmatex"><span class="MathJax_Preview">C \subseteq \mathbb{R}^n</span><script type="math/tex">C \subseteq \mathbb{R}^n</script></span> 。若 <span class="arithmatex"><span class="MathJax_Preview">\forall x, y \in C</span><script type="math/tex">\forall x, y \in C</script></span> 满足</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\forall t \in[0,1], t x+(1-t) y \in C
+</div>
+<script type="math/tex; mode=display">
+\forall t \in[0,1], t x+(1-t) y \in C
+</script>
+</div>
+<p>那么集合 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 为凸集。</p>
+<h3 id="_3"><strong>凸函数</strong></h3>
+<p>给定一个函数 <span class="arithmatex"><span class="MathJax_Preview">f:\mathbb{R}^n→\mathbb{R}</span><script type="math/tex">f:\mathbb{R}^n→\mathbb{R}</script></span>，如果 domain(f) 是凸集，且任意 <span class="arithmatex"><span class="MathJax_Preview">x,y\in domain(f),</span><script type="math/tex">x,y\in domain(f),</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\forall t \in[0,1], f(t x+(1-t) y) \leq t f(x)+(1-t) f(y)
+</div>
+<script type="math/tex; mode=display">
+\forall t \in[0,1], f(t x+(1-t) y) \leq t f(x)+(1-t) f(y)
+</script>
+</div>
+<p>那么函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是凸函数。</p>
+<p><strong>凸函数例子</strong>：</p>
+<ul>
+<li>
+<p>指数函数 <span class="arithmatex"><span class="MathJax_Preview">\exp (a x)</span><script type="math/tex">\exp (a x)</script></span></p>
+</li>
+<li>
+<p>负对数函数 <span class="arithmatex"><span class="MathJax_Preview">-\log (x)</span><script type="math/tex">-\log (x)</script></span></p>
+</li>
+<li>反射函数 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{a}^{\top} \boldsymbol{x}+b</span><script type="math/tex">\boldsymbol{a}^{\top} \boldsymbol{x}+b</script></span></li>
+<li>二次函数 <span class="arithmatex"><span class="MathJax_Preview">x^{\top} A \boldsymbol{x}+2 \boldsymbol{b}^{\top} \boldsymbol{x}+c \quad(A</span><script type="math/tex">x^{\top} A \boldsymbol{x}+2 \boldsymbol{b}^{\top} \boldsymbol{x}+c \quad(A</script></span> 半正定 <span class="arithmatex"><span class="MathJax_Preview">)</span><script type="math/tex">)</script></span></li>
+<li>范数 <span class="arithmatex"><span class="MathJax_Preview">\|x\|_p=\sqrt[p]{\sum_i\left|x_i\right|^p}</span><script type="math/tex">\|x\|_p=\sqrt[p]{\sum_i\left|x_i\right|^p}</script></span></li>
+<li>最大函数 <span class="arithmatex"><span class="MathJax_Preview">f(x)=\max \left\{x_1, \cdots, x_n\right\}</span><script type="math/tex">f(x)=\max \left\{x_1, \cdots, x_n\right\}</script></span></li>
+<li>Softplus <span class="arithmatex"><span class="MathJax_Preview">\log (1+\exp (x))</span><script type="math/tex">\log (1+\exp (x))</script></span></li>
+<li>LogSumExp <span class="arithmatex"><span class="MathJax_Preview">\log \left(\sum_i \exp \left(x_i\right)\right)</span><script type="math/tex">\log \left(\sum_i \exp \left(x_i\right)\right)</script></span></li>
+<li>LogDeterminant <span class="arithmatex"><span class="MathJax_Preview">-\log \operatorname{det}(X)</span><script type="math/tex">-\log \operatorname{det}(X)</script></span> 在半正定矩阵定义域上</li>
+</ul>
+<p><strong>一阶条件</strong></p>
+<p>假设函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 可微，那么 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是凸函数当且仅当 <span class="arithmatex"><span class="MathJax_Preview">∀ x,y∈dom(f)</span><script type="math/tex">∀ x,y∈dom(f)</script></span>，
+$$
+f(y)≥f(x)+∇f(x)^⊤ (y-x)
+$$
+即 —— 函数在切线上方。</p>
+<p><strong>二阶条件</strong></p>
+<p>假设函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 二阶可微，那么 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是凸函数当且仅当 <span class="arithmatex"><span class="MathJax_Preview">∀ x∈dom(f)</span><script type="math/tex">∀ x∈dom(f)</script></span>，
+$$
+∇^2 f(x)≽0
+$$
+ 即 —— 海森矩阵半正定。</p>
+<h2 id="_4">优化问题</h2>
+<h3 id="_5"><strong>优化问题</strong></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{array}{cl} 
+&amp; \min _x f(x) \\
+\text { s.t. } &amp; g_i(x) \leq 0, i=1,2, \ldots, m \\
+&amp; h_j(x)=0, j=1,2, \cdots, n
+\end{array}
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{cl} 
+& \min _x f(x) \\
+\text { s.t. } & g_i(x) \leq 0, i=1,2, \ldots, m \\
+& h_j(x)=0, j=1,2, \cdots, n
+\end{array}
+</script>
+</div>
+<p>这里的 <span class="arithmatex"><span class="MathJax_Preview">s.t.</span><script type="math/tex">s.t.</script></span> 是 subject to，意为 “在……的约束下”。</p>
+<h3 id="_6"><strong>凸优化问题</strong></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{gathered}
+\min _x f(\boldsymbol{x}) \\
+\text { s.t. } g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
+\boldsymbol{a}_i^{\top} \boldsymbol{x}=b, j=1,2, \cdots, n
+\end{gathered}
+</div>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\min _x f(\boldsymbol{x}) \\
+\text { s.t. } g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
+\boldsymbol{a}_i^{\top} \boldsymbol{x}=b, j=1,2, \cdots, n
+\end{gathered}
+</script>
+</div>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">f(\boldsymbol{x}), g_i(\boldsymbol{x})</span><script type="math/tex">f(\boldsymbol{x}), g_i(\boldsymbol{x})</script></span> 是凸函数。</p>
+<ul>
+<li>凸优化中，局部最优等价于全局最优。假设函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 可微凸函数，那么 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 的全局最优当且仅当 <span class="arithmatex"><span class="MathJax_Preview">∇f(\mathbf{x})=0</span><script type="math/tex">∇f(\mathbf{x})=0</script></span>。</li>
+</ul>
+<h3 id="_7"><strong>无约束优化：梯度下降</strong></h3>
+<p>目标： <span class="arithmatex"><span class="MathJax_Preview">\min _x f(x)</span><script type="math/tex">\min _x f(x)</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{aligned}
+&amp;\text { while }\left\|\nabla f\left(x_t\right)\right\|&gt;\delta \text { do } \\
+&amp;\quad \boldsymbol{x}_{t+1} \leftarrow \boldsymbol{x}_t-\alpha \nabla f\left(\boldsymbol{x}_t\right) \\
+&amp;\text { end while }
+\end{aligned}
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\text { while }\left\|\nabla f\left(x_t\right)\right\|>\delta \text { do } \\
+&\quad \boldsymbol{x}_{t+1} \leftarrow \boldsymbol{x}_t-\alpha \nabla f\left(\boldsymbol{x}_t\right) \\
+&\text { end while }
+\end{aligned}
+</script>
+</div>
+<h3 id="kkt"><strong>有约束优化：KKT条件（拉格朗日乘子法）</strong></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{array}{cc} 
+&amp; \min _{\boldsymbol{x}} f(\boldsymbol{x}) \\
+\text { s.t. } &amp; g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
+&amp; h_j(\boldsymbol{x})=0, j=1,2, \cdots, n
+\end{array}
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{cc} 
+& \min _{\boldsymbol{x}} f(\boldsymbol{x}) \\
+\text { s.t. } & g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
+& h_j(\boldsymbol{x})=0, j=1,2, \cdots, n
+\end{array}
+</script>
+</div>
+<p>引入拉格朗日函数：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=f(\boldsymbol{x})+\sum_i u_i g_i(\boldsymbol{x})+\sum_j v_j h_j(\boldsymbol{x})
+</div>
+<script type="math/tex; mode=display">
+L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=f(\boldsymbol{x})+\sum_i u_i g_i(\boldsymbol{x})+\sum_j v_j h_j(\boldsymbol{x})
+</script>
+</div>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">u_i \geq 0</span><script type="math/tex">u_i \geq 0</script></span>。</p>
+<p>最优解的<strong>必要条件：KKT条件</strong></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{gathered}
+\boldsymbol{\nabla}_{\mathbf{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=\mathbf{0} \\
+g_i(\boldsymbol{x}) \leq 0 \\
+h_j(\boldsymbol{x})=0 \\
+\mu_i \geq 0 \\
+\mu_i g_i(\boldsymbol{x})=0
+\end{gathered}
+</div>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\boldsymbol{\nabla}_{\mathbf{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=\mathbf{0} \\
+g_i(\boldsymbol{x}) \leq 0 \\
+h_j(\boldsymbol{x})=0 \\
+\mu_i \geq 0 \\
+\mu_i g_i(\boldsymbol{x})=0
+\end{gathered}
+</script>
+</div>
+<p>最后一个式子表明只有 <span class="arithmatex"><span class="MathJax_Preview">\mu_i=0</span><script type="math/tex">\mu_i=0</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">g_i(x)=0</span><script type="math/tex">g_i(x)=0</script></span>。</p>
+<p><strong>取一个简单的示例做解释</strong>：</p>
+<p>令 <span class="arithmatex"><span class="MathJax_Preview">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</span><script type="math/tex">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</script></span>，因为 <span class="arithmatex"><span class="MathJax_Preview">\mu g(x)\le0</span><script type="math/tex">\mu g(x)\le0</script></span>，所以 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle\max_\mu L(x,\mu)=f(x)</span><script type="math/tex">\displaystyle\max_\mu L(x,\mu)=f(x)</script></span>（1）。</p>
+<p>所以目标函数变为（称之为 <span class="arithmatex"><span class="MathJax_Preview">x\mu</span><script type="math/tex">x\mu</script></span> 问题）</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\min _x f(x)=\min _x \max _\mu L(x, \mu)
+</div>
+<script type="math/tex; mode=display">
+\min _x f(x)=\min _x \max _\mu L(x, \mu)
+</script>
+</div>
+<p>如果对等号右边那一项交换顺序（称之为 <span class="arithmatex"><span class="MathJax_Preview">\mu x</span><script type="math/tex">\mu x</script></span> 问题）</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{aligned}
+\max _\mu \min _x L(x, \mu)&amp;=\max _\mu\left[\min _x f(x)+\min _x \mu g(x)\right]（按定义展开）\\&amp;=\max _\mu \min _x f(x)+\max _\mu \min _x \mu g(x)（分配算子，这一步可略）\\&amp;=\min _x f(x)+\max _\mu \min _x \mu g(x)（第一项不受\mu约束）
+\end{aligned}
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\max _\mu \min _x L(x, \mu)&=\max _\mu\left[\min _x f(x)+\min _x \mu g(x)\right]（按定义展开）\\&=\max _\mu \min _x f(x)+\max _\mu \min _x \mu g(x)（分配算子，这一步可略）\\&=\min _x f(x)+\max _\mu \min _x \mu g(x)（第一项不受\mu约束）
+\end{aligned}
+</script>
+</div>
+<p>然后我们观察</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\left.\begin{array}{c}
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=&gt;\min _x \mu g(x)=\left\{\begin{array}{cc}
+0 &amp; \text { if } \mu=0 \text { or } g(x)=0 \\
+-\infty &amp; \text { if } \mu&gt;0 \text { and } g(x)&lt;0
+\end{array}\right.
+</div>
+<script type="math/tex; mode=display">
+\left.\begin{array}{c}
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=>\min _x \mu g(x)=\left\{\begin{array}{cc}
+0 & \text { if } \mu=0 \text { or } g(x)=0 \\
+-\infty & \text { if } \mu>0 \text { and } g(x)<0
+\end{array}\right.
+</script>
+</div>
+<p>说明 </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\max _\mu \min _x \mu g(x)=0 \text { 此时 } \mu=0 \text { or } g(x)=0
+（2）
+</div>
+<script type="math/tex; mode=display">
+\max _\mu \min _x \mu g(x)=0 \text { 此时 } \mu=0 \text { or } g(x)=0
+（2）
+</script>
+</div>
+<p>就是说 </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（3）
+</div>
+<script type="math/tex; mode=display">
+\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（3）
+</script>
+</div>
+<p>这说明 <span class="arithmatex"><span class="MathJax_Preview">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</span><script type="math/tex">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</script></span>，两个算子可以交换顺序</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\left.\begin{array}{c}
+L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=&gt;\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)
+</div>
+<script type="math/tex; mode=display">
+\left.\begin{array}{c}
+L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=>\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)
+</script>
+</div>
+<p>这就说明如果满足条件（2），互为对偶的两个问题 <span class="arithmatex"><span class="MathJax_Preview">x\mu,\mu x</span><script type="math/tex">x\mu,\mu x</script></span> 的解和 <span class="arithmatex"><span class="MathJax_Preview">\min_x f(x)</span><script type="math/tex">\min_x f(x)</script></span> 是相同的。</p>
+<p>设这个最优解是 <span class="arithmatex"><span class="MathJax_Preview">\xi</span><script type="math/tex">\xi</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">x=\xi</span><script type="math/tex">x=\xi</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">\mu=0</span><script type="math/tex">\mu=0</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">g(\xi)=0</span><script type="math/tex">g(\xi)=0</script></span>。带入（1）中，有 </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\max_\mu L(\xi,\mu)=f(\xi)
+</div>
+<script type="math/tex; mode=display">
+\max_\mu L(\xi,\mu)=f(\xi)
+</script>
+</div>
+<p>又由（3）得【注意到 <span class="arithmatex"><span class="MathJax_Preview">f(\xi)=\min_xf(x)</span><script type="math/tex">f(\xi)=\min_xf(x)</script></span>】</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\max _\mu \min _x L(x, \mu)=f(\xi)
+</div>
+<script type="math/tex; mode=display">
+\max _\mu \min _x L(x, \mu)=f(\xi)
+</script>
+</div>
+<p>所以</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+L(\xi,\mu)=\min_xL(x,\mu)
+</div>
+<script type="math/tex; mode=display">
+L(\xi,\mu)=\min_xL(x,\mu)
+</script>
+</div>
+<p>说明 <span class="arithmatex"><span class="MathJax_Preview">\xi</span><script type="math/tex">\xi</script></span> 也是 <span class="arithmatex"><span class="MathJax_Preview">L(x,\mu)</span><script type="math/tex">L(x,\mu)</script></span> 的极值点，后者在这点的偏 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 导数为 0。</p>
+<p>结论就是：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\left.\begin{array}{c}
+L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=&gt;\left\{\begin{array}{c}
+\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)=f\left(\xi\right) \\
+\mu_k g_k\left(\xi\right)=0 \\
+\left.\frac{\partial L(x, \mu)}{\partial x}\right|_{x=\xi}=0
+\end{array}\right.
+</div>
+<script type="math/tex; mode=display">
+\left.\begin{array}{c}
+L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=>\left\{\begin{array}{c}
+\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)=f\left(\xi\right) \\
+\mu_k g_k\left(\xi\right)=0 \\
+\left.\frac{\partial L(x, \mu)}{\partial x}\right|_{x=\xi}=0
+\end{array}\right.
+</script>
+</div>
+<p>KKT 条件总结起来就是：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\left.\begin{array}{c}
+L(x, \lambda, \mu)=f(x)+\sum_{i=1}^n \lambda_i h_i(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\lambda_i \neq 0 \\
+h_i(x)=0 \\
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=&gt;\left\{\begin{array}{c}
+\min _x \max _\mu L(x, \lambda, \mu)=\max _\mu \min _x L(x, \lambda, \mu)=\min _x f(x)=f\left(\xi\right) \\
+\mu_k g_k\left(\xi\right)=0 \\
+\left.\frac{\partial L(x, \lambda, \mu)}{\partial x}\right|_{x=\xi}=0
+\end{array}\right.
+</div>
+<script type="math/tex; mode=display">
+\left.\begin{array}{c}
+L(x, \lambda, \mu)=f(x)+\sum_{i=1}^n \lambda_i h_i(x)+\sum_{k=1}^q \mu_k g_k(x) \\
+\lambda_i \neq 0 \\
+h_i(x)=0 \\
+\mu_k \geq 0 \\
+g_k(x) \leq 0
+\end{array}\right\}=>\left\{\begin{array}{c}
+\min _x \max _\mu L(x, \lambda, \mu)=\max _\mu \min _x L(x, \lambda, \mu)=\min _x f(x)=f\left(\xi\right) \\
+\mu_k g_k\left(\xi\right)=0 \\
+\left.\frac{\partial L(x, \lambda, \mu)}{\partial x}\right|_{x=\xi}=0
+\end{array}\right.
+</script>
+</div>
+<p>注: <span class="arithmatex"><span class="MathJax_Preview">x, \lambda, \mu</span><script type="math/tex">x, \lambda, \mu</script></span> 都是向量。</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../2%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 2概率论与数理统计" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              2概率论与数理统计
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../%E7%AC%AC%E4%BA%8C%E7%AB%A0_%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" class="md-footer__link md-footer__link--next" aria-label="下一页: 模型评估与选择" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              模型评估与选择
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

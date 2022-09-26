@@ -1,0 +1,581 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>2概率论与数理统计 - IML Notes Site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="IML Notes Site" class="md-header__button md-logo" aria-label="IML Notes Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IML Notes Site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2概率论与数理统计
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IML Notes Site" class="md-nav__button md-logo" aria-label="IML Notes Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IML Notes Site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          第一章 数学基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="第一章 数学基础" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          第一章 数学基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+        1线性代数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2概率论与数理统计
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        2概率论与数理统计
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概率分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    熵
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kl" class="md-nav__link">
+    KL 散度
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        3优化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          第二章 模型评估
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="第二章 模型评估" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          第二章 模型评估
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AC%AC%E4%BA%8C%E7%AB%A0_%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" class="md-nav__link">
+        模型评估与选择
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概率分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    熵
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kl" class="md-nav__link">
+    KL 散度
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>2概率论与数理统计</h1>
+
+<h2 id="_1">概率分布</h2>
+<ul>
+<li>高斯分布、正态分布</li>
+</ul>
+<blockquote>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}\left(x ; \mu, \sigma^2\right)=\sqrt{\frac{1}{2 \pi \sigma^2}} \exp \left(-\frac{1}{2 \sigma^2}(x-\mu)^2\right) \quad</span><script type="math/tex">\displaystyle\mathcal{N}\left(x ; \mu, \sigma^2\right)=\sqrt{\frac{1}{2 \pi \sigma^2}} \exp \left(-\frac{1}{2 \sigma^2}(x-\mu)^2\right) \quad</script></span> 均值 <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> 标准差 <span class="arithmatex"><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}\left(x ; \mu, \beta^{-1}\right)=\sqrt{\frac{\beta}{2 \pi}} \exp \left(-\frac{\beta}{2}(x-\mu)^2\right) \quad</span><script type="math/tex">\displaystyle\mathcal{N}\left(x ; \mu, \beta^{-1}\right)=\sqrt{\frac{\beta}{2 \pi}} \exp \left(-\frac{\beta}{2}(x-\mu)^2\right) \quad</script></span> 均值 <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> Scale <span class="arithmatex"><span class="MathJax_Preview">\beta</span><script type="math/tex">\beta</script></span></p>
+</blockquote>
+<ul>
+<li>多元正态分布</li>
+</ul>
+<blockquote>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\Sigma})=\frac{1}{\sqrt{(2 \pi)^n \operatorname{det}(\boldsymbol{\Sigma})}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \mathbf{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right)</span><script type="math/tex">\displaystyle\mathcal{N}(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\Sigma})=\frac{1}{\sqrt{(2 \pi)^n \operatorname{det}(\boldsymbol{\Sigma})}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \mathbf{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right)</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathcal{N}\left(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\beta}^{-1}\right)=\sqrt{\frac{\operatorname{det}(\boldsymbol{\beta})}{(2 \pi)^n}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \boldsymbol{\beta}(\boldsymbol{x}-\boldsymbol{\mu})\right)</span><script type="math/tex">\displaystyle\mathcal{N}\left(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\beta}^{-1}\right)=\sqrt{\frac{\operatorname{det}(\boldsymbol{\beta})}{(2 \pi)^n}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \boldsymbol{\beta}(\boldsymbol{x}-\boldsymbol{\mu})\right)</script></span></p>
+</blockquote>
+<ul>
+<li>贝塔分布 ——<span class="arithmatex"><span class="MathJax_Preview">\mu\in[0,1]</span><script type="math/tex">\mu\in[0,1]</script></span> </li>
+</ul>
+<blockquote>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{Beta}(\mu \mid a, b)=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \mu^{a-1}(1-\mu)^{b-1}</span><script type="math/tex">\displaystyle\operatorname{Beta}(\mu \mid a, b)=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \mu^{a-1}(1-\mu)^{b-1}</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathbb{E}[\mu]=\frac{a}{a+b}</span><script type="math/tex">\displaystyle\mathbb{E}[\mu]=\frac{a}{a+b}</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{var}[\mu]=\frac{a b}{(a+b)^2(a+b+1)}</span><script type="math/tex">\displaystyle\operatorname{var}[\mu]=\frac{a b}{(a+b)^2(a+b+1)}</script></span></p>
+</blockquote>
+<ul>
+<li>狄利克雷分布 ——贝塔分布的多元扩展</li>
+</ul>
+<blockquote>
+<p>多个连续变量 <span class="arithmatex"><span class="MathJax_Preview">\mu_i \in[0,1]</span><script type="math/tex">\mu_i \in[0,1]</script></span> 的概率分布，满足 <span class="arithmatex"><span class="MathJax_Preview">\sum_i \mu_i=1</span><script type="math/tex">\sum_i \mu_i=1</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{Dir}(\boldsymbol{\mu} \mid \boldsymbol{\alpha})=\frac{\Gamma\left(\sum_i \alpha_i\right)}{\Pi_i \Gamma\left(\alpha_i\right)} \prod_i \mu_i^{\alpha_i-1}</span><script type="math/tex">\displaystyle\operatorname{Dir}(\boldsymbol{\mu} \mid \boldsymbol{\alpha})=\frac{\Gamma\left(\sum_i \alpha_i\right)}{\Pi_i \Gamma\left(\alpha_i\right)} \prod_i \mu_i^{\alpha_i-1}</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathbb{E}\left[\mu_i\right]=\frac{\alpha_i}{\sum_i \alpha_i}</span><script type="math/tex">\displaystyle\mathbb{E}\left[\mu_i\right]=\frac{\alpha_i}{\sum_i \alpha_i}</script></span></p>
+</blockquote>
+<ul>
+<li>伽马分布 ——<span class="arithmatex"><span class="MathJax_Preview">\tau&gt;0</span><script type="math/tex">\tau>0</script></span></li>
+</ul>
+<blockquote>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{Gam}(\tau \mid a, b)=\frac{1}{\Gamma(a)} b^a \tau^{a-1} e^{-b \tau}</span><script type="math/tex">\displaystyle\operatorname{Gam}(\tau \mid a, b)=\frac{1}{\Gamma(a)} b^a \tau^{a-1} e^{-b \tau}</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\mathbb{E}[\tau]=\frac{a}{b}</span><script type="math/tex">\displaystyle\mathbb{E}[\tau]=\frac{a}{b}</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\displaystyle\operatorname{var}[\tau]=\frac{a}{b^2}</span><script type="math/tex">\displaystyle\operatorname{var}[\tau]=\frac{a}{b^2}</script></span></p>
+</blockquote>
+<h2 id="_2">熵</h2>
+<p>当取自有限的样本时，熵的公式可以表示为：（注意负号）
+$$
+\mathrm{H}(X)=\sum_i \mathrm{P}\left(x_i\right) \mathrm{I}\left(x_i\right)=-\sum_i \mathrm{P}\left(x_i\right) \log _b \mathrm{P}\left(x_i\right)
+$$</p>
+<p>这里 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> 是底，通常可以是 2，e 或 10.</p>
+<p>还可以定义事件 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">Y</span><script type="math/tex">Y</script></span> 分别取 <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">y_j</span><script type="math/tex">y_j</script></span> 时的条件熵为
+$$
+\mathrm{H}(X \mid Y)=-\sum_{i, j} p\left(x_i| y_j\right) \log \frac{p\left(x_i| y_j\right)}{p\left(y_j\right)}
+$$</p>
+<h2 id="kl">KL 散度</h2>
+<p>衡量两个分布的差异</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">D_{K L}(P \| Q)=\mathbb{E}_{x \sim P}\left[\log \frac{P(x)}{Q(x)}\right]</span><script type="math/tex">D_{K L}(P \| Q)=\mathbb{E}_{x \sim P}\left[\log \frac{P(x)}{Q(x)}\right]</script></span></li>
+<li>非负, <span class="arithmatex"><span class="MathJax_Preview">\mathrm{P}=\mathrm{Q}</span><script type="math/tex">\mathrm{P}=\mathrm{Q}</script></span> 时为零</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">D_{K L}(P \| Q) \neq D_{K L}(Q \| P)</span><script type="math/tex">D_{K L}(P \| Q) \neq D_{K L}(Q \| P)</script></span> ，但理论上最小值均当 <span class="arithmatex"><span class="MathJax_Preview">\mathrm{P}=\mathrm{Q}</span><script type="math/tex">\mathrm{P}=\mathrm{Q}</script></span></li>
+</ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+D_{K L}(P \| Q)=\mathbb{E}_{x \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb{E}_{x \sim P}[\log P(x)]-\mathbb{E}_{x \sim P}[\log Q(x)]
+</div>
+<script type="math/tex; mode=display">
+D_{K L}(P \| Q)=\mathbb{E}_{x \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb{E}_{x \sim P}[\log P(x)]-\mathbb{E}_{x \sim P}[\log Q(x)]
+</script>
+</div>
+<ul>
+<li>即 P 和 Q 的 KL 散度等于 <span class="arithmatex"><span class="MathJax_Preview">-H(P)+H(P,Q)</span><script type="math/tex">-H(P)+H(P,Q)</script></span>，后者称之为交叉熵。</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../1%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1线性代数" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              1线性代数
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../3%E4%BC%98%E5%8C%96/" class="md-footer__link md-footer__link--next" aria-label="下一页: 3优化" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              3优化
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
