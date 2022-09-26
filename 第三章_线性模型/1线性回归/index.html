@@ -412,6 +412,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90/" class="md-nav__link">
+        3线性判别分析
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -603,46 +617,89 @@ w=\frac{\sum_i y_i(x_i-\bar x)}{\sum_ix_i^2-\frac{1}{m}(\sum_{i}x_i)^2}
 <p>这里 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{E}(w,b)</span><script type="math/tex">\mathbb{E}(w,b)</script></span> 是关于 <span class="arithmatex"><span class="MathJax_Preview">w,b</span><script type="math/tex">w,b</script></span> 的凸函数，所以导数均为0时得到最优解。</p>
 </blockquote>
 <h3 id="_5">多元线性回归</h3>
-<p>目标：
-$$
-f\left(\boldsymbol{x}<em>{\boldsymbol{i}}\right)=\boldsymbol{w}^{\top} \boldsymbol{x}_i+b \text { 使得 } f\left(\boldsymbol{x}_i\right) \approx y_i
-$$
-把 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{w}</span><script type="math/tex">\boldsymbol{w}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> 合并成 <span class="arithmatex"><span class="MathJax_Preview">\hat{\boldsymbol{w}}=(\boldsymbol{w};b)</span><script type="math/tex">\hat{\boldsymbol{w}}=(\boldsymbol{w};b)</script></span>，则数据集 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 需要拓展一个维度（恒为1）。
-$$
+<p>目标：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+f\left(\boldsymbol{x}_{\boldsymbol{i}}\right)=\boldsymbol{w}^{\top} \boldsymbol{x}_i+b \text { 使得 } f\left(\boldsymbol{x}_i\right) \approx y_i
+</div>
+<script type="math/tex; mode=display">
+f\left(\boldsymbol{x}_{\boldsymbol{i}}\right)=\boldsymbol{w}^{\top} \boldsymbol{x}_i+b \text { 使得 } f\left(\boldsymbol{x}_i\right) \approx y_i
+</script>
+</div>
+<p>把 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{w}</span><script type="math/tex">\boldsymbol{w}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> 合并成 <span class="arithmatex"><span class="MathJax_Preview">\hat{\boldsymbol{w}}=(\boldsymbol{w};b)</span><script type="math/tex">\hat{\boldsymbol{w}}=(\boldsymbol{w};b)</script></span>，则数据集 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 需要拓展一个维度（恒为1）。</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{gathered}
 \boldsymbol{X}=\left(\begin{array}{ccccc}
-x</em>{11} &amp; x_{12} &amp; \cdots &amp; x_{1 d} &amp; 1 \
-x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2 d} &amp; 1 \
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \
+x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1 d} &amp; 1 \\
+x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2 d} &amp; 1 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
 x_{m 1} &amp; x_{m 2} &amp; \cdots &amp; x_{m d} &amp; 1
 \end{array}\right)=\left(\begin{array}{cc}
-\boldsymbol{x}_1^{\top} &amp; 1 \
-\boldsymbol{x}_2^{\top} &amp; 1 \
-\vdots &amp; \vdots \
+\boldsymbol{x}_1^{\top} &amp; 1 \\
+\boldsymbol{x}_2^{\top} &amp; 1 \\
+\vdots &amp; \vdots \\
 \boldsymbol{x}_m^{\top} &amp; 1
-\end{array}\right) \
+\end{array}\right) \\
 \boldsymbol{y}=\left(y_1 ; y_2 ; \cdots ; y_m\right)
 \end{gathered}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\boldsymbol{X}=\left(\begin{array}{ccccc}
+x_{11} & x_{12} & \cdots & x_{1 d} & 1 \\
+x_{21} & x_{22} & \cdots & x_{2 d} & 1 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+x_{m 1} & x_{m 2} & \cdots & x_{m d} & 1
+\end{array}\right)=\left(\begin{array}{cc}
+\boldsymbol{x}_1^{\top} & 1 \\
+\boldsymbol{x}_2^{\top} & 1 \\
+\vdots & \vdots \\
+\boldsymbol{x}_m^{\top} & 1
+\end{array}\right) \\
+\boldsymbol{y}=\left(y_1 ; y_2 ; \cdots ; y_m\right)
+\end{gathered}
+</script>
+</div>
 <h4 id="_6">最小二乘法</h4>
-<p>最小化目标：
-$$
-\mathbb{E}(\hat{\boldsymbol{w}})=||\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol{w}}||<em>2^2=(\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol{w}})^\top(\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol{w}})
-$$
-求 <span class="arithmatex"><span class="MathJax_Preview">E(\widehat{w})</span><script type="math/tex">E(\widehat{w})</script></span> 关于变量 <span class="arithmatex"><span class="MathJax_Preview">\widehat{w}</span><script type="math/tex">\widehat{w}</script></span> 的导数得到
-$$
-\nabla</em>{\widehat{w}} E(\widehat{\boldsymbol{w}})=2 \boldsymbol{X}^{\top}(\boldsymbol{X} \widehat{\boldsymbol{w}}-\boldsymbol{y})
-$$
-令其为 0 可以得到 <span class="arithmatex"><span class="MathJax_Preview">\hat w</span><script type="math/tex">\hat w</script></span> 最优解的闭式解，但是涉及到矩阵的逆要稍微做点讨论。</p>
+<p>最小化目标：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\mathbb{E}(\hat{\boldsymbol{w}})=||\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol{w}}||_2^2=(\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol{w}})^\top(\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol{w}})
+</div>
+<script type="math/tex; mode=display">
+\mathbb{E}(\hat{\boldsymbol{w}})=||\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol{w}}||_2^2=(\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol{w}})^\top(\boldsymbol{y}-\boldsymbol{X}\hat{\boldsymbol{w}})
+</script>
+</div>
+<p>求 <span class="arithmatex"><span class="MathJax_Preview">E(\widehat{w})</span><script type="math/tex">E(\widehat{w})</script></span> 关于变量 <span class="arithmatex"><span class="MathJax_Preview">\widehat{w}</span><script type="math/tex">\widehat{w}</script></span> 的导数得到</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\nabla_{\widehat{w}} E(\widehat{\boldsymbol{w}})=2 \boldsymbol{X}^{\top}(\boldsymbol{X} \widehat{\boldsymbol{w}}-\boldsymbol{y})
+</div>
+<script type="math/tex; mode=display">
+\nabla_{\widehat{w}} E(\widehat{\boldsymbol{w}})=2 \boldsymbol{X}^{\top}(\boldsymbol{X} \widehat{\boldsymbol{w}}-\boldsymbol{y})
+</script>
+</div>
+<p>令其为 0 可以得到 <span class="arithmatex"><span class="MathJax_Preview">\hat w</span><script type="math/tex">\hat w</script></span> 最优解的闭式解，但是涉及到矩阵的逆要稍微做点讨论。</p>
 <hr />
-<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X^TX</span><script type="math/tex">X^TX</script></span> 是满秩矩阵或者正定矩阵，则可以直接求逆。最优解是
-$$
-\hat w^<em>=(X^TX)^{-1}X^Ty
-$$
-此时学得的线性回归模型是
-$$
-f(\hat{x_i})=\hat{x_i}^T\hat{w}^</em>
-$$</p>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X^TX</span><script type="math/tex">X^TX</script></span> 是满秩矩阵或者正定矩阵，则可以直接求逆。最优解是</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\hat w^*=(X^TX)^{-1}X^Ty
+</div>
+<script type="math/tex; mode=display">
+\hat w^*=(X^TX)^{-1}X^Ty
+</script>
+</div>
+<p>此时学得的线性回归模型是</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+f(\hat{x_i})=\hat{x_i}^T\hat{w}^*
+</div>
+<script type="math/tex; mode=display">
+f(\hat{x_i})=\hat{x_i}^T\hat{w}^*
+</script>
+</div>
 <hr />
 <p>实际情况中往往不满足上述条件，就会解出很多个 <span class="arithmatex"><span class="MathJax_Preview">\hat w</span><script type="math/tex">\hat w</script></span> 能使均方误差最小化。此时选择哪一个解要看学习算法的归纳偏好，常见的作法是<a href="https://mp.weixin.qq.com/s/vfWmI3qUD6NNNfzCV2AGPA">引入正则化项</a>。</p>
 <blockquote>

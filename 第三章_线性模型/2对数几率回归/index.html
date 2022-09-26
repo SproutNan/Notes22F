@@ -366,6 +366,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90/" class="md-nav__link">
+        3线性判别分析
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -482,15 +496,15 @@ y=g^{-1}(\bold{w}^T\bold{x}+b)
 $$
 这样的称之为<strong>广义线性模型</strong>。</p>
 <h2 id="_2">对数几率回归</h2>
-<p><strong>问题</strong>：在二分类任务中，需要的是 <span class="arithmatex"><span class="MathJax_Preview">\{0,1\}</span><script type="math/tex">\{0,1\}</script></span> 这种标记，而非一个实数值（<span class="arithmatex"><span class="MathJax_Preview">\bold{w}^T\bold{x}+b</span><script type="math/tex">\bold{w}^T\bold{x}+b</script></span>）。</p>
+<p><strong>问题</strong>：在二分类任务中，需要的是 <span class="arithmatex"><span class="MathJax_Preview">\{0,1\}</span><script type="math/tex">\{0,1\}</script></span> 这种标记，而非一个实数值（<span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{w}^T\boldsymbol{x}+b</span><script type="math/tex">\boldsymbol{w}^T\boldsymbol{x}+b</script></span>）。</p>
 <p>这种转换可以通过对数几率函数 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle h(z)=\frac{1}{1+e^{-z}}</span><script type="math/tex">\displaystyle h(z)=\frac{1}{1+e^{-z}}</script></span> 来实现。</p>
 <p><img alt="image-20220926214405329" src="../2%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20220926214405329.png" /></p>
 <p>这个函数的反函数 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle h^{-1}(y)=\ln\frac{y}{1-y}</span><script type="math/tex">\displaystyle h^{-1}(y)=\ln\frac{y}{1-y}</script></span>。</p>
 <p>所以实际上是
 $$
-\ln\frac{y}{1-y}=\bold{w}^T\bold{x}+b
+\ln\frac{y}{1-y}=\boldsymbol{w}^T\boldsymbol{x}+b
 $$
-<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> 视为样本 <span class="arithmatex"><span class="MathJax_Preview">\bold x</span><script type="math/tex">\bold x</script></span> 作为正例的可能性，可以视为后验概率 <span class="arithmatex"><span class="MathJax_Preview">p(y=1|x)</span><script type="math/tex">p(y=1|x)</script></span>，所以上式可以重写为
+<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> 视为样本 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol x</span><script type="math/tex">\boldsymbol x</script></span> 作为正例的可能性，可以视为后验概率 <span class="arithmatex"><span class="MathJax_Preview">p(y=1|x)</span><script type="math/tex">p(y=1|x)</script></span>，所以上式可以重写为
 $$
 \ln\frac{p(y=1|x)}{p(y=0|x)}=w^Tx+b
 $$
@@ -498,9 +512,14 @@ $$
 $$
 p(y=1|x)=\frac{e^{w^Tx+b}}{1+e^{w^Tx+b}}
 $$</p>
-<p>$$</p>
-<p>p(y=0|x)=\frac{1}{1+e^{w^Tx+b}}
-$$</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+p(y=0|x)=\frac{1}{1+e^{w^Tx+b}}
+</div>
+<script type="math/tex; mode=display">
+p(y=0|x)=\frac{1}{1+e^{w^Tx+b}}
+</script>
+</div>
 <p>根据已有的数据集，可以通过极大似然法来求最优化的参数。
 $$
 l(w,b)=\sum_{i=1}^m\ln p(y_i|x_i;w,b)
@@ -542,13 +561,13 @@ $$
       
       
         
-        <a href="../../%E7%AC%AC%E4%BA%8C%E7%AB%A0_%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" class="md-footer__link md-footer__link--next" aria-label="下一页: 模型评估与选择" rel="next">
+        <a href="../3%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90/" class="md-footer__link md-footer__link--next" aria-label="下一页: 3线性判别分析" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              模型评估与选择
+              3线性判别分析
             </div>
           </div>
           <div class="md-footer__button md-icon">
