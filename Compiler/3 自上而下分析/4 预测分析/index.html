@@ -513,6 +513,53 @@
     非递归的预测分析
   </a>
   
+    <nav class="md-nav" aria-label="非递归的预测分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    构造预测分析表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    多重定义及解决
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    错误恢复
+  </a>
+  
+    <nav class="md-nav" aria-label="错误恢复">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    编译器的错误处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    分析器对错误处理的基本目标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -804,6 +851,53 @@
     非递归的预测分析
   </a>
   
+    <nav class="md-nav" aria-label="非递归的预测分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    构造预测分析表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    多重定义及解决
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    错误恢复
+  </a>
+  
+    <nav class="md-nav" aria-label="错误恢复">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    编译器的错误处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    分析器对错误处理的基本目标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -848,6 +942,32 @@
 <li>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是非终结符，访问分析表 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>，若 <span class="arithmatex"><span class="MathJax_Preview">M[X,a]</span><script type="math/tex">M[X,a]</script></span> 是空白，说明出错。</li>
 </ul>
 </div>
+<p>算法执行示例位于书 P59，个人感觉挺好理解，就不贴了。</p>
+<h3 id="_3">构造预测分析表</h3>
+<p>构造分析预测表的<strong>思路</strong>，对于每个形如 <span class="arithmatex"><span class="MathJax_Preview">A→\alpha</span><script type="math/tex">A→\alpha</script></span> 的产生式，考虑两方面：</p>
+<ul>
+<li>对于 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\alpha)</span><script type="math/tex">FIRST(\alpha)</script></span> 中的所有非空终结符，都要使 <span class="arithmatex"><span class="MathJax_Preview">A→\alpha</span><script type="math/tex">A→\alpha</script></span> 加入 <span class="arithmatex"><span class="MathJax_Preview">M[A,a]</span><script type="math/tex">M[A,a]</script></span>；</li>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\alpha)</span><script type="math/tex">FIRST(\alpha)</script></span> 中包含 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span>，如果当前的输入符号（包含 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span>）在 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span> 中，用 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 展开 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 仍是合理的选择。在这种情况下，对于 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span> 中的每个终结符 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span>（包含 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span>），都要使 <span class="arithmatex"><span class="MathJax_Preview">A→\alpha</span><script type="math/tex">A→\alpha</script></span> 加入 <span class="arithmatex"><span class="MathJax_Preview">M[A,b]</span><script type="math/tex">M[A,b]</script></span>。</li>
+</ul>
+<p>对于文法 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的所有产生式执行上述两条后，剩下的 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 条目都是空白（出错）。</p>
+<h3 id="_4">多重定义及解决</h3>
+<p>一个文法的预测分析表没有多重定义条目 <span class="arithmatex"><span class="MathJax_Preview">\Leftrightarrow</span><script type="math/tex">\Leftrightarrow</script></span> 该文法是 LL(1) 的</p>
+<p>文法 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 是左递归或者二义的 <span class="arithmatex"><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 至少含一个多重定义的条目</p>
+<p><strong>如何解决分析表中有多重定义的情况</strong>？</p>
+<ul>
+<li><strong>求助于文法变换</strong>：消除左递归和提取左因子，以期得到 LL(1) 文法。（不一定能够做到）</li>
+</ul>
+<p>这说明使用预测分析的主要困难就是给源语言写出一个好的文法。</p>
+<h2 id="_5">错误恢复</h2>
+<h3 id="_6">编译器的错误处理</h3>
+<p><strong>词法错误</strong>，如标识符、关键字或算符的拼写错</p>
+<p><strong>语法错误</strong>，如算术表达式的括号不配对</p>
+<p><strong>语义错误</strong>，如算符作用于不相容的运算对象</p>
+<p><strong>逻辑错误</strong>，如无穷的递归调用；把 == 写成了 =</p>
+<h3 id="_7">分析器对错误处理的基本目标</h3>
+<p>清楚而准确地报告错误的出现，并尽量少出现伪错误</p>
+<p>迅速地从每个错误中恢复过来，以便诊断后面的错误</p>
+<p>它不应该使正确程序的处理速度降低太多</p>
 
 
 
