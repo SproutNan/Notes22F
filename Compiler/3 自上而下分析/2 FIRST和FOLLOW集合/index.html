@@ -901,46 +901,52 @@
 </ul>
 </blockquote>
 <h3 id="_2">算法</h3>
-<p>!!! info "计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)</span><script type="math/tex">FIRST(X)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符或非终结符"</p>
-<pre><code>如果 $X$ 是某个终结符，则 $FIRST(X)=\{X\}$
-
-如果 $X$ 是某个非终结符，遍历所有其产生式 $X→Y_1Y_2...Y_k$，递归计算每一个产生式中的每一个 $FIRST(Y_i)$，这很容易做到
-
-- 要么全都**包含**空 $\varepsilon$（$FIRST(X)=FIRST(X)\cup\varepsilon$）
-
-- 要么出现了某个满足条件的非终结符 $a$（$FIRST(X)=FIRST(X)\cup a$）
-
-如果 $X$ 是某个非终结符，且某个产生式是 $X→\varepsilon$，则直接 $FIRST(X)=FIRST(X)\cup\varepsilon$。
-</code></pre>
-<p>!!! info "计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1...X_n)</span><script type="math/tex">FIRST(X_1...X_n)</script></span>，其中每个 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 都是某个终结符或非终结符"</p>
-<pre><code>结果按下面的步骤来获得：
-
-- $FIRST(X_1)$ 中的所有非 $\varepsilon$ 符号
-
-- 如果 $\varepsilon$ 在 $FIRST(X_1),...,FIRST(X_i)$ 中，那么应当把上面的下标 1 改成 $i+1$
-
-- 如果所有的 $FIRST(X_i)$ 都只有 $\varepsilon$，最终的结果也只有它。
-</code></pre>
+<div class="admonition info">
+<p class="admonition-title">计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)</span><script type="math/tex">FIRST(X)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符或非终结符</p>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符，则 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=\{X\}</span><script type="math/tex">FIRST(X)=\{X\}</script></span></p>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个非终结符，遍历所有其产生式 <span class="arithmatex"><span class="MathJax_Preview">X→Y_1Y_2...Y_k</span><script type="math/tex">X→Y_1Y_2...Y_k</script></span>，递归计算每一个产生式中的每一个 <span class="arithmatex"><span class="MathJax_Preview">FIRST(Y_i)</span><script type="math/tex">FIRST(Y_i)</script></span>，这很容易做到</p>
+<ul>
+<li>
+<p>要么全都<strong>包含</strong>空 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span>（<span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup\varepsilon</span><script type="math/tex">FIRST(X)=FIRST(X)\cup\varepsilon</script></span>）</p>
+</li>
+<li>
+<p>要么出现了某个满足条件的非终结符 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>（<span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup a</span><script type="math/tex">FIRST(X)=FIRST(X)\cup a</script></span>）</p>
+</li>
+</ul>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个非终结符，且某个产生式是 <span class="arithmatex"><span class="MathJax_Preview">X→\varepsilon</span><script type="math/tex">X→\varepsilon</script></span>，则直接 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup\varepsilon</span><script type="math/tex">FIRST(X)=FIRST(X)\cup\varepsilon</script></span>。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1...X_n)</span><script type="math/tex">FIRST(X_1...X_n)</script></span>，其中每个 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 都是某个终结符或非终结符</p>
+<p>结果按下面的步骤来获得：</p>
+<ul>
+<li>
+<p><span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1)</span><script type="math/tex">FIRST(X_1)</script></span> 中的所有非 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 符号</p>
+</li>
+<li>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1),...,FIRST(X_i)</span><script type="math/tex">FIRST(X_1),...,FIRST(X_i)</script></span> 中，那么应当把上面的下标 1 改成 <span class="arithmatex"><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span></p>
+</li>
+<li>
+<p>如果所有的 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_i)</span><script type="math/tex">FIRST(X_i)</script></span> 都只有 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span>，最终的结果也只有它。</p>
+</li>
+</ul>
+</div>
 <h3 id="_3">例子</h3>
-<p>!!! abstract "对下面文法的每个非终结符求 FIRST 集合"</p>
-<pre><code>- $E→TE'$
-- $E'→+TE'|\varepsilon$
-- $T→FT'$
-- $T'→*FT'|\varepsilon$
-- $F→(E)|\textbf{id}$
-
-这里采用一种自下而上的求法，避免从上而下导致分支。
-
-（1）$FIRST(F)=\{(,\textbf{id}\}$；
-
-（2）$FIRST(T')=\{*,\varepsilon\}$；
-
-（3）$FIRST(T)=FIRST(F)$；
-
-（4）$FIRST(E')=\{+,\varepsilon\}$；
-
-（5）$FIRST(E)=FIRST(T)$；
-</code></pre>
+<div class="admonition abstract">
+<p class="admonition-title">对下面文法的每个非终结符求 FIRST 集合</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">E→TE'</span><script type="math/tex">E→TE'</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">E'→+TE'|\varepsilon</span><script type="math/tex">E'→+TE'|\varepsilon</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">T→FT'</span><script type="math/tex">T→FT'</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">T'→*FT'|\varepsilon</span><script type="math/tex">T'→*FT'|\varepsilon</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">F→(E)|\textbf{id}</span><script type="math/tex">F→(E)|\textbf{id}</script></span></li>
+</ul>
+<p>这里采用一种自下而上的求法，避免从上而下导致分支。</p>
+<p>（1）<span class="arithmatex"><span class="MathJax_Preview">FIRST(F)=\{(,\textbf{id}\}</span><script type="math/tex">FIRST(F)=\{(,\textbf{id}\}</script></span>；</p>
+<p>（2）<span class="arithmatex"><span class="MathJax_Preview">FIRST(T')=\{*,\varepsilon\}</span><script type="math/tex">FIRST(T')=\{*,\varepsilon\}</script></span>；</p>
+<p>（3）<span class="arithmatex"><span class="MathJax_Preview">FIRST(T)=FIRST(F)</span><script type="math/tex">FIRST(T)=FIRST(F)</script></span>；</p>
+<p>（4）<span class="arithmatex"><span class="MathJax_Preview">FIRST(E')=\{+,\varepsilon\}</span><script type="math/tex">FIRST(E')=\{+,\varepsilon\}</script></span>；</p>
+<p>（5）<span class="arithmatex"><span class="MathJax_Preview">FIRST(E)=FIRST(T)</span><script type="math/tex">FIRST(E)=FIRST(T)</script></span>；</p>
+</div>
 <h2 id="_4">后继符号集</h2>
 <ul>
 <li>如果 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon\in FIRST(\alpha)</span><script type="math/tex">\varepsilon\in FIRST(\alpha)</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的某个选择，说明还需要考虑 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 之后的符号。</li>
@@ -965,24 +971,33 @@ $$
 （4）<strong>形如</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{S→\alpha X\beta}</span><script type="math/tex">\boldsymbol{S→\alpha X\beta}</script></span>，<strong>且</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{FIRST(\beta)}</span><script type="math/tex">\boldsymbol{FIRST(\beta)}</script></span> <strong>包含</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\varepsilon</span><script type="math/tex">\boldsymbol\varepsilon</script></span>。使用这条产生式推导，情况变成（1）或（3）。
 $$
 FIRST(\beta)-{\varepsilon}+FOLLOW(S)\subseteq FOLLOW(X)
-$$
-!!! info "计算 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是某个非终结符"</p>
-<pre><code>- 如果 $A$ 是开始符号 $S$，把 $\$$ 加入 $FOLLOW(A)$ 中
-
-- 如果 $B→...A\beta$，则将 $FIRST(\beta)$ 加入到 $FOLLOW(A)$
-
-- 如果 $B→...A$ 或者 $B→...A\beta$，$\varepsilon \in FIRST(\beta)$，则将 $FOLLOW(B)$ 加入到 $FOLLOW(A)$
-</code></pre>
+$$</p>
+<div class="admonition info">
+<p class="admonition-title">计算 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是某个非终结符</p>
+<ul>
+<li>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是开始符号 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>，把 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span> 加入 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span> 中</p>
+</li>
+<li>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">B→...A\beta</span><script type="math/tex">B→...A\beta</script></span>，则将 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\beta)</span><script type="math/tex">FIRST(\beta)</script></span> 加入到 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span></p>
+</li>
+<li>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">B→...A</span><script type="math/tex">B→...A</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">B→...A\beta</span><script type="math/tex">B→...A\beta</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\varepsilon \in FIRST(\beta)</span><script type="math/tex">\varepsilon \in FIRST(\beta)</script></span>，则将 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(B)</span><script type="math/tex">FOLLOW(B)</script></span> 加入到 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span></p>
+</li>
+</ul>
+</div>
 <h3 id="_6">例子</h3>
-<p>!!! abstract "对下面文法的每个非终结符求 FOLLOW 集合"</p>
-<pre><code>- $E→TE'$
-- $E'→+TE'|\varepsilon$
-- $T→FT'$
-- $T'→*FT'|\varepsilon$
-- $F→(E)|\textbf{id}$
-
-需要对整个文法进行循环遍历，不断对所有的 $FOLLOW$ 集合扩充，当某一次遍历的过程中结果不再变化，表示当前结果集为最终结果。
-</code></pre>
+<div class="admonition abstract">
+<p class="admonition-title">对下面文法的每个非终结符求 FOLLOW 集合</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">E→TE'</span><script type="math/tex">E→TE'</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">E'→+TE'|\varepsilon</span><script type="math/tex">E'→+TE'|\varepsilon</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">T→FT'</span><script type="math/tex">T→FT'</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">T'→*FT'|\varepsilon</span><script type="math/tex">T'→*FT'|\varepsilon</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">F→(E)|\textbf{id}</span><script type="math/tex">F→(E)|\textbf{id}</script></span></li>
+</ul>
+<p>需要对整个文法进行循环遍历，不断对所有的 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW</span><script type="math/tex">FOLLOW</script></span> 集合扩充，当某一次遍历的过程中结果不再变化，表示当前结果集为最终结果。</p>
+</div>
 
 
 
