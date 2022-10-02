@@ -1009,6 +1009,7 @@
 <li>高层构造的首终结符，比如 <span class="arithmatex"><span class="MathJax_Preview">a=expr;\textbf{ if }...</span><script type="math/tex">a=expr;\textbf{ if }...</script></span>，可以把 <span class="arithmatex"><span class="MathJax_Preview">\textbf{if}</span><script type="math/tex">\textbf{if}</script></span> 这样的句首终结符作为 <span class="arithmatex"><span class="MathJax_Preview">expr</span><script type="math/tex">expr</script></span> 的同步记号，以免发生遗漏分号的错误时把后面的 if 语句一大段全部丢弃的情况。</li>
 <li><span class="arithmatex"><span class="MathJax_Preview">FIRST(A)</span><script type="math/tex">FIRST(A)</script></span> 的所有终结符，比如 <span class="arithmatex"><span class="MathJax_Preview">a=expr;,\textbf{if }...</span><script type="math/tex">a=expr;,\textbf{if }...</script></span>，语句的开始符号（这里是 if）作为 <span class="arithmatex"><span class="MathJax_Preview">stmt</span><script type="math/tex">stmt</script></span> 语句的同步符号，以免多出一个逗号时把 if 语句忽略了。</li>
 <li>如果出错时栈顶是存在有产生空串选择的非终结符，则可以使用其推出空串的产生式选择。</li>
+<li>如果终结符在栈顶而不能匹配，弹出此终结符。</li>
 </ul>
 
 
