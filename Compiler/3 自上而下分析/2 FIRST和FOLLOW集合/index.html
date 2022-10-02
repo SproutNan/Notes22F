@@ -550,6 +550,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90/" class="md-nav__link">
+        4 预测分析
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -892,6 +906,8 @@
 <h2 id="_1">开始符号集</h2>
 <ul>
 <li>对于文法的某个句型 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>，其开始符号集合 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\alpha)</span><script type="math/tex">FIRST(\alpha)</script></span> 是说，当这个句型经过若干次推导后，不以非终结符打头了，换言之是以某个终结符 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> 打头的，那么这个终结符 <span class="arithmatex"><span class="MathJax_Preview">b\in FIRST(\alpha)</span><script type="math/tex">b\in FIRST(\alpha)</script></span>，后者就是由所有这样的 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> 组成的。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">FIRST(\alpha)=\{a|\alpha\Rightarrow^*a...,a\in V_T\}\cup\{\varepsilon|\alpha\Rightarrow^*\varepsilon\}</span><script type="math/tex">FIRST(\alpha)=\{a|\alpha\Rightarrow^*a...,a\in V_T\}\cup\{\varepsilon|\alpha\Rightarrow^*\varepsilon\}</script></span></li>
+<li>即：<span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 推出的非空串中首终结符和 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 推出空串时的 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 组成的集合。</li>
 </ul>
 <blockquote>
 <ul>
@@ -951,6 +967,8 @@
 <ul>
 <li>如果 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon\in FIRST(\alpha)</span><script type="math/tex">\varepsilon\in FIRST(\alpha)</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的某个选择，说明还需要考虑 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 之后的符号。</li>
 <li>定义 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span> 是，从开始符号开始推导，所有可以出现在非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 之后的终结符 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 的集合。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)=\{a|S\Rightarrow^*...Aa...,a\in V_T\}\cup\{\$|S\Rightarrow^*...A\}</span><script type="math/tex">FOLLOW(A)=\{a|S\Rightarrow^*...Aa...,a\in V_T\}\cup\{\$|S\Rightarrow^*...A\}</script></span></li>
+<li>即：在句型中紧跟在 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 之后的终结符或 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span> 组成的集合，其中 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 是开始符号。</li>
 </ul>
 <blockquote>
 <ul>
