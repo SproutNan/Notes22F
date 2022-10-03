@@ -564,34 +564,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    对比
-  </a>
-  
-    <nav class="md-nav" aria-label="对比">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    自上而下预测分析
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    自下而上移进-规约
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    规约
+    举例
   </a>
   
 </li>
@@ -875,34 +848,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    对比
-  </a>
-  
-    <nav class="md-nav" aria-label="对比">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    自上而下预测分析
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    自下而上移进-规约
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    规约
+    举例
   </a>
   
 </li>
@@ -924,30 +870,45 @@
 
   <h1>2 规约</h1>
 
-<h2 id="_1">对比</h2>
-<h3 id="_2">自上而下预测分析</h3>
-<ul>
-<li>从开始符号出发，为输入串寻找最左推导，是自上而下形成分析树的过程</li>
-<li>即便消除左递归、提取左因子，仍然存在一些程序语言不能做到 LL(1)</li>
-</ul>
-<h3 id="-">自下而上移进-规约</h3>
-<ul>
-<li>针对输入串，尝试根据产生式规约，直至归约到开始符号</li>
-<li>是自下而上形成分析树的过程，比自上而下更一般化</li>
-</ul>
-<h2 id="_3">规约</h2>
-<p>reduce，将与产生式右边匹配的串规约为左部符号，如有产生式
+<h2 id="_1">举例</h2>
+<p>把输入串规约成文法的开始符号，是<strong>最右推导</strong>的逆过程。</p>
+<p>如有文法：
 $$
-A→sB
+\begin{aligned}
+S&amp;→aABe\newline
+A&amp;→Abc|b\newline
+B&amp;→d
+\end{aligned}
 $$
-现在有串
-$$
-asB
-$$
-则可规约为
-$$
-aA
-$$</p>
+输入串：<span class="arithmatex"><span class="MathJax_Preview">abbcde</span><script type="math/tex">abbcde</script></span></p>
+<p>规约的做法是：寻找能匹配<strong>某产生式右部</strong>的子串。</p>
+<blockquote>
+<p>下面的示例中，<span class="arithmatex"><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> 表示规约一步，<span class="arithmatex"><span class="MathJax_Preview">→</span><script type="math/tex">→</script></span> 表示读取新的输入符号</p>
+</blockquote>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+a→ab\Rightarrow aA→aAb
+</div>
+<script type="math/tex; mode=display">
+a→ab\Rightarrow aA→aAb
+</script>
+</div>
+<div class="admonition info">
+<p class="admonition-title">此时可以将 <span class="arithmatex"><span class="MathJax_Preview">aAb</span><script type="math/tex">aAb</script></span> 规约成 <span class="arithmatex"><span class="MathJax_Preview">aAA</span><script type="math/tex">aAA</script></span> 吗？</p>
+<p>不能，因为 <span class="arithmatex"><span class="MathJax_Preview">aAA</span><script type="math/tex">aAA</script></span> 不是右句型！</p>
+<p><strong>右句型</strong>：按最右推导推出的句型</p>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+aAbc\Rightarrow aA→aAd\Rightarrow aAB→aABe\Rightarrow S
+</div>
+<script type="math/tex; mode=display">
+aAbc\Rightarrow aA→aAd\Rightarrow aAB→aABe\Rightarrow S
+</script>
+</div>
+<p>体会<strong>自下而上</strong>的过程：</p>
+<p><img alt="image-20221003112155402" src="../2%20%E8%A7%84%E7%BA%A6.assets/image-20221003112155402.png" /></p>
+<p><img alt="image-20221003112244669" src="../2%20%E8%A7%84%E7%BA%A6.assets/image-20221003112244669.png" /></p>
 
 
 
