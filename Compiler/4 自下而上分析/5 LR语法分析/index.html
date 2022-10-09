@@ -1052,8 +1052,8 @@
 <p>首先又得弄一些工具。</p>
 <div class="admonition info">
 <p class="admonition-title">增广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span></p>
-<p>设 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 是一个以 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 为开始符号的文法，则其增广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span> 就是在 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 中加上新的开始符号 <span class="arithmatex"><span class="MathJax_Preview">S'</span><script type="math/tex">S'</script></span> 和产生式 <span class="arithmatex"><span class="MathJax_Preview">S'→S</span><script type="math/tex">S'→S</script></span> 得到的文法
-引入这个新的产生式的目的：告诉语法分析器何时（当且仅当要使用 <span class="arithmatex"><span class="MathJax_Preview">S'→S</span><script type="math/tex">S'→S</script></span> 规约时）应该停止并宣告接受</p>
+<p>设 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 是一个以 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 为开始符号的文法，则其增广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span> 就是在 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 中加上新的开始符号 <span class="arithmatex"><span class="MathJax_Preview">S'</span><script type="math/tex">S'</script></span> 和产生式 <span class="arithmatex"><span class="MathJax_Preview">S'→S</span><script type="math/tex">S'→S</script></span> 得到的文法</p>
+<p>引入这个新的产生式的目的：告诉语法分析器何时（当且仅当要使用 <span class="arithmatex"><span class="MathJax_Preview">S'→S</span><script type="math/tex">S'→S</script></span> 规约时）应该停止并宣告接受</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">CLOSURE 函数（闭包）</p>
@@ -1083,12 +1083,31 @@ F&→(E)|\textbf{id}
 </div>
 <p>要求计算 <span class="arithmatex"><span class="MathJax_Preview">C(I)=C(\{[E'→·E]\})</span><script type="math/tex">C(I)=C(\{[E'→·E]\})</script></span>。</p>
 <p><strong>注意</strong>：</p>
-<p>闭包运算的结果往往非常大，考虑到存储空间的问题，一个闭包运算的结果 <span class="arithmatex"><span class="MathJax_Preview">C[I]</span><script type="math/tex">C[I]</script></span> 可以被划分为两个部分：</p>
+<p>闭包运算的结果往往非常大，考虑到存储空间的问题，一个闭包运算的结果 <span class="arithmatex"><span class="MathJax_Preview">C(I)</span><script type="math/tex">C(I)</script></span> 可以被划分为两个部分：</p>
 <ul>
 <li>内核项：包括初始项 <span class="arithmatex"><span class="MathJax_Preview">S'→S</span><script type="math/tex">S'→S</script></span> 和点不在最左侧的所有项</li>
 <li>非内核项：除了 <span class="arithmatex"><span class="MathJax_Preview">S'→S</span><script type="math/tex">S'→S</script></span> 之外的点在最左侧的所有项</li>
 </ul>
 <p>可以看出，求闭包时，（2）加入的项不可能是内核项，而所有非内核项可以在运行时临时计算，不必在一开始就全部计算出然后保存。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">GOTO 函数</p>
+<p>GOTO(I,X)，其中 I 是一个项集，X 是一个文法符号。</p>
+<p>GOTO(I,X) 被定义为 I 中所有形如 <span class="arithmatex"><span class="MathJax_Preview">X→\alpha·X\beta</span><script type="math/tex">X→\alpha·X\beta</script></span> 的项所对应的项 <span class="arithmatex"><span class="MathJax_Preview">X→\alpha X·\beta</span><script type="math/tex">X→\alpha X·\beta</script></span> 集合的闭包，形式上来说：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{aligned}
+I'(I, X) = \{X→\alpha X·\beta|X→\alpha·X\beta\in I\}\newline
+GOTO(I,X)=C(I'(I,X))
+\end{aligned}
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I'(I, X) = \{X→\alpha X·\beta|X→\alpha·X\beta\in I\}\newline
+GOTO(I,X)=C(I'(I,X))
+\end{aligned}
+</script>
+</div>
 </div>
 
 
