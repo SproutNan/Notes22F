@@ -34,7 +34,7 @@
 
     </script>
     <script src="./js/base.js"></script>
-      <script src="/mathjax-config.js"></script>
+      <script src="./mathjax-config.js"></script>
       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
 </head>
 
@@ -49,10 +49,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <a name="_top"></a>
     
 
+  <h1 id="search">Search Results</h1>
 
-  <h2 style="text-align: center">404</h2>
-  <h1 style="text-align: center">Page not found</h1>
+  <ul id="mkdocs-search-results" class="wm-search-page">
+    Searching...
+  </ul>
 
+  <script>
+    window.top.doSearch({
+      resultsElem: $('#mkdocs-search-results'),
+      query: getParam('q'),
+      snippetLen: 200,
+      limit: 0
+    });
+  </script>
 
 
   <br>
