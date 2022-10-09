@@ -1083,7 +1083,12 @@ F&→(E)|\textbf{id}
 </div>
 <p>要求计算 <span class="arithmatex"><span class="MathJax_Preview">C(I)=C(\{[E'→·E]\})</span><script type="math/tex">C(I)=C(\{[E'→·E]\})</script></span>。</p>
 <p><strong>注意</strong>：</p>
-<p>如果对所有的</p>
+<p>闭包运算的结果往往非常大，考虑到存储空间的问题，一个闭包运算的结果 <span class="arithmatex"><span class="MathJax_Preview">C[I]</span><script type="math/tex">C[I]</script></span> 可以被划分为两个部分：</p>
+<ul>
+<li>内核项：包括初始项 <span class="arithmatex"><span class="MathJax_Preview">S'→S</span><script type="math/tex">S'→S</script></span> 和点不在最左侧的所有项</li>
+<li>非内核项：除了 <span class="arithmatex"><span class="MathJax_Preview">S'→S</span><script type="math/tex">S'→S</script></span> 之外的点在最左侧的所有项</li>
+</ul>
+<p>可以看出，求闭包时，（2）加入的项不可能是内核项，而所有非内核项可以在运行时临时计算，不必在一开始就全部计算出然后保存。</p>
 </div>
 
 
