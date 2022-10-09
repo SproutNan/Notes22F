@@ -682,6 +682,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E5%88%86%E6%9E%90/5%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
+        5 LR语法分析
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1114,7 +1128,7 @@
 </ul>
 <h3 id="_9">预测分析的错误恢复</h3>
 <p>采用<strong>紧急方式</strong>的错误恢复：发现错误时，抛弃输入记号直到其属于某个指定的<strong>同步记号</strong>集合为止。</p>
-<p>同步词法单元通常是界限符号，比如 <span class="arithmatex"><span class="MathJax_Preview">;</span><script type="math/tex">;</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\}</span><script type="math/tex">\}</script></span>，具体如何为一种文法的非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 选择同步记号集合有下面一些方法：</p>
+<p>同步词法单元通常是界限符号，比如 <span class="arithmatex"><span class="MathJax_Preview">;</span><script type="math/tex">;</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\}</span><script type="math/tex">\}</script></span>，具体如何为一种文法的非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> <strong>选择同步记号集合</strong>有下面一些方法：</p>
 <ul>
 <li><span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span> 的所有终结符，比如 <span class="arithmatex"><span class="MathJax_Preview">\textbf{if }expr\textbf{ then } stmt</span><script type="math/tex">\textbf{if }expr\textbf{ then } stmt</script></span>，非终结符 <span class="arithmatex"><span class="MathJax_Preview">expr</span><script type="math/tex">expr</script></span> 的同步记号包含 <span class="arithmatex"><span class="MathJax_Preview">\textbf{then}</span><script type="math/tex">\textbf{then}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">;</span><script type="math/tex">;</script></span> 等。</li>
 <li>高层构造的首终结符，比如 <span class="arithmatex"><span class="MathJax_Preview">a=expr;\textbf{ if }...</span><script type="math/tex">a=expr;\textbf{ if }...</script></span>，可以把 <span class="arithmatex"><span class="MathJax_Preview">\textbf{if}</span><script type="math/tex">\textbf{if}</script></span> 这样的句首终结符作为 <span class="arithmatex"><span class="MathJax_Preview">expr</span><script type="math/tex">expr</script></span> 的同步记号，以免发生遗漏分号的错误时把后面的 if 语句一大段全部丢弃的情况。</li>

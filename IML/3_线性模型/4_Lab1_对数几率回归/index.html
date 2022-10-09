@@ -573,6 +573,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Compiler/4%20%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E5%88%86%E6%9E%90/5%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
+        5 LR语法分析
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1116,7 +1130,7 @@ l(\boldsymbol{\beta})=\sum_{i=1}^m\left(-y_i\boldsymbol{\beta}^\top\hat{\boldsym
 <p>In my code I also dealt with the situation when <code>fit_intercept=False</code>, but in the report I'll only discuss the situation when <code>fit_intercept=True</code>.</p>
 </blockquote>
 <p>I use <span class="arithmatex"><span class="MathJax_Preview">\displaystyle\sigma(x)=\frac{1}{1+e^{-z}}</span><script type="math/tex">\displaystyle\sigma(x)=\frac{1}{1+e^{-z}}</script></span> as the sigmoid function, so the result of one prediction is <span class="arithmatex"><span class="MathJax_Preview">\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}})</span><script type="math/tex">\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}})</script></span>. </p>
-<p>Now let me implement the training (<code>fit</code>) method. The cost function is</p>
+<p>Now implement the training (<code>fit</code>) method. The cost function is</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
 cost(\boldsymbol\beta)=\frac1m\sum_{i=1}^m[y_i-\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}_i)]^2+\gamma ||\boldsymbol{\beta}||_\text{1 or 2}
@@ -1162,7 +1176,7 @@ p(\hat{\boldsymbol x}_i)=\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}_i)
 <h2 id="result">Result</h2>
 <h3 id="loss-curve">Loss curve</h3>
 <p>The loss curve (one training process) of training process is as follows. Here the y-axis is the value of cost function, the x-axis is the number of iterations.</p>
-<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221008101412662.png" alt="image-20221008101412662"  /></p>
+<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221008101412662.png" alt="image-20221008101412662" style="zoom:33%;" /></p>
 <h3 id="comparation-table">Comparation table</h3>
 <p>The original parameters I picked is:</p>
 <ul>
@@ -1214,7 +1228,7 @@ $$</p>
 <p>Then each time I will use one difference parameter on the basis of these values.</p>
 <hr />
 <h4 id="pnr">PNR</h4>
-<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221009004226081.png" alt="image-20221009004226081"  /></p>
+<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221009004226081.png" alt="image-20221009004226081" style="zoom:33%;" /></p>
 <table>
 <thead>
 <tr>
@@ -1239,10 +1253,13 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<p>Other: <span class="arithmatex"><span class="MathJax_Preview">TAR=0.5,lr=0.1,tol=10^{-5}</span><script type="math/tex">TAR=0.5,lr=0.1,tol=10^{-5}</script></span>    Each <span class="arithmatex"><span class="MathJax_Preview">PNR</span><script type="math/tex">PNR</script></span> case repeated 10 times, The result is the average.</p>
+<ul>
+<li>Other: <span class="arithmatex"><span class="MathJax_Preview">TAR=0.5,lr=0.1,tol=10^{-5}</span><script type="math/tex">TAR=0.5,lr=0.1,tol=10^{-5}</script></span></li>
+<li>Each <span class="arithmatex"><span class="MathJax_Preview">PNR</span><script type="math/tex">PNR</script></span> case repeated 10 times, The result is the average.</li>
+</ul>
 <hr />
 <h4 id="tar">TAR</h4>
-<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221009003342744.png" alt="image-20221009003342744"  /></p>
+<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221009003342744.png" alt="image-20221009003342744" style="zoom:33%;" /></p>
 <table>
 <thead>
 <tr>
@@ -1263,10 +1280,13 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<p>Other: <span class="arithmatex"><span class="MathJax_Preview">PNR=1:1,lr=0.1,tol=10^{-5}</span><script type="math/tex">PNR=1:1,lr=0.1,tol=10^{-5}</script></span>    Each <span class="arithmatex"><span class="MathJax_Preview">TAR</span><script type="math/tex">TAR</script></span> case repeated 10 times, The result is the average.</p>
+<ul>
+<li>Other: <span class="arithmatex"><span class="MathJax_Preview">PNR=1:1,lr=0.1,tol=10^{-5}</span><script type="math/tex">PNR=1:1,lr=0.1,tol=10^{-5}</script></span>    </li>
+<li>Each <span class="arithmatex"><span class="MathJax_Preview">TAR</span><script type="math/tex">TAR</script></span> case repeated 10 times, The result is the average.</li>
+</ul>
 <hr />
 <h4 id="lr">lr</h4>
-<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221009005524730.png" alt="image-20221009005524730"  /></p>
+<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221009005524730.png" alt="image-20221009005524730" style="zoom:33%;" /></p>
 <table>
 <thead>
 <tr>
@@ -1289,7 +1309,10 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<p>Other: <span class="arithmatex"><span class="MathJax_Preview">PNR=1:1,TAR=0.5,tol=10^{-5}</span><script type="math/tex">PNR=1:1,TAR=0.5,tol=10^{-5}</script></span>    Each <span class="arithmatex"><span class="MathJax_Preview">lr</span><script type="math/tex">lr</script></span> case repeated 10 times, The result is the average.</p>
+<ul>
+<li>Other: <span class="arithmatex"><span class="MathJax_Preview">PNR=1:1,TAR=0.5,tol=10^{-5}</span><script type="math/tex">PNR=1:1,TAR=0.5,tol=10^{-5}</script></span>    </li>
+<li>Each <span class="arithmatex"><span class="MathJax_Preview">lr</span><script type="math/tex">lr</script></span> case repeated 10 times, The result is the average.</li>
+</ul>
 <p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221009005950272.png" alt="image-20221009005950272"  /></p>
 <p>The loss curve for each case of <span class="arithmatex"><span class="MathJax_Preview">lr</span><script type="math/tex">lr</script></span>. We can intuitively conclude that the larger the value of <span class="arithmatex"><span class="MathJax_Preview">lr</span><script type="math/tex">lr</script></span>, the faster the loss function decreases.</p>
 <h3 id="best-accuracy">Best accuracy</h3>
@@ -1298,7 +1321,7 @@ $$
 PNR=1.9:1\quad TAR=0.5\quad lr=0.1\quad tol=10^{-5}
 $$
 Its confusion matrix is</p>
-<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221009010633455.png" alt="image-20221009010633455"  /></p>
+<p><img src="./Lab1_%E5%AF%B9%E6%95%B0%E5%87%A0%E7%8E%87%E5%9B%9E%E5%BD%92.assets/image-20221009010633455.png" alt="image-20221009010633455" style="zoom:33%;" /></p>
 
 
 
