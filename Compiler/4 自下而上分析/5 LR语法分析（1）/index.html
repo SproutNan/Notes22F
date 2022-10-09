@@ -1092,17 +1092,17 @@ F&→(E)|\textbf{id}
 <div class="admonition info">
 <p class="admonition-title">GOTO 函数</p>
 <p><span class="arithmatex"><span class="MathJax_Preview">GOTO(I,X)</span><script type="math/tex">GOTO(I,X)</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 是一个项集，<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是一个文法符号。</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">GOTO(I,X)</span><script type="math/tex">GOTO(I,X)</script></span> 被定义为 <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 中所有形如 <span class="arithmatex"><span class="MathJax_Preview">X→\alpha·X\beta</span><script type="math/tex">X→\alpha·X\beta</script></span> 的项所对应的项 <span class="arithmatex"><span class="MathJax_Preview">X→\alpha X·\beta</span><script type="math/tex">X→\alpha X·\beta</script></span> 集合的闭包，形式上来说：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">GOTO(I,X)</span><script type="math/tex">GOTO(I,X)</script></span> 被定义为 <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 中所有形如 <span class="arithmatex"><span class="MathJax_Preview">A→\alpha·X\beta</span><script type="math/tex">A→\alpha·X\beta</script></span> 的项所对应的项 <span class="arithmatex"><span class="MathJax_Preview">A→\alpha X·\beta</span><script type="math/tex">A→\alpha X·\beta</script></span> 集合的闭包，形式上来说：</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
 \begin{aligned}
-I'(I, X) &amp;= \{X→\alpha X·\beta|X→\alpha·X\beta\in I\}\newline
+I'(I, X) &amp;= \{A→\alpha X·\beta|A→\alpha·X\beta\in I\}\newline
 GOTO(I,X)&amp;=C(I'(I,X))
 \end{aligned}
 </div>
 <script type="math/tex; mode=display">
 \begin{aligned}
-I'(I, X) &= \{X→\alpha X·\beta|X→\alpha·X\beta\in I\}\newline
+I'(I, X) &= \{A→\alpha X·\beta|A→\alpha·X\beta\in I\}\newline
 GOTO(I,X)&=C(I'(I,X))
 \end{aligned}
 </script>
