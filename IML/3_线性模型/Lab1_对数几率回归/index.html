@@ -1108,24 +1108,44 @@ l(\boldsymbol{\beta})=\sum_{i=1}^m\left(-y_i\boldsymbol{\beta}^\top\hat{\boldsym
 <p>In my code I also dealt with the situation when <code>fit_intercept=False</code>, but in the report I'll only discuss the situation when <code>fit_intercept=True</code>.</p>
 </blockquote>
 <p>I use <span class="arithmatex"><span class="MathJax_Preview">\displaystyle\sigma(x)=\frac{1}{1+e^{-z}}</span><script type="math/tex">\displaystyle\sigma(x)=\frac{1}{1+e^{-z}}</script></span> as the sigmoid function, so the result of one prediction is <span class="arithmatex"><span class="MathJax_Preview">\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}})</span><script type="math/tex">\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}})</script></span>. </p>
-<p>Now let me implement the training (<code>fit</code>) method. The cost function is
-$$
-cost(\boldsymbol\beta)=\frac1m\sum_{i=1}^m[y_i-\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}<em>i)]^2+\gamma ||\boldsymbol{\beta}||</em>\text{1 or 2}
-$$
-I use gradient descent to decrease the cost function and find the optimal <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\beta</span><script type="math/tex">\boldsymbol\beta</script></span>. According to the (3.30), the gradient function is
-$$
-\nabla_\boldsymbol{\beta}l(\boldsymbol\beta)=\frac{\partial l(\boldsymbol\beta)}{\partial \boldsymbol\beta}=\sum_{i=1}^m[y_i-\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}<em>i)]\hat{\boldsymbol{x}}_i
-$$
-In each iteration, if the absolute value of the increment of the cost function is less than the parameter <code>tol</code>, the iteration will break, which means the training is done. Otherwise the <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\beta</span><script type="math/tex">\boldsymbol\beta</script></span> should update according to
-$$
-\boldsymbol\beta←\boldsymbol\beta+\frac\alpha m\nabla</em>\boldsymbol{\beta}l(\boldsymbol\beta)
-$$
-Here <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> is the parameter <code>lr</code>. The training has a maximum number of iteration which is set by the parameter <code>max_iter</code>. One more thing, in order to draw a loss curve, the <code>fit</code> method will return an array of values of cost function during the training process.</p>
-<p>The last thing is implementation of <code>predict</code> method. It will use the trained <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\beta</span><script type="math/tex">\boldsymbol\beta</script></span> to caculate a result for each line in X_test. The result will be caculated according to
-$$
+<p>Now let me implement the training (<code>fit</code>) method. The cost function is</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+cost(\boldsymbol\beta)=\frac1m\sum_{i=1}^m[y_i-\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}_i)]^2+\gamma ||\boldsymbol{\beta}||_\text{1 or 2}
+</div>
+<script type="math/tex; mode=display">
+cost(\boldsymbol\beta)=\frac1m\sum_{i=1}^m[y_i-\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}_i)]^2+\gamma ||\boldsymbol{\beta}||_\text{1 or 2}
+</script>
+</div>
+<p>I use gradient descent to decrease the cost function and find the optimal <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\beta</span><script type="math/tex">\boldsymbol\beta</script></span>. According to the (3.30), the gradient function is</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\nabla_\boldsymbol{\beta}l(\boldsymbol\beta)=\frac{\partial l(\boldsymbol\beta)}{\partial \boldsymbol\beta}=\sum_{i=1}^m[y_i-\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}_i)]\hat{\boldsymbol{x}}_i
+</div>
+<script type="math/tex; mode=display">
+\nabla_\boldsymbol{\beta}l(\boldsymbol\beta)=\frac{\partial l(\boldsymbol\beta)}{\partial \boldsymbol\beta}=\sum_{i=1}^m[y_i-\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}_i)]\hat{\boldsymbol{x}}_i
+</script>
+</div>
+<p>In each iteration, if the absolute value of the increment of the cost function is less than the parameter <code>tol</code>, the iteration will break, which means the training is done. Otherwise the <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\beta</span><script type="math/tex">\boldsymbol\beta</script></span> should update according to</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\boldsymbol\beta←\boldsymbol\beta+\frac\alpha m\nabla_\boldsymbol{\beta}l(\boldsymbol\beta)
+</div>
+<script type="math/tex; mode=display">
+\boldsymbol\beta←\boldsymbol\beta+\frac\alpha m\nabla_\boldsymbol{\beta}l(\boldsymbol\beta)
+</script>
+</div>
+<p>Here <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> is the parameter <code>lr</code>. The training has a maximum number of iteration which is set by the parameter <code>max_iter</code>. One more thing, in order to draw a loss curve, the <code>fit</code> method will return an array of values of cost function during the training process.</p>
+<p>The last thing is implementation of <code>predict</code> method. It will use the trained <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\beta</span><script type="math/tex">\boldsymbol\beta</script></span> to caculate a result for each line in X_test. The result will be caculated according to</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 p(\hat{\boldsymbol x}_i)=\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}_i)
-$$
-And the <code>predict</code> method will return an array of results from all test lines.</p>
+</div>
+<script type="math/tex; mode=display">
+p(\hat{\boldsymbol x}_i)=\sigma(\boldsymbol{\beta}^\top\hat{\boldsymbol{x}}_i)
+</script>
+</div>
+<p>And the <code>predict</code> method will return an array of results from all test lines.</p>
 <p><strong>Step3</strong>. Train and test in framework</p>
 <p>Now I have the split dataset (<code>X_train</code>, <code>X_test</code>, <code>y_train</code>, <code>y_test</code>) and LR class. Simply call the <code>fit</code> method on <code>X_train</code> and <code>y_train</code>. And using matplotlib to illustrate the loss curve according to the return value of <code>fit</code>.</p>
 <p>In the test process simply call the <code>predict</code> method on <code>X_test</code> and get its return value. Then compare each element of it and its corresponding label in <code>y_test</code>. In this process I will use a confusion matrix to display the result of the trained model running on the test dataset.</p>
