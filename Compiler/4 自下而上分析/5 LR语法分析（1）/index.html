@@ -14,7 +14,7 @@
   
   
   
-  <title>5 LR语法分析 - Notes Site</title>
+  <title>5 LR语法分析（1） - Notes Site</title>
   
   
   
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5 LR语法分析
+              5 LR语法分析（1）
             
           </span>
         </div>
@@ -591,12 +591,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          5 LR语法分析
+          5 LR语法分析（1）
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        5 LR语法分析
+        5 LR语法分析（1）
       </a>
       
         
@@ -635,22 +635,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lr0lr0-lr0lr0" class="md-nav__link">
-    规范 LR(0)LR(0) 项集族 和 LR(0)LR(0) 自动机
-  </a>
-  
-    <nav class="md-nav" aria-label="规范 LR(0)LR(0) 项集族 和 LR(0)LR(0) 自动机">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#lr0lr0" class="md-nav__link">
     规范 LR(0)LR(0) 项集族的构造
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -663,6 +650,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%882%EF%BC%89/" class="md-nav__link">
+        6 LR语法分析（2）
+      </a>
     </li>
   
 
@@ -973,22 +974,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lr0lr0-lr0lr0" class="md-nav__link">
-    规范 LR(0)LR(0) 项集族 和 LR(0)LR(0) 自动机
-  </a>
-  
-    <nav class="md-nav" aria-label="规范 LR(0)LR(0) 项集族 和 LR(0)LR(0) 自动机">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#lr0lr0" class="md-nav__link">
     规范 LR(0)LR(0) 项集族的构造
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1012,7 +1000,7 @@
               
 
 
-  <h1>5 LR语法分析</h1>
+  <h1>5 LR语法分析（1）</h1>
 
 <h2 id="lrklrk"><span class="arithmatex"><span class="MathJax_Preview">LR(k)</span><script type="math/tex">LR(k)</script></span> 语法分析</h2>
 <p>L 表示对输入从左向右扫描，R 表示反向构造一个最右推导序列。</p>
@@ -1045,11 +1033,8 @@
 <li><span class="arithmatex"><span class="MathJax_Preview">A→X·YZ</span><script type="math/tex">A→X·YZ</script></span> 表示我们已经看到了一个 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 推导的串，接下来想从输入中看到一个从 <span class="arithmatex"><span class="MathJax_Preview">YZ</span><script type="math/tex">YZ</script></span> 推导出来的串</li>
 <li><span class="arithmatex"><span class="MathJax_Preview">A→XYZ·</span><script type="math/tex">A→XYZ·</script></span> 表示我们已经看到了一个 <span class="arithmatex"><span class="MathJax_Preview">XYZ</span><script type="math/tex">XYZ</script></span> 推导的串，是时候将其规约为 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 了</li>
 </ul>
-<h3 id="lr0lr0-lr0lr0">规范 <span class="arithmatex"><span class="MathJax_Preview">LR(0)</span><script type="math/tex">LR(0)</script></span> 项集族 和 <span class="arithmatex"><span class="MathJax_Preview">LR(0)</span><script type="math/tex">LR(0)</script></span> 自动机</h3>
+<h3 id="lr0lr0">规范 <span class="arithmatex"><span class="MathJax_Preview">LR(0)</span><script type="math/tex">LR(0)</script></span> 项集族的构造</h3>
 <p>一个 <strong>规范 LR(0) 项集族</strong> 是一些项集的集合（所以被称之为集族）。</p>
-<p><strong>LR(0) 自动机</strong> 可以用来做出语法分析决定，其每个状态都是规范 LR(0) 项集族的一个项集。</p>
-<h4 id="lr0lr0">规范 <span class="arithmatex"><span class="MathJax_Preview">LR(0)</span><script type="math/tex">LR(0)</script></span> 项集族的构造</h4>
-<p>首先又得弄一些工具。</p>
 <div class="admonition info">
 <p class="admonition-title">增广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span></p>
 <p>设 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 是一个以 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 为开始符号的文法，则其增广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span> 就是在 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 中加上新的开始符号 <span class="arithmatex"><span class="MathJax_Preview">S'</span><script type="math/tex">S'</script></span> 和产生式 <span class="arithmatex"><span class="MathJax_Preview">S'→S</span><script type="math/tex">S'→S</script></span> 得到的文法</p>
@@ -1110,6 +1095,18 @@ GOTO(I,X)&=C(I'(I,X))
 </div>
 <p>直观上来说，<span class="arithmatex"><span class="MathJax_Preview">GOTO</span><script type="math/tex">GOTO</script></span> 函数定义了一个文法的 LR(0) 自动机中的转换，<span class="arithmatex"><span class="MathJax_Preview">GOTO(I,X)</span><script type="math/tex">GOTO(I,X)</script></span> 就是当输入为 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 时离开状态 <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 的转换。</p>
 </div>
+<p>现在终于可以来构造一个规范 LR(0) 项集族了。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">items</span><span class="p">(</span><span class="n">G</span><span class="err">’</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">CLOSURE</span><span class="p">({[</span><span class="n">S</span><span class="err">’→·</span><span class="n">S</span><span class="p">]})}</span><span class="w"></span>
+<span class="w">    </span><span class="n">repeat</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">C中的每个项集I</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">每个文法符号X</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">GOTO</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">X</span><span class="p">)</span><span class="n">非空且不在C中</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="n">将GOTO</span><span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">X</span><span class="p">)</span><span class="n">加入C中</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">until</span><span class="w"> </span><span class="n">某一轮中没有新的项集加入C中</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 
 
@@ -1151,13 +1148,13 @@ GOTO(I,X)&=C(I'(I,X))
       
       
         
-        <a href="../../../IML/1_%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/1_%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1 线性代数" rel="next">
+        <a href="../6%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%882%EF%BC%89/" class="md-footer__link md-footer__link--next" aria-label="下一页: 6 LR语法分析（2）" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              1 线性代数
+              6 LR语法分析（2）
             </div>
           </div>
           <div class="md-footer__button md-icon">
