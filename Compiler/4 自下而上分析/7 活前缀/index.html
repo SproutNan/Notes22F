@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
       
-      <a href="#lr-slr" class="md-skip">
+      <a href="#viable-prefix" class="md-skip">
         跳转至
       </a>
       
@@ -641,49 +641,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lr-slr" class="md-nav__link">
-    简单 LR 语法分析技术（SLR）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lr" class="md-nav__link">
-    LR 语法分析算法
-  </a>
-  
-    <nav class="md-nav" aria-label="LR 语法分析算法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action" class="md-nav__link">
-    ACTION 语法分析表
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#goto" class="md-nav__link">
-    GOTO 语法分析表
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lr_1" class="md-nav__link">
-    LR 语法分析器行为
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slr" class="md-nav__link">
-    SLR 语法分析表的构造
+  <a href="#viable-prefix" class="md-nav__link">
+    活前缀（可行前缀 viable prefix）
   </a>
   
 </li>
@@ -980,49 +939,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lr-slr" class="md-nav__link">
-    简单 LR 语法分析技术（SLR）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lr" class="md-nav__link">
-    LR 语法分析算法
-  </a>
-  
-    <nav class="md-nav" aria-label="LR 语法分析算法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action" class="md-nav__link">
-    ACTION 语法分析表
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#goto" class="md-nav__link">
-    GOTO 语法分析表
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lr_1" class="md-nav__link">
-    LR 语法分析器行为
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slr" class="md-nav__link">
-    SLR 语法分析表的构造
+  <a href="#viable-prefix" class="md-nav__link">
+    活前缀（可行前缀 viable prefix）
   </a>
   
 </li>
@@ -1044,59 +962,7 @@
 
   <h1>7 活前缀</h1>
 
-<h2 id="lr-slr">简单 LR 语法分析技术（SLR）</h2>
-<p><strong>中心思想</strong>：根据文法构造出 LR(0) 自动机，这个自动机的状态是规范 LR(0) 项集族中的元素，转换函数由 GOTO 给出，开始状态是 <span class="arithmatex"><span class="MathJax_Preview">CLOSURE(\{[S'→·S]\})</span><script type="math/tex">CLOSURE(\{[S'→·S]\})</script></span>，所有的状态都是接受状态。</p>
-<p>LR(0) 自动机 用于帮助做出 S-R 决定，具体规则如下：</p>
-<p>假设文法符号串 <span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> 已经使自动机从开始状态运行到某个状态 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span></p>
-<ul>
-<li>如果下一个输入符号是 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>，且状态 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 支持 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 的转换，就移入 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span></li>
-<li>否则，选择规约，状态 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 的项告诉我们使用哪个产生式进行规约</li>
-</ul>
-<h2 id="lr">LR 语法分析算法</h2>
-<p><img alt="image-20221009171351822" src="../6%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%882%EF%BC%89.assets/image-20221009171351822.png" /></p>
-<p>移入：向栈中移入一个状态，这个状态是对其下所有状态信息的浓缩</p>
-<h3 id="action">ACTION 语法分析表</h3>
-<p><strong>签名</strong>：<span class="arithmatex"><span class="MathJax_Preview">ACTION(i,a)</span><script type="math/tex">ACTION(i,a)</script></span></p>
-<p><strong>参数</strong>：<span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 表示当前状态；<span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 表示终结符号（或者 $）</p>
-<p><strong>返回</strong>：四种可能的取值</p>
-<ul>
-<li>移入状态 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，状态 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 就代表了 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span></li>
-<li>规约 <span class="arithmatex"><span class="MathJax_Preview">A→\beta</span><script type="math/tex">A→\beta</script></span>，把栈顶的句柄规约为产生式头 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span></li>
-<li>接受</li>
-<li>报错</li>
-</ul>
-<h3 id="goto">GOTO 语法分析表</h3>
-<p>原来的 GOTO 函数是定义在项集上的，现在在 LR 分析中，一个状态就代表了一个项集，所以 GOTO 的定义可以迁移到状态集上。</p>
-<p>如果 <span class="arithmatex"><span class="MathJax_Preview">GOTO[I_i,A]=I_j</span><script type="math/tex">GOTO[I_i,A]=I_j</script></span>，则 GOTO 也把状态 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 和一个非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 映射到状态 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>。</p>
-<h3 id="lr_1">LR 语法分析器行为</h3>
-<p>设当前格局为 <span class="arithmatex"><span class="MathJax_Preview">(...s_{m-1}s_ma_i...a_n\$)</span><script type="math/tex">(...s_{m-1}s_ma_i...a_n\$)</script></span>，语法分析器要据此决定下一个动作，它首先阅读 <span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">s_m</span><script type="math/tex">s_m</script></span>，然后查询 <span class="arithmatex"><span class="MathJax_Preview">ACTION[s_m,a_i]</span><script type="math/tex">ACTION[s_m,a_i]</script></span> 获得下一步应该做的操作，然后：</p>
-<ul>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">ACTION[s_m,a_i]=</span><script type="math/tex">ACTION[s_m,a_i]=</script></span> 移入 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，则下一个格局变为 <span class="arithmatex"><span class="MathJax_Preview">(...s_{m-1}s_msa_{i+1}...a_n\$)</span><script type="math/tex">(...s_{m-1}s_msa_{i+1}...a_n\$)</script></span></li>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">ACTION[s_m,a_i]=</span><script type="math/tex">ACTION[s_m,a_i]=</script></span> 规约 <span class="arithmatex"><span class="MathJax_Preview">A→\beta</span><script type="math/tex">A→\beta</script></span>，则下一个格局变为  <span class="arithmatex"><span class="MathJax_Preview">(...s_{m-r}sa_i...a_n\$)</span><script type="math/tex">(...s_{m-r}sa_i...a_n\$)</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\beta</span><script type="math/tex">\beta</script></span> 的长度，<span class="arithmatex"><span class="MathJax_Preview">s=GOTO(s_{m-r},A)</span><script type="math/tex">s=GOTO(s_{m-r},A)</script></span>，注意此时输入符号指针不发生改变</li>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">ACTION[s_m,a_i]=</span><script type="math/tex">ACTION[s_m,a_i]=</script></span> 接受/出错，则另行处理</li>
-</ul>
-<p>不同的 LR 语法分析器只是 ACTION 和 GOTO 的信息不一样。</p>
-<h2 id="slr">SLR 语法分析表的构造</h2>
-<div class="admonition info">
-<p class="admonition-title">SLR 语法分析表构造算法</p>
-<p><strong>输入</strong>：一个增广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span></p>
-<p><strong>输出</strong>：<span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span> 的语法分析表函数 ACTION 和 GOTO</p>
-<p><strong>方法</strong>：</p>
-<p>（1）构造 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span> 的规范 LR(0) 项目集族 <span class="arithmatex"><span class="MathJax_Preview">C=\{I_0,...,I_n\}</span><script type="math/tex">C=\{I_0,...,I_n\}</script></span></p>
-<p>（2）根据 <span class="arithmatex"><span class="MathJax_Preview">I_i</span><script type="math/tex">I_i</script></span> 构造状态 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>，其 ACTION 表按如下规则决定：</p>
-<ul>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">[A→\alpha·a\beta]\in I_i</span><script type="math/tex">[A→\alpha·a\beta]\in I_i</script></span>，并且 <span class="arithmatex"><span class="MathJax_Preview">GOTO(I_i,a)=I_j</span><script type="math/tex">GOTO(I_i,a)=I_j</script></span>，那么 <span class="arithmatex"><span class="MathJax_Preview">ACTION[i,a]=</span><script type="math/tex">ACTION[i,a]=</script></span> 移入 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">a\in V_T</span><script type="math/tex">a\in V_T</script></span></li>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">[A→\alpha·a]\in I_i</span><script type="math/tex">[A→\alpha·a]\in I_i</script></span>，则对于 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span> 中的所有 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>，令 <span class="arithmatex"><span class="MathJax_Preview">ACTION[i,a]=</span><script type="math/tex">ACTION[i,a]=</script></span> 规约 <span class="arithmatex"><span class="MathJax_Preview">A→\alpha</span><script type="math/tex">A→\alpha</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">A\neq S'</span><script type="math/tex">A\neq S'</script></span></li>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">[S'→S·]\in I_i</span><script type="math/tex">[S'→S·]\in I_i</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">ACTION[i,a]=</span><script type="math/tex">ACTION[i,a]=</script></span> 接受</li>
-</ul>
-<p>（3）状态 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 对各个非终结符的 GOTO 表按如下规则决定：</p>
-<ul>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">GOTO(I_i,A)=I_j</span><script type="math/tex">GOTO(I_i,A)=I_j</script></span>，那么 <span class="arithmatex"><span class="MathJax_Preview">GOTO(i,A)=j</span><script type="math/tex">GOTO(i,A)=j</script></span></li>
-</ul>
-<p>（4）规则（2，3）没有定义的所有条目都设置为报错，并且如果出现冲突，则说明这个文法不是 SLR(1) 的，退出</p>
-<p>（5）语法分析器的初始状态就是根据 <span class="arithmatex"><span class="MathJax_Preview">[S'→·S]</span><script type="math/tex">[S'→·S]</script></span> 所在项集构造得到的状态</p>
-</div>
-<p>这个算法给出的是 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的 SLR(1) 分析表，使用 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的 SLR(1) 分析表的 LR 语法分析器称为 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的 SLR(1) 语法分析器。常常省略这里的 (1)。</p>
+<h2 id="viable-prefix">活前缀（可行前缀 viable prefix）</h2>
 
 
 
