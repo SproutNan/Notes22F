@@ -960,6 +960,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gini" class="md-nav__link">
+    Gini 指数
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1020,6 +1027,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gini" class="md-nav__link">
+    Gini 指数
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1065,6 +1079,32 @@ $$
 这种划分度量被 ID3 决策树所采用。</p>
 <h2 id="_2">信息增益率</h2>
 <p>用信息增益来选择划分可能导致一个窘境：样本可能具有唯一标识，如果我们考虑这个唯一标识，则划分后的信息增益非常大（每个节点只有一个样本了），这样不符合实际。<strong>信息增益准则偏好那些可取值较多的属性</strong>。</p>
+<p>如何度量一个属性的可取值方面的情况呢？类似信息熵，引入<strong>固有值</strong>（Intrinsic Value）这一概念：
+$$
+IV(a)=-\sum_{v=1}^V\frac{|D^v|}{|D|}\log_2\frac{|D^v|}{|D|}
+$$
+根据经验来说，如果 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 越大，<span class="arithmatex"><span class="MathJax_Preview">IV</span><script type="math/tex">IV</script></span> 的值通常越大，于是可提出<strong>信息增益率</strong>
+$$
+Gain_ratio(D,a)=\frac{Gain(D,a)}{IV(a)}
+$$
+其减小了属性可取值方面的影响。但是增益率准则对可取值较少的属性有所偏好，所以算法一般先从候选属性中找 Gain 高于平均值的那些属性，再从这里面选 Gain_ratio 最高的。</p>
+<p>这种划分度量被 C4.5 决策树所采用。</p>
+<h2 id="gini">Gini 指数</h2>
+<p>另一种度量纯度的方法是使用 Gini 值和 Gini 指数。</p>
+<p><strong>Gini 值</strong>是对于某个集合来定义的，其定义为
+$$
+Gini(D):=\sum_{k=1}^{|\mathcal{Y}|}\sum_{k\neq k'}p_kp_{k'}=1-\sum_{k=1}^{|\mathcal{Y}|}p_k^2
+$$
+也就是说从数据集 <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 中随机选两个样本，其类别不一致的概率。显然，这个概率越低，<span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> 的纯度越高。</p>
+<p><strong>Gini 指数</strong>是对于某个属性来定义的，其定义为
+$$
+Gini_index(D,a)=\sum_{v=1}^V\frac{|D^v|}{|D|}Gini(D^v)
+$$
+在所有候选属性中，选择 Gini 指数最小的那个属性作最优划分，即
+$$
+a_*={\arg\min}_{a\in A}Gini_index(D,a)
+$$
+这种划分度量被 CART 决策树所采用。</p>
 
 
 
