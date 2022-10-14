@@ -1063,10 +1063,38 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    梯度下降的选择
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    多层前馈的局限性
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_%E5%87%BD%E6%95%B0%E9%80%89%E6%8B%A9/" class="md-nav__link">
+        4 函数选择
+      </a>
     </li>
   
 
@@ -1119,6 +1147,20 @@
         <li class="md-nav__item">
   <a href="#bp" class="md-nav__link">
     BP 算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    梯度下降的选择
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    多层前馈的局限性
   </a>
   
 </li>
@@ -1207,11 +1249,42 @@ $$
 E_k=\frac12\sum_{j=1}^l(\hat y_j^{(k)}-y_j^{(k)})^2
 $$
 这里等号左边的下标 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 和右边的上标 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 表示的是第 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 个样本。</p>
+<p><img src="3_%E5%A4%9A%E5%B1%82%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.assets/image-20221014100416278.png" alt="image-20221014100416278" style="zoom: 67%;" /></p>
+<p>前向的传播关系：</p>
+<p><img src="3_%E5%A4%9A%E5%B1%82%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.assets/image-20221014100547863.png" alt="image-20221014100547863" style="zoom: 67%;" /></p>
 <p>BP 算法更新参数使用的是梯度下降策略，在第 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 个样本上，<span class="arithmatex"><span class="MathJax_Preview">w_{hj}</span><script type="math/tex">w_{hj}</script></span> 的更新公式为
 $$
 w_{hj}←w_{hj}-\eta \frac{\partial E_k}{\partial w_{hj}}
 $$
-问题在于计算偏导数项。</p>
+这个偏导数项很好计算，利用 <span class="arithmatex"><span class="MathJax_Preview">E_k</span><script type="math/tex">E_k</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\hat y_j</span><script type="math/tex">\hat y_j</script></span> 的定义式做链式法则即可，也可以从图上从右往左来看。
+$$
+\frac{\partial E_k}{\partial w_{hj}}=\frac{\partial E_k}{\partial \hat y_j}·\frac{\partial \hat y_j}{\partial \alpha_j}·\frac{\partial \alpha_j}{\partial w_{hj}}:=g_jb_h
+$$
+同理，在计算 <span class="arithmatex"><span class="MathJax_Preview">v_{ih}</span><script type="math/tex">v_{ih}</script></span> 的更新量时，链式法则也是图中从右往左，但是注意，输出层所有的神经元都与某个隐层神经元有关，所以要求一个和，计算式稍微复杂一点
+$$
+\frac{\partial E_k}{\partial v_{ih}}=\sum_j\frac{\partial E_k}{\partial \hat y_j}·\frac{\partial \hat y_j}{\partial \alpha_j}·\frac{\partial \alpha_j}{\partial b_{h}}·\frac{\partial b_h}{\partial \beta_{h}}·\frac{\partial \beta_h}{\partial v_{ih}}:=e_hx_i
+$$
+<img src="3_%E5%A4%9A%E5%B1%82%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.assets/image-20221014101428252.png" alt="image-20221014101428252" style="zoom:67%;" /></p>
+<p>在上面这个算法中，<span class="arithmatex"><span class="MathJax_Preview">\displaystyle{}g_j=\frac{\partial E_k}{\partial \hat y_j}·\frac{\partial \hat y_j}{\partial \alpha_j}</span><script type="math/tex">\displaystyle{}g_j=\frac{\partial E_k}{\partial \hat y_j}·\frac{\partial \hat y_j}{\partial \alpha_j}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\displaystyle{}e_h=\sum_j\frac{\partial E_k}{\partial \hat y_j}·\frac{\partial \hat y_j}{\partial \alpha_j}·\frac{\partial \alpha_j}{\partial b_{h}}·\frac{\partial b_h}{\partial \beta_{h}}</span><script type="math/tex">\displaystyle{}e_h=\sum_j\frac{\partial E_k}{\partial \hat y_j}·\frac{\partial \hat y_j}{\partial \alpha_j}·\frac{\partial \alpha_j}{\partial b_{h}}·\frac{\partial b_h}{\partial \beta_{h}}</script></span></p>
+<h2 id="_2">梯度下降的选择</h2>
+<p>还记得上面的 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 吗，意思是说对一个训练样例就可以做一次或者多次的参数更新。</p>
+<ul>
+<li>标准 BP（随机 BP）每次针对单个训练样例更新参数。但是参数更新频繁，以及不同样例对参数的影响可能抵消，开销大且可能做无用功。</li>
+<li>累计 BP 优化目标则改成整个训练集上的累计误差，即 <span class="arithmatex"><span class="MathJax_Preview">E=\frac1m\sum_{k=1}^mE_k</span><script type="math/tex">E=\frac1m\sum_{k=1}^mE_k</script></span>，读取整个训练集一遍之后，才更新参数。这样的更新频率是比较低的。</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">注</p>
+<p>但在很多任务中，累计误差下降到一定程度后，进一步下降会非常缓慢，这时标准BP算法往往会获得较好的解，尤其当训练集非常大时效果更明显。</p>
+</div>
+<ul>
+<li>小批量随机梯度下降，是指每次选择一小部分样例 <span class="arithmatex"><span class="MathJax_Preview">n&lt;&lt;m</span><script type="math/tex">n<<m</script></span> 来做更新，即
+  $$
+  \frac{\partial E}{\partial \theta}=\frac{1}{m}\sum_k^m\frac{\partial E_k}{\partial \theta}\sim\frac1n\sum_i^n\frac{\partial E_i}{\partial \theta}
+  $$
+  这里面 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的大小被称为一个 Batch。</li>
+</ul>
+<h2 id="_3">多层前馈的局限性</h2>
+<p><img src="3_%E5%A4%9A%E5%B1%82%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.assets/image-20221014102723557.png" alt="image-20221014102723557" style="zoom:50%;" /></p>
 
 
 
@@ -1251,6 +1324,21 @@ $$
           </div>
         </a>
       
+      
+        
+        <a href="../4_%E5%87%BD%E6%95%B0%E9%80%89%E6%8B%A9/" class="md-footer__link md-footer__link--next" aria-label="下一页: 4 函数选择" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              4 函数选择
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
