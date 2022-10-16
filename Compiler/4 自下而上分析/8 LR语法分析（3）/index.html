@@ -666,6 +666,33 @@
     规范的 LR 分析
   </a>
   
+    <nav class="md-nav" aria-label="规范的 LR 分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lr1_1" class="md-nav__link">
+    LR(1) 规范项目集族
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" class="md-nav__link">
+    ACTION 函数表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goto" class="md-nav__link">
+    GOTO 函数表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1149,6 +1176,33 @@
     规范的 LR 分析
   </a>
   
+    <nav class="md-nav" aria-label="规范的 LR 分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lr1_1" class="md-nav__link">
+    LR(1) 规范项目集族
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" class="md-nav__link">
+    ACTION 函数表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goto" class="md-nav__link">
+    GOTO 函数表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1175,7 +1229,7 @@ $$
 $$
 表示 A 之后紧跟 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>，如果存在 <span class="arithmatex"><span class="MathJax_Preview">S\Rightarrow_{rm}^*\delta Aw\Rightarrow_{rm}\delta\alpha\beta w</span><script type="math/tex">S\Rightarrow_{rm}^*\delta Aw\Rightarrow_{rm}\delta\alpha\beta w</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 的第一个符号，或者 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 且 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span></p>
 <div class="admonition info">
-<p class="admonition-title">LR(1) 项目集构造算法</p>
+<p class="admonition-title">LR(1) 项目集族构造算法 <span class="arithmatex"><span class="MathJax_Preview">items(G')</span><script type="math/tex">items(G')</script></span></p>
 <p><strong>输入</strong>：一个拓广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span></p>
 <p>求闭包 <span class="arithmatex"><span class="MathJax_Preview">c(I)</span><script type="math/tex">c(I)</script></span> 的算法：</p>
 <p><img alt="image-20221016131242286" src="../8%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%883%EF%BC%89.assets/image-20221016131242286.png" /></p>
@@ -1185,6 +1239,22 @@ $$
 <p><img alt="image-20221016132750679" src="../8%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%883%EF%BC%89.assets/image-20221016132750679.png" /></p>
 </div>
 <h2 id="lr">规范的 LR 分析</h2>
+<h3 id="lr1_1">LR(1) 规范项目集族</h3>
+<p>按上面的算法构造项目集族 <span class="arithmatex"><span class="MathJax_Preview">C=\{I_0,...,I_m\}</span><script type="math/tex">C=\{I_0,...,I_m\}</script></span></p>
+<h3 id="action">ACTION 函数表</h3>
+<ul>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">[A→\alpha·a\beta,b]\in I_i</span><script type="math/tex">[A→\alpha·a\beta,b]\in I_i</script></span> 且 <span class="arithmatex"><span class="MathJax_Preview">goto(I_i,a)=I_j</span><script type="math/tex">goto(I_i,a)=I_j</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">action(i,a)=sj</span><script type="math/tex">action(i,a)=sj</script></span></li>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">[A→\alpha·,a]\in I_i</span><script type="math/tex">[A→\alpha·,a]\in I_i</script></span> 且 <span class="arithmatex"><span class="MathJax_Preview">A\neq S'</span><script type="math/tex">A\neq S'</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">action[i,a]=rj</span><script type="math/tex">action[i,a]=rj</script></span></li>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">[S'→S·,\$]\in I_i</span><script type="math/tex">[S'→S·,\$]\in I_i</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">action[i,\$]=acc</span><script type="math/tex">action[i,\$]=acc</script></span></li>
+<li>其他未定义的条目都是 error</li>
+</ul>
+<p>注意到，SLR 是根据 Follow(A) 来确定归约动作，这里是根据搜索符（上下文信息）来确定。</p>
+<p>如果没有多重定义的条目，该文法就称之为 LR(1) 文法，如果不会引起误解的话可以省略 (1)</p>
+<h3 id="goto">GOTO 函数表</h3>
+<ul>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">goto(I_i,A)=I_j</span><script type="math/tex">goto(I_i,A)=I_j</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">goto[i,A]=j</span><script type="math/tex">goto[i,A]=j</script></span></li>
+<li>其他未定义的条目都是 error</li>
+</ul>
 
 
 
