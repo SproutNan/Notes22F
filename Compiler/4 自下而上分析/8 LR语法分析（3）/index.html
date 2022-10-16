@@ -661,6 +661,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#lr" class="md-nav__link">
+    规范的 LR 分析
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1137,6 +1144,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#lr" class="md-nav__link">
+    规范的 LR 分析
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1162,11 +1176,15 @@ $$
 表示 A 之后紧跟 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>，如果存在 <span class="arithmatex"><span class="MathJax_Preview">S\Rightarrow_{rm}^*\delta Aw\Rightarrow_{rm}\delta\alpha\beta w</span><script type="math/tex">S\Rightarrow_{rm}^*\delta Aw\Rightarrow_{rm}\delta\alpha\beta w</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 的第一个符号，或者 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 且 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span></p>
 <div class="admonition info">
 <p class="admonition-title">LR(1) 项目集构造算法</p>
-<p>输入一个拓广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span></p>
+<p><strong>输入</strong>：一个拓广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span></p>
 <p>求闭包 <span class="arithmatex"><span class="MathJax_Preview">c(I)</span><script type="math/tex">c(I)</script></span> 的算法：</p>
 <p><img alt="image-20221016131242286" src="../8%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%883%EF%BC%89.assets/image-20221016131242286.png" /></p>
+<p>计算 <span class="arithmatex"><span class="MathJax_Preview">goto(I,X)</span><script type="math/tex">goto(I,X)</script></span> 的算法（<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是文法符号，可以是终结符也可以是非终结符）：</p>
+<p><img alt="image-20221016132450061" src="../8%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%883%EF%BC%89.assets/image-20221016132450061.png" /></p>
+<p>计算 <span class="arithmatex"><span class="MathJax_Preview">items(G')</span><script type="math/tex">items(G')</script></span> 的算法：</p>
+<p><img alt="image-20221016132750679" src="../8%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%883%EF%BC%89.assets/image-20221016132750679.png" /></p>
 </div>
-<p>​    </p>
+<h2 id="lr">规范的 LR 分析</h2>
 
 
 
