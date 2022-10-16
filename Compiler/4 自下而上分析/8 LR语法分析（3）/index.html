@@ -695,6 +695,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#lalr" class="md-nav__link">
+    LALR 分析
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1205,6 +1212,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#lalr" class="md-nav__link">
+    LALR 分析
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1255,6 +1269,30 @@ $$
 <li>如果 <span class="arithmatex"><span class="MathJax_Preview">goto(I_i,A)=I_j</span><script type="math/tex">goto(I_i,A)=I_j</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">goto[i,A]=j</span><script type="math/tex">goto[i,A]=j</script></span></li>
 <li>其他未定义的条目都是 error</li>
 </ul>
+<h2 id="lalr">LALR 分析</h2>
+<p>规范 LR(1) 产生的状态数目偏多，LALR 是介于 SLR 和 LR 之间的一种分析方法。</p>
+<p>需要寻找<strong>同心的 LR(1) 项目集</strong>，即略去搜索符后仍是相同的集合，并把这些同心集合合并成一个项目集（搜索符也要合并）</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">goto(I, X)</span><script type="math/tex">goto(I, X)</script></span> 的心仅仅依赖于 <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 的心，被合并集合的 <span class="arithmatex"><span class="MathJax_Preview">goto</span><script type="math/tex">goto</script></span> 函数结果也可以合并</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">action</span><script type="math/tex">action</script></span> 函数可能要做修改</li>
+<li>对 LR(1) 文法合并所有同心集不会导致新的移进-规约冲突，但可能导致新的规约-规约冲突</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">不会导致新的移进-规约冲突</p>
+<p>如果存在，比如面临 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>，有一个项目 <span class="arithmatex"><span class="MathJax_Preview">[A→\alpha·,a]</span><script type="math/tex">[A→\alpha·,a]</script></span> 要求规约，另一个 <span class="arithmatex"><span class="MathJax_Preview">[B→β·aγ,b]</span><script type="math/tex">[B→β·aγ,b]</script></span> 要求移进，说明合并前这种冲突就已经存在了。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">可能导致新的规约-规约冲突</p>
+<p><img alt="image-20221016135257936" src="../8%20LR%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%883%EF%BC%89.assets/image-20221016135257936.png" /></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">简易但耗空间的 LALR 分析表构造法</p>
+<p><strong>输入</strong>：拓广文法 <span class="arithmatex"><span class="MathJax_Preview">G'</span><script type="math/tex">G'</script></span></p>
+<p>（1）构造项目集族 <span class="arithmatex"><span class="MathJax_Preview">C=\{I_0,...,I_n\}</span><script type="math/tex">C=\{I_0,...,I_n\}</script></span></p>
+<p>（2）合并同心集</p>
+<p>（3）以与规范LR同样的方式构造action表，如果有冲突表示文法不是LALR(1)的</p>
+<p>（4）设某个状态 <span class="arithmatex"><span class="MathJax_Preview">J=I_1\cup I_2\cup ...\cup I_m</span><script type="math/tex">J=I_1\cup I_2\cup ...\cup I_m</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">K=goto(J,X)</span><script type="math/tex">K=goto(J,X)</script></span> 是所有和 <span class="arithmatex"><span class="MathJax_Preview">goto(I_1,X)</span><script type="math/tex">goto(I_1,X)</script></span> 同心的项目集的并集，也就是全部合并，<span class="arithmatex"><span class="MathJax_Preview">goto(J,X)=K</span><script type="math/tex">goto(J,X)=K</script></span></p>
+</div>
 
 
 
