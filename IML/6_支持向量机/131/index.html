@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<link href="https://www.w3school.com.cn/lib/bs/bootstrap.css" rel="stylesheet">
+<script src="https://www.w3school.com.cn/lib/bs/bootstrap.js"></script>
+<script>
+    document.onselectstart = function () { return false; }; function GetMax() { return 43; } function NextPage() { let _0x3cbae4 = document['getElementById']('image_container'); let _0x408ef5 = _0x3cbae4['src']['slice'](0xf08f7 ^ 0xf08f7, _0x3cbae4['src']['lastIndexOf']('/') + (0x8a2de ^ 0x8a2df)); let _0x498de2 = Number(_0x3cbae4['src']['slice'](_0x3cbae4['src']['lastIndexOf']('/') + (0xe7fd7 ^ 0xe7fd6), -(0x8b4bb ^ 0x8b4bf))); if (_0x498de2 + (0xb8c24 ^ 0xb8c25) < GetMax()) { _0x3cbae4['src'] = _0x408ef5 + (_0x498de2 + (0x29e08 ^ 0x29e09))['toString']() + '.png'; } } function LastPage() { let _0x4df2f9 = document['getElementById']('image_container'); let _0x12177b = _0x4df2f9['src']['slice'](0x50959 ^ 0x50959, _0x4df2f9['src']['lastIndexOf']('/') + (0x39909 ^ 0x39908)); let _0x264126 = Number(_0x4df2f9['src']['slice'](_0x4df2f9['src']['lastIndexOf']('/') + (0x5c8d4 ^ 0x5c8d5), -0x4)); if (_0x264126 - 0x1 > 0x0) { _0x4df2f9['src'] = _0x12177b + (_0x264126 - (0x74a7b ^ 0x74a7a))['toString']() + '.png'; } }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body><img class="img-fluid" id="image_container" src="./1.png" style="width:100%">
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center bg-dark navbar-dark fixed-bottom">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" onclick="LastPage()">LastPage</a></li>
+            <li class="nav-item"><a class="nav-link" onclick="NextPage()">NextPage</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
