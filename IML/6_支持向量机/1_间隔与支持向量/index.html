@@ -1184,7 +1184,12 @@ y_i=-1\Rightarrow w^Tx_i+b&lt;0
 \end{aligned}
 $$
 也就是说 <span class="arithmatex"><span class="MathJax_Preview">y_i*(w^Tx_i+b)&gt;0.</span><script type="math/tex">y_i*(w^Tx_i+b)>0.</script></span></p>
-<p>只要让上述不等式右边从 0 开始增大（以变量 <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> 代之），就可以刻画这个超平面沿着其法向量方向远离，两个平面 <span class="arithmatex"><span class="MathJax_Preview">w^Tx_i+b=\pm\epsilon</span><script type="math/tex">w^Tx_i+b=\pm\epsilon</script></span> 之间的距离是 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle{}\frac{2\epsilon}{||\w||}</span><script type="math/tex">\displaystyle{}\frac{2\epsilon}{||\w||}</script></span></p>
+<p>只要让上述不等式右边从 0 开始增大（以变量 <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> 代之），就可以刻画这个超平面沿着其法向量方向远离，两个平面 <span class="arithmatex"><span class="MathJax_Preview">w^Tx_i+b=\pm\epsilon</span><script type="math/tex">w^Tx_i+b=\pm\epsilon</script></span> 之间的距离是 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle{}\frac{2\epsilon}{||\w||}</span><script type="math/tex">\displaystyle{}\frac{2\epsilon}{||\w||}</script></span>。这个 <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> 让问题复杂了一点，事实上，在我们的假设下，存在一个缩放变换 <span class="arithmatex"><span class="MathJax_Preview">\alpha\w→\w',\alpha b→b'</span><script type="math/tex">\alpha\w→\w',\alpha b→b'</script></span> 可以让这个 <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> 固定为 <span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span>，我们只需要找参数 <span class="arithmatex"><span class="MathJax_Preview">\w,b</span><script type="math/tex">\w,b</script></span> 即可。</p>
+<div class="admonition info">
+<p class="admonition-title">伸缩变换</p>
+<p>假设 <span class="arithmatex"><span class="MathJax_Preview">y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq \epsilon</span><script type="math/tex">y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq \epsilon</script></span> ，则 <span class="arithmatex"><span class="MathJax_Preview">y_i\left(\frac{\boldsymbol{w}^{\top}}{\epsilon} \boldsymbol{x}_i+\frac{b}{\epsilon}\right) \geq 1</span><script type="math/tex">y_i\left(\frac{\boldsymbol{w}^{\top}}{\epsilon} \boldsymbol{x}_i+\frac{b}{\epsilon}\right) \geq 1</script></span></p>
+<p><img alt="image-20221019232750153" src="../1_%E9%97%B4%E9%9A%94%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F.assets/image-20221019232750153.png" /></p>
+</div>
 
 
 
