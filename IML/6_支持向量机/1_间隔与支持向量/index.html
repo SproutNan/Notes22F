@@ -1190,20 +1190,36 @@ $$
 <p>假设 <span class="arithmatex"><span class="MathJax_Preview">y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq \epsilon</span><script type="math/tex">y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq \epsilon</script></span> ，则 <span class="arithmatex"><span class="MathJax_Preview">y_i\left(\frac{\boldsymbol{w}^{\top}}{\epsilon} \boldsymbol{x}_i+\frac{b}{\epsilon}\right) \geq 1</span><script type="math/tex">y_i\left(\frac{\boldsymbol{w}^{\top}}{\epsilon} \boldsymbol{x}_i+\frac{b}{\epsilon}\right) \geq 1</script></span></p>
 <p><img alt="image-20221019232750153" src="../1_%E9%97%B4%E9%9A%94%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F.assets/image-20221019232750153.png" /></p>
 </div>
-<p>将上面的想法写成优化问题就是
-$$
+<p>将上面的想法写成优化问题就是</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{gathered}
-\max <em>{\boldsymbol{w}, b} \frac{2}{|\boldsymbol{w}|} \newline
+\max _{\boldsymbol{w}, b} \frac{2}{\|\boldsymbol{w}\|} \newline
 \text { s.t. } y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq 1 \quad i=1, \cdots, m
 \end{gathered}
-$$
-为了方便求导等操作，可以写成等价的问题<span style="font-family: 楷体">（平方是因为这里是 2-范数）</span>
-$$
+</div>
+<script type="math/tex; mode=display">
 \begin{gathered}
-\min </em>{\boldsymbol{w}, b} \frac{1}{2}|\boldsymbol{w}|^2 \
+\max _{\boldsymbol{w}, b} \frac{2}{\|\boldsymbol{w}\|} \newline
 \text { s.t. } y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq 1 \quad i=1, \cdots, m
 \end{gathered}
-$$</p>
+</script>
+</div>
+<p>为了方便求导等操作，可以写成等价的问题<span style="font-family: 楷体">（平方是因为这里是 2-范数）</span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{gathered}
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2 \\
+\text { s.t. } y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq 1 \quad i=1, \cdots, m
+\end{gathered}
+</div>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2 \\
+\text { s.t. } y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq 1 \quad i=1, \cdots, m
+\end{gathered}
+</script>
+</div>
 
 
 
