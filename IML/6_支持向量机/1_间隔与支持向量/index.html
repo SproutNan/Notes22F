@@ -1170,7 +1170,21 @@
 <p><img alt="image-20221019225623297" src="../1_%E9%97%B4%E9%9A%94%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F.assets/image-20221019225623297.png" /></p>
 <p>能将样本分类的超平面可能有很多，但是选择<strong>最中间</strong>的容忍性好、鲁棒性高、泛化能力最强。</p>
 <p><center><span style="font-size:20pt; font-weight:600">怎样刻画“正中间”？</span></center></p>
-<p>假设超平面的方程是 <span class="arithmatex"><span class="MathJax_Preview">w^Tx+b=0</span><script type="math/tex">w^Tx+b=0</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">x,w</span><script type="math/tex">x,w</script></span> 都是 <span class="arithmatex"><span class="MathJax_Preview">p-1</span><script type="math/tex">p-1</script></span> 维的。</p>
+<p>假设超平面的方程是 <span class="arithmatex"><span class="MathJax_Preview">w^Tx+b=0</span><script type="math/tex">w^Tx+b=0</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">x,w</span><script type="math/tex">x,w</script></span> 都是 <span class="arithmatex"><span class="MathJax_Preview">p-1</span><script type="math/tex">p-1</script></span> 维的。我们希望用样本点到超平面的距离来刻画“正中间”这种说法。样本点 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{x}</span><script type="math/tex">\boldsymbol{x}</script></span> 到上述超平面的距离可以写为
+$$
+\newcommand{\w}{\boldsymbol{w}}
+\newcommand{\x}{\boldsymbol{x}}
+r=\frac{|\w^T\x+b|}{||\w||}
+$$
+假定超平面把样本正确分类，即
+$$
+\begin{aligned}
+y_i=+1\Rightarrow w^Tx_i+b&gt;0\newline
+y_i=-1\Rightarrow w^Tx_i+b&lt;0
+\end{aligned}
+$$
+也就是说 <span class="arithmatex"><span class="MathJax_Preview">y_i*(w^Tx_i+b)&gt;0.</span><script type="math/tex">y_i*(w^Tx_i+b)>0.</script></span></p>
+<p>只要让上述不等式右边从 0 开始增大（以变量 <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> 代之），就可以刻画这个超平面沿着其法向量方向远离，两个平面 <span class="arithmatex"><span class="MathJax_Preview">w^Tx_i+b=\pm\epsilon</span><script type="math/tex">w^Tx_i+b=\pm\epsilon</script></span> 之间的距离是 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle{}\frac{2\epsilon}{||\w||}</span><script type="math/tex">\displaystyle{}\frac{2\epsilon}{||\w||}</script></span></p>
 
 
 
