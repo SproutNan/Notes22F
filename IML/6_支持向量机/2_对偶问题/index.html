@@ -1211,27 +1211,51 @@ $$
 \end{aligned}
 $$
 因为凸优化问题拉格朗日函数偏导为 0 的解一定是最优解，所以把上面两式代回 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 中，就可以消去 <span class="arithmatex"><span class="MathJax_Preview">\w,b</span><script type="math/tex">\w,b</script></span>，得到关于 $\a $ 的条件，进而关于 $\a $ 优化就可以求出最优解 <span class="arithmatex"><span class="MathJax_Preview">\w</span><script type="math/tex">\w</script></span>。</p>
-<p>具体推导如下：
-$$
+<p>具体推导如下：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
-\inf <em>{\w,b}L&amp;=\frac{1}{2}\w^T\w+\sum</em>{i=1}^m\alpha_i-\sum_{i=1}^m\alpha_iy_i\w^T\x_i-\sum_{i=1}^m\alpha_iy_ib\newline
+\inf _{\w,b}L&amp;=\frac{1}{2}\w^T\w+\sum_{i=1}^m\alpha_i-\sum_{i=1}^m\alpha_iy_i\w^T\x_i-\sum_{i=1}^m\alpha_iy_ib\newline
 &amp;=-\frac{1}{2}\w^T\w+\sum_{i=1}^m\alpha_i\newline
 &amp;=-\frac12\left(\sum_{i=1}^m\alpha_iy_i\x_i\right)^T\left(\sum_{i=1}^m\alpha_iy_i\x_i\right)+\sum_{i=1}^m\alpha_i\newline
 &amp;=-\frac12\sum_{i=1}^m\alpha_iy_i\x_i^T\sum_{i=1}^m\alpha_iy_i\x_i+\sum_{i=1}^m\alpha_i\newline
 &amp;=-\frac12\sum_{i=1}^m\sum_{j=1}^m\alpha_iy_i\x_i^T\alpha_jy_j\x_j+\sum_{i=1}^m\alpha_i
 \end{aligned}
-$$
-所以
-$$
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\inf _{\w,b}L&=\frac{1}{2}\w^T\w+\sum_{i=1}^m\alpha_i-\sum_{i=1}^m\alpha_iy_i\w^T\x_i-\sum_{i=1}^m\alpha_iy_ib\newline
+&=-\frac{1}{2}\w^T\w+\sum_{i=1}^m\alpha_i\newline
+&=-\frac12\left(\sum_{i=1}^m\alpha_iy_i\x_i\right)^T\left(\sum_{i=1}^m\alpha_iy_i\x_i\right)+\sum_{i=1}^m\alpha_i\newline
+&=-\frac12\sum_{i=1}^m\alpha_iy_i\x_i^T\sum_{i=1}^m\alpha_iy_i\x_i+\sum_{i=1}^m\alpha_i\newline
+&=-\frac12\sum_{i=1}^m\sum_{j=1}^m\alpha_iy_i\x_i^T\alpha_jy_j\x_j+\sum_{i=1}^m\alpha_i
+\end{aligned}
+</script>
+</div>
+<p>所以</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \max_{\a}\inf_{\w,b}L=\max_\a\left(\sum_{i=1}^m\alpha_i-\frac12\sum_{i=1}^m\sum_{j=1}^m\alpha_iy_i\x_i^T\alpha_jy_j\x_j\right)
-$$
-对偶问题为
-$$
+</div>
+<script type="math/tex; mode=display">
+\max_{\a}\inf_{\w,b}L=\max_\a\left(\sum_{i=1}^m\alpha_i-\frac12\sum_{i=1}^m\sum_{j=1}^m\alpha_iy_i\x_i^T\alpha_jy_j\x_j\right)
+</script>
+</div>
+<p>对偶问题为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
 &amp;\max_\a\left(\sum_{i=1}^m\alpha_i-\frac12\sum_{i=1}^m\sum_{j=1}^m\alpha_iy_i\x_i^T\alpha_jy_j\x_j\right)\newline
 &amp;\text{s.t. }\sum_{i=1}^m\alpha_iy_i=0,\quad \a≽0
 \end{aligned}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\max_\a\left(\sum_{i=1}^m\alpha_i-\frac12\sum_{i=1}^m\sum_{j=1}^m\alpha_iy_i\x_i^T\alpha_jy_j\x_j\right)\newline
+&\text{s.t. }\sum_{i=1}^m\alpha_iy_i=0,\quad \a≽0
+\end{aligned}
+</script>
+</div>
 <div class="admonition info">
 <p class="admonition-title">注记</p>
 <p>原问题：</p>
