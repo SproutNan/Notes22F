@@ -1259,6 +1259,7 @@ y=\boldsymbol{x}^{\top} \boldsymbol{w}+b=\sum_i^m \alpha_i^{\star} y_i \phi(\bol
 </script>
 </div>
 </div>
+<p>可以看到 <span class="arithmatex"><span class="MathJax_Preview">\phi</span><script type="math/tex">\phi</script></span> 仅以内积 <span class="arithmatex"><span class="MathJax_Preview">\phi^T(x)\phi(x)</span><script type="math/tex">\phi^T(x)\phi(x)</script></span> 的形式出现。<span class="arithmatex"><span class="MathJax_Preview">\phi(x)</span><script type="math/tex">\phi(x)</script></span>的维数可能很高甚至无穷维，通过计算 <span class="arithmatex"><span class="MathJax_Preview">\phi(x)</span><script type="math/tex">\phi(x)</script></span> 直接计算内积通常是困难的，但是我们可以设想有一个函数 <span class="arithmatex"><span class="MathJax_Preview">\kappa(x_i,x_j)=\phi^T(x_i)\phi(x_j)</span><script type="math/tex">\kappa(x_i,x_j)=\phi^T(x_i)\phi(x_j)</script></span>，这样就不用求解 <span class="arithmatex"><span class="MathJax_Preview">\phi</span><script type="math/tex">\phi</script></span>，直接带入这个函数就可以求得内积的值。这个函数就称之为<span style="color:red">核函数</span>。</p>
 
 
 
