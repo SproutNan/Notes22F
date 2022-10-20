@@ -1254,9 +1254,18 @@ h_j(\boldsymbol{x})=0, j=1,2, \cdots, n
 </script>
 </div>
 <p>对偶问题：
-<span class="arithmatex"><span class="MathJax_Preview">\displaytyle\max _{\boldsymbol{u}, \boldsymbol{v}} g(\boldsymbol{u}, \boldsymbol{v})</span><script type="math/tex">\displaytyle\max _{\boldsymbol{u}, \boldsymbol{v}} g(\boldsymbol{u}, \boldsymbol{v})</script></span> </p>
-<p>s.t. <span class="arithmatex"><span class="MathJax_Preview">\displaytyle\boldsymbol{u} ≽ 0</span><script type="math/tex">\displaytyle\boldsymbol{u} ≽ 0</script></span></p>
-<p>其中 <span class="arithmatex"><span class="MathJax_Preview">\displaytyle g(\boldsymbol{u}, \boldsymbol{v})=\min _{\boldsymbol{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})</span><script type="math/tex">\displaytyle g(\boldsymbol{u}, \boldsymbol{v})=\min _{\boldsymbol{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})</script></span></p>
+<span class="arithmatex"><span class="MathJax_Preview">\displaystyle\max _{\boldsymbol{u}, \boldsymbol{v}} g(\boldsymbol{u}, \boldsymbol{v})</span><script type="math/tex">\displaystyle\max _{\boldsymbol{u}, \boldsymbol{v}} g(\boldsymbol{u}, \boldsymbol{v})</script></span> </p>
+<p>s.t. <span class="arithmatex"><span class="MathJax_Preview">\displaystyle\boldsymbol{u} ≽ 0</span><script type="math/tex">\displaystyle\boldsymbol{u} ≽ 0</script></span></p>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle g(\boldsymbol{u}, \boldsymbol{v})=\min _{\boldsymbol{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})</span><script type="math/tex">\displaystyle g(\boldsymbol{u}, \boldsymbol{v})=\min _{\boldsymbol{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})</script></span></p>
+<p>强对偶性条件：原问题为凸优化问题，且可行域中至少有一个点使得不等式约束严格成立</p>
+<ul>
+<li>
+<p>对于线性可分问题，一定存在 <span class="arithmatex"><span class="MathJax_Preview">(\boldsymbol{w}, b)</span><script type="math/tex">(\boldsymbol{w}, b)</script></span> 使得 <span class="arithmatex"><span class="MathJax_Preview">y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq 1</span><script type="math/tex">y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right) \geq 1</script></span> ， <span class="arithmatex"><span class="MathJax_Preview">i=1,2, \ldots, m</span><script type="math/tex">i=1,2, \ldots, m</script></span></p>
+</li>
+<li>
+<p>设 <span class="arithmatex"><span class="MathJax_Preview">\epsilon&lt;1</span><script type="math/tex">\epsilon<1</script></span> ，则 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right)&gt;\epsilon \Rightarrow y_i\left(\frac{\boldsymbol{w}^{\top}}{\epsilon} \boldsymbol{x}_i+\frac{b}{\epsilon}\right)&gt;1</span><script type="math/tex">\displaystyle y_i\left(\boldsymbol{w}^{\top} \boldsymbol{x}_i+b\right)>\epsilon \Rightarrow y_i\left(\frac{\boldsymbol{w}^{\top}}{\epsilon} \boldsymbol{x}_i+\frac{b}{\epsilon}\right)>1</script></span> 则 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle\left(\frac{\w}{\epsilon}, \frac{b}{\epsilon}\right)</span><script type="math/tex">\displaystyle\left(\frac{\w}{\epsilon}, \frac{b}{\epsilon}\right)</script></span> 严格满足不等式。因此，该优化问题满足强对偶性条件。</p>
+</li>
+</ul>
 </div>
 
 
