@@ -1216,7 +1216,8 @@ $$
 (2)&amp;y_if(\x_i)-1\ge 0\newline
 (3)&amp;\alpha_i[y_if(\x_i)-1]=0
 \end{aligned}
-$$</p>
+$$
+其中 <span class="arithmatex"><span class="MathJax_Preview">f(\x)=\w^T\x+b</span><script type="math/tex">f(\x)=\w^T\x+b</script></span>，上面三个式子说明，<span class="arithmatex"><span class="MathJax_Preview">\alpha_i</span><script type="math/tex">\alpha_i</script></span> 对应的样本 <span class="arithmatex"><span class="MathJax_Preview">(\x_i,y_i)</span><script type="math/tex">(\x_i,y_i)</script></span> 要么 <span class="arithmatex"><span class="MathJax_Preview">\alpha_i=0</span><script type="math/tex">\alpha_i=0</script></span>，要么 <span class="arithmatex"><span class="MathJax_Preview">y_if(\x_i)=1</span><script type="math/tex">y_if(\x_i)=1</script></span>，说明支持向量机解有<strong>稀疏性</strong>：训练完成后，大部分的训练样本都不需保留在模型中（<span class="arithmatex"><span class="MathJax_Preview">\alpha_i=0</span><script type="math/tex">\alpha_i=0</script></span>），最终模型仅与支持向量（<span class="arithmatex"><span class="MathJax_Preview">y_if(\x_i)=1</span><script type="math/tex">y_if(\x_i)=1</script></span>）有关。</p>
 
 
 
