@@ -1260,6 +1260,61 @@ y=\boldsymbol{x}^{\top} \boldsymbol{w}+b=\sum_i^m \alpha_i^{\star} y_i \phi(\bol
 </div>
 </div>
 <p>可以看到 <span class="arithmatex"><span class="MathJax_Preview">\phi</span><script type="math/tex">\phi</script></span> 仅以内积 <span class="arithmatex"><span class="MathJax_Preview">\phi^T(x)\phi(x)</span><script type="math/tex">\phi^T(x)\phi(x)</script></span> 的形式出现。<span class="arithmatex"><span class="MathJax_Preview">\phi(x)</span><script type="math/tex">\phi(x)</script></span>的维数可能很高甚至无穷维，通过计算 <span class="arithmatex"><span class="MathJax_Preview">\phi(x)</span><script type="math/tex">\phi(x)</script></span> 直接计算内积通常是困难的，但是我们可以设想有一个函数 <span class="arithmatex"><span class="MathJax_Preview">\kappa(x_i,x_j)=\phi^T(x_i)\phi(x_j)</span><script type="math/tex">\kappa(x_i,x_j)=\phi^T(x_i)\phi(x_j)</script></span>，这样就不用求解 <span class="arithmatex"><span class="MathJax_Preview">\phi</span><script type="math/tex">\phi</script></span>，直接带入这个函数就可以求得内积的值。这个函数就称之为<span style="color:red">核函数</span>。</p>
+<p>现在的问题是：</p>
+<ol>
+<li>核函数是否存在？</li>
+<li>什么样的函数可以作为核函数？</li>
+</ol>
+<p>对于这两个问题，我们有 <strong>Mercer 定理</strong>：</p>
+<p>令 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{X}</span><script type="math/tex">\mathcal{X}</script></span> 为输入空间， <span class="arithmatex"><span class="MathJax_Preview">\kappa(\cdot, \cdot)</span><script type="math/tex">\kappa(\cdot, \cdot)</script></span> 是定义在 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{X} \times \mathcal{X}</span><script type="math/tex">\mathcal{X} \times \mathcal{X}</script></span> 上的对称函数，则 <span class="arithmatex"><span class="MathJax_Preview">\kappa</span><script type="math/tex">\kappa</script></span> 是核函数<strong>当且仅当</strong>对于任意数据集 <span class="arithmatex"><span class="MathJax_Preview">D=\left\{\boldsymbol{x}_1, \cdots, \boldsymbol{x}_m\right\}</span><script type="math/tex">D=\left\{\boldsymbol{x}_1, \cdots, \boldsymbol{x}_m\right\}</script></span> ，核矩阵 <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> 总是半正定的</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+K=\left[\begin{array}{ccc}
+\kappa\left(\boldsymbol{x}_1, \boldsymbol{x}_1\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}_1, \boldsymbol{x}_m\right) \\
+\vdots &amp; \ddots &amp; \vdots \\
+\kappa\left(\boldsymbol{x}_m, \boldsymbol{x}_1\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}_m, \boldsymbol{x}_m\right)
+\end{array}\right]
+</div>
+<script type="math/tex; mode=display">
+K=\left[\begin{array}{ccc}
+\kappa\left(\boldsymbol{x}_1, \boldsymbol{x}_1\right) & \cdots & \kappa\left(\boldsymbol{x}_1, \boldsymbol{x}_m\right) \\
+\vdots & \ddots & \vdots \\
+\kappa\left(\boldsymbol{x}_m, \boldsymbol{x}_1\right) & \cdots & \kappa\left(\boldsymbol{x}_m, \boldsymbol{x}_m\right)
+\end{array}\right]
+</script>
+</div>
+<p>这说明，只要一个对称函数对应的 <span class="arithmatex"><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> 是半正定的，其就能作为核函数使用。</p>
+<p>至此我们只知道哪些函数可以作为核函数，但是不知道某个<strong>核函数的选择是否是合适的</strong>，所以这才是 SVM 的最大变数。经验来看，常用的核函数如下：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\begin{array}{lll}
+\hline \text { 名称 } &amp; \text { 表达式 } &amp; \text { 参数 } \\
+\hline \text { 线性核 } &amp; \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\boldsymbol{x}_i^{\top} \boldsymbol{x}_j &amp; \\
+\text { 多项式核 } &amp; \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\left(\boldsymbol{x}_i^{\top} \boldsymbol{x}_j\right)^d &amp; d \geq 1 \text { 为多项式的次数 } \\
+\text { 高斯核 } &amp; \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\exp \left(-\frac{\left\|\boldsymbol{x}_i-\boldsymbol{x}_j\right\|^2}{2 \delta^2}\right) &amp; \delta&gt;0 \text { 为高斯核的带宽(width) } \\
+\text { 拉普拉斯核 } &amp; \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\exp \left(-\frac{\left\|\boldsymbol{x}_i-\boldsymbol{x}_j\right\|}{\delta}\right) &amp; \delta&gt;0 \\
+\text { Sigmoid核 } &amp; \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\tanh \left(\beta \boldsymbol{x}_i^{\top} \boldsymbol{x}_j+\theta\right) &amp; \tanh \text { 为双曲正切函数, } \beta&gt;0, \theta&lt;0 \\
+\hline
+\end{array}
+</div>
+<script type="math/tex; mode=display">
+\begin{array}{lll}
+\hline \text { 名称 } & \text { 表达式 } & \text { 参数 } \\
+\hline \text { 线性核 } & \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\boldsymbol{x}_i^{\top} \boldsymbol{x}_j & \\
+\text { 多项式核 } & \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\left(\boldsymbol{x}_i^{\top} \boldsymbol{x}_j\right)^d & d \geq 1 \text { 为多项式的次数 } \\
+\text { 高斯核 } & \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\exp \left(-\frac{\left\|\boldsymbol{x}_i-\boldsymbol{x}_j\right\|^2}{2 \delta^2}\right) & \delta>0 \text { 为高斯核的带宽(width) } \\
+\text { 拉普拉斯核 } & \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\exp \left(-\frac{\left\|\boldsymbol{x}_i-\boldsymbol{x}_j\right\|}{\delta}\right) & \delta>0 \\
+\text { Sigmoid核 } & \kappa\left(\boldsymbol{x}_i, \boldsymbol{x}_j\right)=\tanh \left(\beta \boldsymbol{x}_i^{\top} \boldsymbol{x}_j+\theta\right) & \tanh \text { 为双曲正切函数, } \beta>0, \theta<0 \\
+\hline
+\end{array}
+</script>
+</div>
+<p>函数组合也可得到一些核函数：</p>
+<ul>
+<li>核函数线性组合 <span class="arithmatex"><span class="MathJax_Preview">\gamma_1 \kappa_1+\gamma_2 \kappa_2</span><script type="math/tex">\gamma_1 \kappa_1+\gamma_2 \kappa_2</script></span></li>
+<li>核函数直积 <span class="arithmatex"><span class="MathJax_Preview">\kappa_1 \otimes \kappa_2(\boldsymbol{x}, \mathrm{z})=\kappa_1(\boldsymbol{x}, \mathbf{z}) \otimes \kappa_1(\boldsymbol{x}, \mathbf{z})</span><script type="math/tex">\kappa_1 \otimes \kappa_2(\boldsymbol{x}, \mathrm{z})=\kappa_1(\boldsymbol{x}, \mathbf{z}) \otimes \kappa_1(\boldsymbol{x}, \mathbf{z})</script></span></li>
+<li>核函数生成 <span class="arithmatex"><span class="MathJax_Preview">\kappa'=g(\boldsymbol{x}) \kappa(\boldsymbol{x}, \mathbf{z}) g(\mathbf{z})</span><script type="math/tex">\kappa'=g(\boldsymbol{x}) \kappa(\boldsymbol{x}, \mathbf{z}) g(\mathbf{z})</script></span></li>
+</ul>
 
 
 
