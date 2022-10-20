@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+      
+      <a href="#smo" class="md-skip">
+        跳转至
+      </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1139,9 +1144,38 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3 SMO算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         3 SMO算法
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#smo" class="md-nav__link">
+    SMO 算法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1178,6 +1212,21 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#smo" class="md-nav__link">
+    SMO 算法
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
               </div>
@@ -1224,6 +1273,44 @@ $$
 \end{aligned}
 $$
 其中 <span class="arithmatex"><span class="MathJax_Preview">f(\x)=\w^T\x+b</span><script type="math/tex">f(\x)=\w^T\x+b</script></span>，上面三个式子说明，<span class="arithmatex"><span class="MathJax_Preview">\alpha_i</span><script type="math/tex">\alpha_i</script></span> 对应的样本 <span class="arithmatex"><span class="MathJax_Preview">(\x_i,y_i)</span><script type="math/tex">(\x_i,y_i)</script></span> 要么 <span class="arithmatex"><span class="MathJax_Preview">\alpha_i=0</span><script type="math/tex">\alpha_i=0</script></span>，要么 <span class="arithmatex"><span class="MathJax_Preview">y_if(\x_i)=1</span><script type="math/tex">y_if(\x_i)=1</script></span>，说明支持向量机解有<strong>稀疏性</strong>：训练完成后，大部分的训练样本都不需保留在模型中（<span class="arithmatex"><span class="MathJax_Preview">\alpha_i=0</span><script type="math/tex">\alpha_i=0</script></span>），最终模型仅与支持向量（<span class="arithmatex"><span class="MathJax_Preview">y_if(\x_i)=1</span><script type="math/tex">y_if(\x_i)=1</script></span>）有关。</p>
+<p><center><span style="font-size:20pt; font-weight:600">怎么求解对偶问题？</span></center></p>
+<p>问题在于问题规模正比于样本数 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>，使用现成的二次规划算法开销很大，所以需要利用问题本身的特性来解决。</p>
+<h2 id="smo">SMO 算法</h2>
+<p>通过序列最小优化（SMO）求解最优的 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{\alpha}</span><script type="math/tex">\boldsymbol{\alpha}</script></span></p>
+<p>基本思路：不断执行如下两个步骤直至收敛</p>
+<ul>
+<li>
+<p>选取一对需更新的变量 <span class="arithmatex"><span class="MathJax_Preview">α_i</span><script type="math/tex">α_i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">α_j</span><script type="math/tex">α_j</script></span></p>
+</li>
+<li>
+<p>固定 <span class="arithmatex"><span class="MathJax_Preview">α_i</span><script type="math/tex">α_i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">α_j</span><script type="math/tex">α_j</script></span>以外的参数，求解上面所说的对偶问题，以更新 <span class="arithmatex"><span class="MathJax_Preview">α_i</span><script type="math/tex">α_i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">α_j</span><script type="math/tex">α_j</script></span></p>
+</li>
+</ul>
+<p>即：（记 <span class="arithmatex"><span class="MathJax_Preview">\x_i^T\x_j=K_{ij},\quad g(x)</span><script type="math/tex">\x_i^T\x_j=K_{ij},\quad g(x)</script></span> 是对偶问题 <span class="arithmatex"><span class="MathJax_Preview">\max</span><script type="math/tex">\max</script></span> 后的函数）</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+g\left(\alpha_i, \alpha_j\right)=\alpha_i+\alpha_j-\frac{1}{2}\left(\alpha_i^2 K_{i i}+\alpha_j^2 K_{j j}+2 \alpha_i \alpha_j y_i y_j K_{i j}+a_i y_i \sum_{k \neq i, j} a_k y_k K_{i k}+\alpha_j y_j \sum_{k \neq i, j} a_k y_k K_{j k}\right)
+</div>
+<script type="math/tex; mode=display">
+g\left(\alpha_i, \alpha_j\right)=\alpha_i+\alpha_j-\frac{1}{2}\left(\alpha_i^2 K_{i i}+\alpha_j^2 K_{j j}+2 \alpha_i \alpha_j y_i y_j K_{i j}+a_i y_i \sum_{k \neq i, j} a_k y_k K_{i k}+\alpha_j y_j \sum_{k \neq i, j} a_k y_k K_{j k}\right)
+</script>
+</div>
+<p>约束条件变为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\alpha_i y_i+\alpha_j y_j=-\sum_{k \neq i, j}^m \alpha_i y_i=\zeta \quad \Rightarrow \quad \alpha_i=\left(\zeta-\alpha_j y_j\right) y_i
+</div>
+<script type="math/tex; mode=display">
+\alpha_i y_i+\alpha_j y_j=-\sum_{k \neq i, j}^m \alpha_i y_i=\zeta \quad \Rightarrow \quad \alpha_i=\left(\zeta-\alpha_j y_j\right) y_i
+</script>
+</div>
+<p>在两个变量上的优化问题是有闭式解的，不需要调用其他算法。</p>
+<p><strong>为什么两个变量就可以</strong>？<span style="font-family: Times New Roman">[Osuna et al. 1997]</span> 证明了：若 <span class="arithmatex"><span class="MathJax_Preview">α_i</span><script type="math/tex">α_i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">α_j</span><script type="math/tex">α_j</script></span> 有一个违反了 KKT 条件，目标函数就会在迭代后增大。KKT 条件违背的程度越大，则变量更新后可能导致的目标函数值增幅越大。</p>
+<p><strong>如何选择这两个变量</strong>？第一个变量：选取违背KKT条件程度最大的变量；第二个变量：选取与第一个变量的间隔最大的变量<span style="font-family: 楷体">（这是一个启发式，认为这样选取的变量代表的样本与第一个变量代表的样本有很大差异）</span>。</p>
+<p><strong>如何确定偏移量</strong> <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span>？对于任意的支持向量 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{x}_i \in S</span><script type="math/tex">\boldsymbol{x}_i \in S</script></span>， 均满足 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{w}^{\top} \boldsymbol{x}_i+b=y_i</span><script type="math/tex">\boldsymbol{w}^{\top} \boldsymbol{x}_i+b=y_i</script></span> ，则
+$$
+b^{\star}=\frac{1}{|S|} \sum_{i \in S}\left(y_i-\boldsymbol{x}_{\boldsymbol{i}}^{\top} \boldsymbol{w}^{\star}\right)
+$$</p>
 
 
 
