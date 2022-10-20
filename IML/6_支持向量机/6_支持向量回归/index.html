@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
       
-      <a href="#hinge" class="md-skip">
+      <a href="#_1" class="md-skip">
         跳转至
       </a>
       
@@ -1209,8 +1209,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hinge" class="md-nav__link">
-    采用 Hinge 损失函数的情形
+  <a href="#_1" class="md-nav__link">
+    支持向量回归
   </a>
   
 </li>
@@ -1262,8 +1262,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hinge" class="md-nav__link">
-    采用 Hinge 损失函数的情形
+  <a href="#_1" class="md-nav__link">
+    支持向量回归
   </a>
   
 </li>
@@ -1285,93 +1285,35 @@
 
   <h1>6 支持向量回归</h1>
 
-<p>很难确定合适的核函数使得训练样本在特征空间中线性可分，并且既便得到了一个线性可分的结果也很难断定是否是有过拟合造成的。</p>
-<p>于是引入<strong>软间隔</strong>的概念，允许支持向量机在一些样本上不满足约束 <span class="arithmatex"><span class="MathJax_Preview">y_i(w^Tx_i+b)\ge1</span><script type="math/tex">y_i(w^Tx_i+b)\ge1</script></span>。</p>
-<p>在最大化间隔时，最好能让不满足约束的样本尽量少，于是优化目标可以写为</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \ell_{0 / 1}\left(y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right)-1\right)
-</div>
-<script type="math/tex; mode=display">
-\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \ell_{0 / 1}\left(y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right)-1\right)
-</script>
-</div>
-<p>其中 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 是个正常数，<span class="arithmatex"><span class="MathJax_Preview">\ell_{0/1}</span><script type="math/tex">\ell_{0/1}</script></span> 是 0/1 损失函数，其定义为</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\ell_{0 / 1}(z)=\left\{\begin{array}{l}
-1, z&lt;0 \\
-0, \text { otherwise }
-\end{array}\right.
-</div>
-<script type="math/tex; mode=display">
-\ell_{0 / 1}(z)=\left\{\begin{array}{l}
-1, z<0 \\
-0, \text { otherwise }
-\end{array}\right.
-</script>
-</div>
-<p><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 其实就是惩罚值，每有一个样本不满足约束，就会导致优化目标值上升。当 <span class="arithmatex"><span class="MathJax_Preview">C→\infty</span><script type="math/tex">C→\infty</script></span> 时，迫使所有样本都要满足约束；当其为有限值时，允许某些样本不满足约束。</p>
-<p>但是如上定义的 0/1 损失函数非凸、非连续，不易优化！老办法，可以选取一些函数来替代之。</p>
-<p><img alt="image-20221020222428342" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020222428342.png" /></p>
-<p>替代损失函数数学性质较好，并且一般<strong>是 0/1 损失函数的上界</strong>。</p>
-<h2 id="hinge">采用 Hinge 损失函数的情形</h2>
-<p>此时优化问题变为</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \max(0,1-y_i(w^T\phi(x_i)+b))
-</div>
-<script type="math/tex; mode=display">
-\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \max(0,1-y_i(w^T\phi(x_i)+b))
-</script>
-</div>
-<p>令（<span class="arithmatex"><span class="MathJax_Preview">\xi_i</span><script type="math/tex">\xi_i</script></span> 称之为松弛变量）</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\xi_i=\max(0,1-y_i(w^T\phi(x_i)+b))
-</div>
-<script type="math/tex; mode=display">
-\xi_i=\max(0,1-y_i(w^T\phi(x_i)+b))
-</script>
-</div>
-<p>所以优化问题可以重写为</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\begin{aligned}
-\displaystyle\min _{\boldsymbol{w}, b, \boldsymbol\xi } &amp;\quad \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \xi_i\newline
-\text { s.t. } &amp;y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right) \geq 1-\xi_i, i=1,2, \ldots, m \newline
-&amp;\xi_i \geq 0, i=1,2, \ldots, m
-\end{aligned}
-</div>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\displaystyle\min _{\boldsymbol{w}, b, \boldsymbol\xi } &\quad \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \xi_i\newline
-\text { s.t. } &y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right) \geq 1-\xi_i, i=1,2, \ldots, m \newline
-&\xi_i \geq 0, i=1,2, \ldots, m
-\end{aligned}
-</script>
-</div>
-<p>这个就是<strong>软间隔支持向量机</strong>。</p>
-<div class="admonition info">
-<p class="admonition-title">注记</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\xi_i\ge 0</span><script type="math/tex">\xi_i\ge 0</script></span>，当 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)&gt;0</span><script type="math/tex">1-y_i(w^Tx_i+b)>0</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)=\xi_i</span><script type="math/tex">1-y_i(w^Tx_i+b)=\xi_i</script></span>；当 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)\le 0</span><script type="math/tex">1-y_i(w^Tx_i+b)\le 0</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">0=\xi_i</span><script type="math/tex">0=\xi_i</script></span>，所以</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-1-y_i(w^Tx_i+b)\le\xi_i
-</div>
-<script type="math/tex; mode=display">
-1-y_i(w^Tx_i+b)\le\xi_i
-</script>
-</div>
-<p>这就是第一个约束条件的推导过程。</p>
-</div>
-<p>其也可以通过求解对偶问题来高效解决，和之前的差不多，就不细看了。</p>
-<blockquote>
-<p>求对偶问题的时候要对 <span class="arithmatex"><span class="MathJax_Preview">w,b,\xi</span><script type="math/tex">w,b,\xi</script></span> 都求导。</p>
-</blockquote>
-<p><img alt="image-20221020225414108" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020225414108.png" /></p>
-<p><img alt="image-20221020225433756" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020225433756.png" /></p>
-<p><img alt="image-20221020225456722" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020225456722.png" /></p>
+<p>支持向量回归的一般形式：
+$$
+\min _{\mathrm{f}}\left[ \Omega(f)+C \sum_i^m \ell\left(f\left(x_i\right), y_i\right)\right]
+$$
+其中：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\Omega(f)</span><script type="math/tex">\Omega(f)</script></span> <strong>结构风险、正则化项</strong>：用于描述 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 的某些性质</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\sum_i^m \ell\left(f\left(x_i\right), y_i\right)</span><script type="math/tex">\sum_i^m \ell\left(f\left(x_i\right), y_i\right)</script></span> <strong>经验风险</strong>：用于描述模型与训练数据的契合程度</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> <strong>正则化系数</strong>：用于对二者进行折中</li>
+</ul>
+<p><span class="arithmatex"><span class="MathJax_Preview">L_p</span><script type="math/tex">L_p</script></span> 范数是常用的正则化项：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">L_2</span><script type="math/tex">L_2</script></span> 倾向于 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 分量取值尽量均衡，即非零分量个数尽量稠密</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">L_{0/1}</span><script type="math/tex">L_{0/1}</script></span> 倾向于 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 分量尽量稀疏，即非零分量个数尽量少</li>
+</ul>
+<h2 id="_1">支持向量回归</h2>
+<p>以前我们的回归模型要求 <span class="arithmatex"><span class="MathJax_Preview">f(x)=y</span><script type="math/tex">f(x)=y</script></span> 时损失才为 0，但是支持向量回归（SVR）能够容忍最多 <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> 上下的偏差，也就是说 <span class="arithmatex"><span class="MathJax_Preview">|f(x)-y|\le\epsilon</span><script type="math/tex">|f(x)-y|\le\epsilon</script></span> 都视为预测正确。</p>
+<p>落入中间 <span class="arithmatex"><span class="MathJax_Preview">2ϵ</span><script type="math/tex">2ϵ</script></span> 间隔带的样本不计算损失，从而使得模型获得稀疏性。新的损失函数（下方红线）为：
+$$
+\ell_\epsilon(z)= \begin{cases}0 &amp; \text { if }|z| \leq \epsilon \ |z|-\epsilon &amp; \text { otherwise }\end{cases}
+$$
+<img alt="image-20221020230737511" src="../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92.assets/image-20221020230737511.png" /></p>
+<p>原来的优化目标变为
+$$
+\min <em>{\boldsymbol{w}, b} \frac{1}{2}|\boldsymbol{w}|^2+C \sum</em>{i=1}^m \ell_\epsilon\left(f\left(\boldsymbol{x}_i\right)-y_i\right)
+$$
+同样通过求解对偶问题，不细说。</p>
+<p>这里 <span class="arithmatex"><span class="MathJax_Preview">\xi_i+\hat\xi_i</span><script type="math/tex">\xi_i+\hat\xi_i</script></span> 的原因是，两侧的松弛程度可能不同。</p>
+<p><img alt="image-20221020230901762" src="../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92.assets/image-20221020230901762.png" /></p>
 
 
 
