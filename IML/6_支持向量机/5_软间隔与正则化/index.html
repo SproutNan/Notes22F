@@ -1273,38 +1273,70 @@
 
 <p>很难确定合适的核函数使得训练样本在特征空间中线性可分，并且既便得到了一个线性可分的结果也很难断定是否是有过拟合造成的。</p>
 <p>于是引入<strong>软间隔</strong>的概念，允许支持向量机在一些样本上不满足约束 <span class="arithmatex"><span class="MathJax_Preview">y_i(w^Tx_i+b)\ge1</span><script type="math/tex">y_i(w^Tx_i+b)\ge1</script></span>。</p>
-<p>在最大化间隔时，最好能让不满足约束的样本尽量少，于是优化目标可以写为
-$$
-\min <em>{\boldsymbol{w}, b} \frac{1}{2}|\boldsymbol{w}|^2+C \sum</em>{i=1}^m \ell_{0 / 1}\left(y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}<em>i\right)+b\right)-1\right)
-$$
-其中 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 是个正常数，<span class="arithmatex"><span class="MathJax_Preview">\ell_{0/1}</span><script type="math/tex">\ell_{0/1}</script></span> 是 0/1 损失函数，其定义为
-$$
-\ell</em>{0 / 1}(z)=\left{\begin{array}{l}
-1, z&lt;0 \
+<p>在最大化间隔时，最好能让不满足约束的样本尽量少，于是优化目标可以写为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \ell_{0 / 1}\left(y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right)-1\right)
+</div>
+<script type="math/tex; mode=display">
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \ell_{0 / 1}\left(y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right)-1\right)
+</script>
+</div>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 是个正常数，<span class="arithmatex"><span class="MathJax_Preview">\ell_{0/1}</span><script type="math/tex">\ell_{0/1}</script></span> 是 0/1 损失函数，其定义为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\ell_{0 / 1}(z)=\left\{\begin{array}{l}
+1, z&lt;0 \\
 0, \text { otherwise }
 \end{array}\right.
-$$
-<span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 其实就是惩罚值，每有一个样本不满足约束，就会导致优化目标值上升。当 <span class="arithmatex"><span class="MathJax_Preview">C→\infty</span><script type="math/tex">C→\infty</script></span> 时，迫使所有样本都要满足约束；当其为有限值时，允许某些样本不满足约束。</p>
+</div>
+<script type="math/tex; mode=display">
+\ell_{0 / 1}(z)=\left\{\begin{array}{l}
+1, z<0 \\
+0, \text { otherwise }
+\end{array}\right.
+</script>
+</div>
+<p><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 其实就是惩罚值，每有一个样本不满足约束，就会导致优化目标值上升。当 <span class="arithmatex"><span class="MathJax_Preview">C→\infty</span><script type="math/tex">C→\infty</script></span> 时，迫使所有样本都要满足约束；当其为有限值时，允许某些样本不满足约束。</p>
 <p>但是如上定义的 0/1 损失函数非凸、非连续，不易优化！老办法，可以选取一些函数来替代之。</p>
 <p><img alt="image-20221020222428342" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020222428342.png" /></p>
 <p>替代损失函数数学性质较好，并且一般<strong>是 0/1 损失函数的上界</strong>。</p>
 <h2 id="hinge">采用 Hinge 损失函数的情形</h2>
-<p>此时优化问题变为
-$$
-\min <em>{\boldsymbol{w}, b} \frac{1}{2}|\boldsymbol{w}|^2+C \sum</em>{i=1}^m \max(0,1-y_i(w^T\phi(x_i)+b))
-$$
-令（<span class="arithmatex"><span class="MathJax_Preview">\xi_i</span><script type="math/tex">\xi_i</script></span> 称之为松弛变量）
-$$
+<p>此时优化问题变为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \max(0,1-y_i(w^T\phi(x_i)+b))
+</div>
+<script type="math/tex; mode=display">
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \max(0,1-y_i(w^T\phi(x_i)+b))
+</script>
+</div>
+<p>令（<span class="arithmatex"><span class="MathJax_Preview">\xi_i</span><script type="math/tex">\xi_i</script></span> 称之为松弛变量）</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \xi_i=\max(0,1-y_i(w^T\phi(x_i)+b))
-$$
-所以优化问题可以重写为
-$$
+</div>
+<script type="math/tex; mode=display">
+\xi_i=\max(0,1-y_i(w^T\phi(x_i)+b))
+</script>
+</div>
+<p>所以优化问题可以重写为</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
-\displaystyle\min <em>{\boldsymbol{w}, b, \boldsymbol\xi } &amp;\quad \frac{1}{2}|\boldsymbol{w}|^2+C \sum</em>{i=1}^m \xi_i\newline
+\displaystyle\min _{\boldsymbol{w}, b, \boldsymbol\xi } &amp;\quad \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \xi_i\newline
 \text { s.t. } &amp;y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right) \geq 1-\xi_i, i=1,2, \ldots, m \newline
 &amp;\xi_i \geq 0, i=1,2, \ldots, m
 \end{aligned}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\displaystyle\min _{\boldsymbol{w}, b, \boldsymbol\xi } &\quad \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \xi_i\newline
+\text { s.t. } &y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right) \geq 1-\xi_i, i=1,2, \ldots, m \newline
+&\xi_i \geq 0, i=1,2, \ldots, m
+\end{aligned}
+</script>
+</div>
 <div class="admonition info">
 <p class="admonition-title">注记</p>
 <p><span class="arithmatex"><span class="MathJax_Preview">\xi_i\ge 0</span><script type="math/tex">\xi_i\ge 0</script></span>，当 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)&gt;0</span><script type="math/tex">1-y_i(w^Tx_i+b)>0</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)=\xi_i</span><script type="math/tex">1-y_i(w^Tx_i+b)=\xi_i</script></span>；当 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)\le 0</span><script type="math/tex">1-y_i(w^Tx_i+b)\le 0</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">0=\xi_i</span><script type="math/tex">0=\xi_i</script></span>，所以</p>
