@@ -14,7 +14,7 @@
   
   
   
-  <title>3 优化 - Notes Site</title>
+  <title>6 支持向量回归 - Notes Site</title>
   
   
   
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
       
-      <a href="#_1" class="md-skip">
+      <a href="#hinge" class="md-skip">
         跳转至
       </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3 优化
+              6 支持向量回归
             
           </span>
         </div>
@@ -690,14 +690,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
       
       
@@ -720,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1_%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+      <a href="../../1_%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/1_%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
         1 线性代数
       </a>
     </li>
@@ -734,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2_%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="md-nav__link">
+      <a href="../../1_%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/2_%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="md-nav__link">
         2 概率论与数理统计
       </a>
     </li>
@@ -746,109 +744,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3 优化
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../1_%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/3_%E4%BC%98%E5%8C%96/" class="md-nav__link">
         3 优化
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    凸集和凸函数
-  </a>
-  
-    <nav class="md-nav" aria-label="凸集和凸函数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    凸集
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    凸函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    优化问题
-  </a>
-  
-    <nav class="md-nav" aria-label="优化问题">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    优化问题
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    凸优化问题
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    无约束优化：梯度下降
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kkt" class="md-nav__link">
-    有约束优化：KKT条件（拉格朗日乘子法）
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1179,12 +1079,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" checked>
       
       
       
@@ -1207,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/1_%E9%97%B4%E9%9A%94%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F/" class="md-nav__link">
+      <a href="../1_%E9%97%B4%E9%9A%94%E4%B8%8E%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F/" class="md-nav__link">
         1 间隔与支持向量
       </a>
     </li>
@@ -1221,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/2_%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../2_%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98/" class="md-nav__link">
         2 对偶问题
       </a>
     </li>
@@ -1235,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/3_SMO%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../3_SMO%E7%AE%97%E6%B3%95/" class="md-nav__link">
         3 SMO算法
       </a>
     </li>
@@ -1249,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/4_%E6%A0%B8%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+      <a href="../4_%E6%A0%B8%E6%8A%80%E5%B7%A7/" class="md-nav__link">
         4 核技巧
       </a>
     </li>
@@ -1263,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/5_%E8%BD%AF%E9%97%B4%E9%9A%94/" class="md-nav__link">
+      <a href="../5_%E8%BD%AF%E9%97%B4%E9%9A%94/" class="md-nav__link">
         5 软间隔
       </a>
     </li>
@@ -1275,11 +1177,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          6 支持向量回归
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         6 支持向量回归
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hinge" class="md-nav__link">
+    采用 Hinge 损失函数的情形
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1323,70 +1262,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    凸集和凸函数
+  <a href="#hinge" class="md-nav__link">
+    采用 Hinge 损失函数的情形
   </a>
-  
-    <nav class="md-nav" aria-label="凸集和凸函数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    凸集
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    凸函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    优化问题
-  </a>
-  
-    <nav class="md-nav" aria-label="优化问题">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    优化问题
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    凸优化问题
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    无约束优化：梯度下降
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kkt" class="md-nav__link">
-    有约束优化：KKT条件（拉格朗日乘子法）
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1405,332 +1283,95 @@
               
 
 
-  <h1>3 优化</h1>
+  <h1>6 支持向量回归</h1>
 
-<h2 id="_1">凸集和凸函数</h2>
-<h3 id="_2"><strong>凸集</strong></h3>
-<p>给定集合 <span class="arithmatex"><span class="MathJax_Preview">C \subseteq \mathbb{R}^n</span><script type="math/tex">C \subseteq \mathbb{R}^n</script></span> 。若 <span class="arithmatex"><span class="MathJax_Preview">\forall x, y \in C</span><script type="math/tex">\forall x, y \in C</script></span> 满足</p>
+<p>很难确定合适的核函数使得训练样本在特征空间中线性可分，并且既便得到了一个线性可分的结果也很难断定是否是有过拟合造成的。</p>
+<p>于是引入<strong>软间隔</strong>的概念，允许支持向量机在一些样本上不满足约束 <span class="arithmatex"><span class="MathJax_Preview">y_i(w^Tx_i+b)\ge1</span><script type="math/tex">y_i(w^Tx_i+b)\ge1</script></span>。</p>
+<p>在最大化间隔时，最好能让不满足约束的样本尽量少，于是优化目标可以写为</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-\forall t \in[0,1], t x+(1-t) y \in C
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \ell_{0 / 1}\left(y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right)-1\right)
 </div>
 <script type="math/tex; mode=display">
-\forall t \in[0,1], t x+(1-t) y \in C
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \ell_{0 / 1}\left(y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right)-1\right)
 </script>
 </div>
-<p>那么集合 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 为凸集。</p>
-<h3 id="_3"><strong>凸函数</strong></h3>
-<p>给定一个函数 <span class="arithmatex"><span class="MathJax_Preview">f:\mathbb{R}^n→\mathbb{R}</span><script type="math/tex">f:\mathbb{R}^n→\mathbb{R}</script></span>，如果 domain(f) 是凸集，且任意 <span class="arithmatex"><span class="MathJax_Preview">x,y\in domain(f),</span><script type="math/tex">x,y\in domain(f),</script></span></p>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 是个正常数，<span class="arithmatex"><span class="MathJax_Preview">\ell_{0/1}</span><script type="math/tex">\ell_{0/1}</script></span> 是 0/1 损失函数，其定义为</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-\forall t \in[0,1], f(t x+(1-t) y) \leq t f(x)+(1-t) f(y)
+\ell_{0 / 1}(z)=\left\{\begin{array}{l}
+1, z&lt;0 \\
+0, \text { otherwise }
+\end{array}\right.
 </div>
 <script type="math/tex; mode=display">
-\forall t \in[0,1], f(t x+(1-t) y) \leq t f(x)+(1-t) f(y)
+\ell_{0 / 1}(z)=\left\{\begin{array}{l}
+1, z<0 \\
+0, \text { otherwise }
+\end{array}\right.
 </script>
 </div>
-<p>那么函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是凸函数。</p>
-<p><strong>凸函数例子</strong>：</p>
-<ul>
-<li>
-<p>指数函数 <span class="arithmatex"><span class="MathJax_Preview">\exp (a x)</span><script type="math/tex">\exp (a x)</script></span></p>
-</li>
-<li>
-<p>负对数函数 <span class="arithmatex"><span class="MathJax_Preview">-\log (x)</span><script type="math/tex">-\log (x)</script></span></p>
-</li>
-<li>反射函数 <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{a}^{\top} \boldsymbol{x}+b</span><script type="math/tex">\boldsymbol{a}^{\top} \boldsymbol{x}+b</script></span></li>
-<li>二次函数 <span class="arithmatex"><span class="MathJax_Preview">x^{\top} A \boldsymbol{x}+2 \boldsymbol{b}^{\top} \boldsymbol{x}+c \quad(A</span><script type="math/tex">x^{\top} A \boldsymbol{x}+2 \boldsymbol{b}^{\top} \boldsymbol{x}+c \quad(A</script></span> 半正定 <span class="arithmatex"><span class="MathJax_Preview">)</span><script type="math/tex">)</script></span></li>
-<li>范数 <span class="arithmatex"><span class="MathJax_Preview">\|x\|_p=\sqrt[p]{\sum_i\left|x_i\right|^p}</span><script type="math/tex">\|x\|_p=\sqrt[p]{\sum_i\left|x_i\right|^p}</script></span></li>
-<li>最大函数 <span class="arithmatex"><span class="MathJax_Preview">f(x)=\max \left\{x_1, \cdots, x_n\right\}</span><script type="math/tex">f(x)=\max \left\{x_1, \cdots, x_n\right\}</script></span></li>
-<li>Softplus <span class="arithmatex"><span class="MathJax_Preview">\log (1+\exp (x))</span><script type="math/tex">\log (1+\exp (x))</script></span></li>
-<li>LogSumExp <span class="arithmatex"><span class="MathJax_Preview">\log \left(\sum_i \exp \left(x_i\right)\right)</span><script type="math/tex">\log \left(\sum_i \exp \left(x_i\right)\right)</script></span></li>
-<li>LogDeterminant <span class="arithmatex"><span class="MathJax_Preview">-\log \operatorname{det}(X)</span><script type="math/tex">-\log \operatorname{det}(X)</script></span> 在半正定矩阵定义域上</li>
-</ul>
-<p><strong>一阶条件</strong></p>
-<p>假设函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 可微，那么 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是凸函数当且仅当 <span class="arithmatex"><span class="MathJax_Preview">∀ x,y∈dom(f)</span><script type="math/tex">∀ x,y∈dom(f)</script></span>，
-$$
-f(y)≥f(x)+∇f(x)^⊤ (y-x)
-$$
-即 —— 函数在切线上方。</p>
-<p><strong>二阶条件</strong></p>
-<p>假设函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 二阶可微，那么 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是凸函数当且仅当 <span class="arithmatex"><span class="MathJax_Preview">∀ x∈dom(f)</span><script type="math/tex">∀ x∈dom(f)</script></span>，
-$$
-∇^2 f(x)≽0
-$$
- 即 —— 海森矩阵半正定。</p>
-<h2 id="_4">优化问题</h2>
-<h3 id="_5"><strong>优化问题</strong></h3>
+<p><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span> 其实就是惩罚值，每有一个样本不满足约束，就会导致优化目标值上升。当 <span class="arithmatex"><span class="MathJax_Preview">C→\infty</span><script type="math/tex">C→\infty</script></span> 时，迫使所有样本都要满足约束；当其为有限值时，允许某些样本不满足约束。</p>
+<p>但是如上定义的 0/1 损失函数非凸、非连续，不易优化！老办法，可以选取一些函数来替代之。</p>
+<p><img alt="image-20221020222428342" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020222428342.png" /></p>
+<p>替代损失函数数学性质较好，并且一般<strong>是 0/1 损失函数的上界</strong>。</p>
+<h2 id="hinge">采用 Hinge 损失函数的情形</h2>
+<p>此时优化问题变为</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-\begin{array}{cl} 
-&amp; \min _x f(x) \\
-\text { s.t. } &amp; g_i(x) \leq 0, i=1,2, \ldots, m \\
-&amp; h_j(x)=0, j=1,2, \cdots, n
-\end{array}
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \max(0,1-y_i(w^T\phi(x_i)+b))
 </div>
 <script type="math/tex; mode=display">
-\begin{array}{cl} 
-& \min _x f(x) \\
-\text { s.t. } & g_i(x) \leq 0, i=1,2, \ldots, m \\
-& h_j(x)=0, j=1,2, \cdots, n
-\end{array}
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \max(0,1-y_i(w^T\phi(x_i)+b))
 </script>
 </div>
-<p>这里的 <span class="arithmatex"><span class="MathJax_Preview">s.t.</span><script type="math/tex">s.t.</script></span> 是 subject to，意为 “在……的约束下”。</p>
-<h3 id="_6"><strong>凸优化问题</strong></h3>
+<p>令（<span class="arithmatex"><span class="MathJax_Preview">\xi_i</span><script type="math/tex">\xi_i</script></span> 称之为松弛变量）</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-\begin{gathered}
-\min _x f(\boldsymbol{x}) \\
-\text { s.t. } g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
-\boldsymbol{a}_i^{\top} \boldsymbol{x}=b, j=1,2, \cdots, n
-\end{gathered}
+\xi_i=\max(0,1-y_i(w^T\phi(x_i)+b))
 </div>
 <script type="math/tex; mode=display">
-\begin{gathered}
-\min _x f(\boldsymbol{x}) \\
-\text { s.t. } g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
-\boldsymbol{a}_i^{\top} \boldsymbol{x}=b, j=1,2, \cdots, n
-\end{gathered}
+\xi_i=\max(0,1-y_i(w^T\phi(x_i)+b))
 </script>
 </div>
-<p>其中 <span class="arithmatex"><span class="MathJax_Preview">f(\boldsymbol{x}), g_i(\boldsymbol{x})</span><script type="math/tex">f(\boldsymbol{x}), g_i(\boldsymbol{x})</script></span> 是凸函数。</p>
-<ul>
-<li>凸优化中，局部最优等价于全局最优。假设函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 可微凸函数，那么 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 的全局最优当且仅当 <span class="arithmatex"><span class="MathJax_Preview">∇f(\mathbf{x})=0</span><script type="math/tex">∇f(\mathbf{x})=0</script></span>。</li>
-</ul>
-<h3 id="_7"><strong>无约束优化：梯度下降</strong></h3>
-<p>目标： <span class="arithmatex"><span class="MathJax_Preview">\min _x f(x)</span><script type="math/tex">\min _x f(x)</script></span></p>
+<p>所以优化问题可以重写为</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
 \begin{aligned}
-&amp;\text { while }\left\|\nabla f\left(x_t\right)\right\|&gt;\delta \text { do } \\
-&amp;\quad \boldsymbol{x}_{t+1} \leftarrow \boldsymbol{x}_t-\alpha \nabla f\left(\boldsymbol{x}_t\right) \\
-&amp;\text { end while }
+\displaystyle\min _{\boldsymbol{w}, b, \boldsymbol\xi } &amp;\quad \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \xi_i\newline
+\text { s.t. } &amp;y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right) \geq 1-\xi_i, i=1,2, \ldots, m \newline
+&amp;\xi_i \geq 0, i=1,2, \ldots, m
 \end{aligned}
 </div>
 <script type="math/tex; mode=display">
 \begin{aligned}
-&\text { while }\left\|\nabla f\left(x_t\right)\right\|>\delta \text { do } \\
-&\quad \boldsymbol{x}_{t+1} \leftarrow \boldsymbol{x}_t-\alpha \nabla f\left(\boldsymbol{x}_t\right) \\
-&\text { end while }
+\displaystyle\min _{\boldsymbol{w}, b, \boldsymbol\xi } &\quad \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \xi_i\newline
+\text { s.t. } &y_i\left(\boldsymbol{w}^{\top} \phi\left(\boldsymbol{x}_i\right)+b\right) \geq 1-\xi_i, i=1,2, \ldots, m \newline
+&\xi_i \geq 0, i=1,2, \ldots, m
 \end{aligned}
 </script>
 </div>
-<h3 id="kkt"><strong>有约束优化：KKT条件（拉格朗日乘子法）</strong></h3>
+<p>这个就是<strong>软间隔支持向量机</strong>。</p>
+<div class="admonition info">
+<p class="admonition-title">注记</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\xi_i\ge 0</span><script type="math/tex">\xi_i\ge 0</script></span>，当 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)&gt;0</span><script type="math/tex">1-y_i(w^Tx_i+b)>0</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)=\xi_i</span><script type="math/tex">1-y_i(w^Tx_i+b)=\xi_i</script></span>；当 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)\le 0</span><script type="math/tex">1-y_i(w^Tx_i+b)\le 0</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">0=\xi_i</span><script type="math/tex">0=\xi_i</script></span>，所以</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-\begin{array}{cc} 
-&amp; \min _{\boldsymbol{x}} f(\boldsymbol{x}) \\
-\text { s.t. } &amp; g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
-&amp; h_j(\boldsymbol{x})=0, j=1,2, \cdots, n
-\end{array}
+1-y_i(w^Tx_i+b)\le\xi_i
 </div>
 <script type="math/tex; mode=display">
-\begin{array}{cc} 
-& \min _{\boldsymbol{x}} f(\boldsymbol{x}) \\
-\text { s.t. } & g_i(\boldsymbol{x}) \leq 0, i=1,2, \ldots, m \\
-& h_j(\boldsymbol{x})=0, j=1,2, \cdots, n
-\end{array}
+1-y_i(w^Tx_i+b)\le\xi_i
 </script>
 </div>
-<p>引入拉格朗日函数：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=f(\boldsymbol{x})+\sum_i u_i g_i(\boldsymbol{x})+\sum_j v_j h_j(\boldsymbol{x})
+<p>这就是第一个约束条件的推导过程。</p>
 </div>
-<script type="math/tex; mode=display">
-L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=f(\boldsymbol{x})+\sum_i u_i g_i(\boldsymbol{x})+\sum_j v_j h_j(\boldsymbol{x})
-</script>
-</div>
-<p>其中 <span class="arithmatex"><span class="MathJax_Preview">u_i \geq 0</span><script type="math/tex">u_i \geq 0</script></span>。</p>
-<p>最优解的<strong>必要条件：KKT条件</strong></p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\begin{gathered}
-\boldsymbol{\nabla}_{\mathbf{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=\mathbf{0} \\
-g_i(\boldsymbol{x}) \leq 0 \\
-h_j(\boldsymbol{x})=0 \\
-\mu_i \geq 0 \\
-\mu_i g_i(\boldsymbol{x})=0
-\end{gathered}
-</div>
-<script type="math/tex; mode=display">
-\begin{gathered}
-\boldsymbol{\nabla}_{\mathbf{x}} L(\boldsymbol{x}, \boldsymbol{u}, \boldsymbol{v})=\mathbf{0} \\
-g_i(\boldsymbol{x}) \leq 0 \\
-h_j(\boldsymbol{x})=0 \\
-\mu_i \geq 0 \\
-\mu_i g_i(\boldsymbol{x})=0
-\end{gathered}
-</script>
-</div>
-<p>最后一个式子表明只有 <span class="arithmatex"><span class="MathJax_Preview">\mu_i=0</span><script type="math/tex">\mu_i=0</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">g_i(x)=0</span><script type="math/tex">g_i(x)=0</script></span>。</p>
-<p><strong>取一个简单的示例做解释</strong>：</p>
-<p>令 <span class="arithmatex"><span class="MathJax_Preview">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</span><script type="math/tex">L(x,\mu)=f(x)+\sum_i\mu_ig_i(x)</script></span>，因为 <span class="arithmatex"><span class="MathJax_Preview">\mu g(x)\le0</span><script type="math/tex">\mu g(x)\le0</script></span>，所以 <span class="arithmatex"><span class="MathJax_Preview">\displaystyle\max_\mu L(x,\mu)=f(x)</span><script type="math/tex">\displaystyle\max_\mu L(x,\mu)=f(x)</script></span>（1）。</p>
-<p>所以目标函数变为（称之为 <span class="arithmatex"><span class="MathJax_Preview">x\mu</span><script type="math/tex">x\mu</script></span> 问题）</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\min _x f(x)=\min _x \max _\mu L(x, \mu)
-</div>
-<script type="math/tex; mode=display">
-\min _x f(x)=\min _x \max _\mu L(x, \mu)
-</script>
-</div>
-<p>如果对等号右边那一项交换顺序（称之为 <span class="arithmatex"><span class="MathJax_Preview">\mu x</span><script type="math/tex">\mu x</script></span> 问题）</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\begin{aligned}
-\max _\mu \min _x L(x, \mu)&amp;=\max _\mu\left[\min _x f(x)+\min _x \mu g(x)\right]（按定义展开）\\&amp;=\max _\mu \min _x f(x)+\max _\mu \min _x \mu g(x)（分配算子，这一步可略）\\&amp;=\min _x f(x)+\max _\mu \min _x \mu g(x)（第一项不受\mu约束）
-\end{aligned}
-</div>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\max _\mu \min _x L(x, \mu)&=\max _\mu\left[\min _x f(x)+\min _x \mu g(x)\right]（按定义展开）\\&=\max _\mu \min _x f(x)+\max _\mu \min _x \mu g(x)（分配算子，这一步可略）\\&=\min _x f(x)+\max _\mu \min _x \mu g(x)（第一项不受\mu约束）
-\end{aligned}
-</script>
-</div>
-<p>然后我们观察</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\left.\begin{array}{c}
-\mu_k \geq 0 \\
-g_k(x) \leq 0
-\end{array}\right\}=&gt;\min _x \mu g(x)=\left\{\begin{array}{cc}
-0 &amp; \text { if } \mu=0 \text { or } g(x)=0 \\
--\infty &amp; \text { if } \mu&gt;0 \text { and } g(x)&lt;0
-\end{array}\right.
-</div>
-<script type="math/tex; mode=display">
-\left.\begin{array}{c}
-\mu_k \geq 0 \\
-g_k(x) \leq 0
-\end{array}\right\}=>\min _x \mu g(x)=\left\{\begin{array}{cc}
-0 & \text { if } \mu=0 \text { or } g(x)=0 \\
--\infty & \text { if } \mu>0 \text { and } g(x)<0
-\end{array}\right.
-</script>
-</div>
-<p>说明 </p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\max _\mu \min _x \mu g(x)=0 \text { 此时 } \mu=0 \text { or } g(x)=0
-（2）
-</div>
-<script type="math/tex; mode=display">
-\max _\mu \min _x \mu g(x)=0 \text { 此时 } \mu=0 \text { or } g(x)=0
-（2）
-</script>
-</div>
-<p>就是说 </p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（3）
-</div>
-<script type="math/tex; mode=display">
-\max _\mu \min _x L(x, \mu)=\min _x f(x)+\max _\mu \min _x \mu g(x)=\min _x f(x)（3）
-</script>
-</div>
-<p>这说明 <span class="arithmatex"><span class="MathJax_Preview">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</span><script type="math/tex">\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)</script></span>，两个算子可以交换顺序</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\left.\begin{array}{c}
-L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
-\mu_k \geq 0 \\
-g_k(x) \leq 0
-\end{array}\right\}=&gt;\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)
-</div>
-<script type="math/tex; mode=display">
-\left.\begin{array}{c}
-L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
-\mu_k \geq 0 \\
-g_k(x) \leq 0
-\end{array}\right\}=>\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)
-</script>
-</div>
-<p>这就说明如果满足条件（2），互为对偶的两个问题 <span class="arithmatex"><span class="MathJax_Preview">x\mu,\mu x</span><script type="math/tex">x\mu,\mu x</script></span> 的解和 <span class="arithmatex"><span class="MathJax_Preview">\min_x f(x)</span><script type="math/tex">\min_x f(x)</script></span> 是相同的。</p>
-<p>设这个最优解是 <span class="arithmatex"><span class="MathJax_Preview">\xi</span><script type="math/tex">\xi</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">x=\xi</span><script type="math/tex">x=\xi</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">\mu=0</span><script type="math/tex">\mu=0</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">g(\xi)=0</span><script type="math/tex">g(\xi)=0</script></span>。带入（1）中，有 </p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\max_\mu L(\xi,\mu)=f(\xi)
-</div>
-<script type="math/tex; mode=display">
-\max_\mu L(\xi,\mu)=f(\xi)
-</script>
-</div>
-<p>又由（3）得【注意到 <span class="arithmatex"><span class="MathJax_Preview">f(\xi)=\min_xf(x)</span><script type="math/tex">f(\xi)=\min_xf(x)</script></span>】</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\max _\mu \min _x L(x, \mu)=f(\xi)
-</div>
-<script type="math/tex; mode=display">
-\max _\mu \min _x L(x, \mu)=f(\xi)
-</script>
-</div>
-<p>所以</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-L(\xi,\mu)=\min_xL(x,\mu)
-</div>
-<script type="math/tex; mode=display">
-L(\xi,\mu)=\min_xL(x,\mu)
-</script>
-</div>
-<p>说明 <span class="arithmatex"><span class="MathJax_Preview">\xi</span><script type="math/tex">\xi</script></span> 也是 <span class="arithmatex"><span class="MathJax_Preview">L(x,\mu)</span><script type="math/tex">L(x,\mu)</script></span> 的极值点，后者在这点的偏 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 导数为 0。</p>
-<p>结论就是：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\left.\begin{array}{c}
-L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
-\mu_k \geq 0 \\
-g_k(x) \leq 0
-\end{array}\right\}=&gt;\left\{\begin{array}{c}
-\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)=f\left(\xi\right) \\
-\mu_k g_k\left(\xi\right)=0 \\
-\left.\frac{\partial L(x, \mu)}{\partial x}\right|_{x=\xi}=0
-\end{array}\right.
-</div>
-<script type="math/tex; mode=display">
-\left.\begin{array}{c}
-L(x, \mu)=f(x)+\sum_{k=1}^q \mu_k g_k(x) \\
-\mu_k \geq 0 \\
-g_k(x) \leq 0
-\end{array}\right\}=>\left\{\begin{array}{c}
-\min _x \max _\mu L(x, \mu)=\max _\mu \min _x L(x, \mu)=\min _x f(x)=f\left(\xi\right) \\
-\mu_k g_k\left(\xi\right)=0 \\
-\left.\frac{\partial L(x, \mu)}{\partial x}\right|_{x=\xi}=0
-\end{array}\right.
-</script>
-</div>
-<p>KKT 条件总结起来就是：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\left.\begin{array}{c}
-L(x, \lambda, \mu)=f(x)+\sum_{i=1}^n \lambda_i h_i(x)+\sum_{k=1}^q \mu_k g_k(x) \\
-\lambda_i \neq 0 \\
-h_i(x)=0 \\
-\mu_k \geq 0 \\
-g_k(x) \leq 0
-\end{array}\right\}=&gt;\left\{\begin{array}{c}
-\min _x \max _\mu L(x, \lambda, \mu)=\max _\mu \min _x L(x, \lambda, \mu)=\min _x f(x)=f\left(\xi\right) \\
-\mu_k g_k\left(\xi\right)=0 \\
-\left.\frac{\partial L(x, \lambda, \mu)}{\partial x}\right|_{x=\xi}=0
-\end{array}\right.
-</div>
-<script type="math/tex; mode=display">
-\left.\begin{array}{c}
-L(x, \lambda, \mu)=f(x)+\sum_{i=1}^n \lambda_i h_i(x)+\sum_{k=1}^q \mu_k g_k(x) \\
-\lambda_i \neq 0 \\
-h_i(x)=0 \\
-\mu_k \geq 0 \\
-g_k(x) \leq 0
-\end{array}\right\}=>\left\{\begin{array}{c}
-\min _x \max _\mu L(x, \lambda, \mu)=\max _\mu \min _x L(x, \lambda, \mu)=\min _x f(x)=f\left(\xi\right) \\
-\mu_k g_k\left(\xi\right)=0 \\
-\left.\frac{\partial L(x, \lambda, \mu)}{\partial x}\right|_{x=\xi}=0
-\end{array}\right.
-</script>
-</div>
-<p>注: <span class="arithmatex"><span class="MathJax_Preview">x, \lambda, \mu</span><script type="math/tex">x, \lambda, \mu</script></span> 都是向量。</p>
+<p>其也可以通过求解对偶问题来高效解决，和之前的差不多，就不细看了。</p>
+<blockquote>
+<p>求对偶问题的时候要对 <span class="arithmatex"><span class="MathJax_Preview">w,b,\xi</span><script type="math/tex">w,b,\xi</script></span> 都求导。</p>
+</blockquote>
+<p><img alt="image-20221020225414108" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020225414108.png" /></p>
+<p><img alt="image-20221020225433756" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020225433756.png" /></p>
+<p><img alt="image-20221020225456722" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020225456722.png" /></p>
 
 
 
@@ -1756,7 +1397,7 @@ g_k(x) \leq 0
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../2_%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 2 概率论与数理统计" rel="prev">
+        <a href="../5_%E8%BD%AF%E9%97%B4%E9%9A%94/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 5 软间隔" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1765,26 +1406,11 @@ g_k(x) \leq 0
               <span class="md-footer__direction">
                 上一页
               </span>
-              2 概率论与数理统计
+              5 软间隔
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../../2_%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" class="md-footer__link md-footer__link--next" aria-label="下一页: 模型评估与选择" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              模型评估与选择
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

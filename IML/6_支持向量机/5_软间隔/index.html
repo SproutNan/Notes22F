@@ -14,7 +14,7 @@
   
   
   
-  <title>5 软间隔与正则化 - Notes Site</title>
+  <title>5 软间隔 - Notes Site</title>
   
   
   
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5 软间隔与正则化
+              5 软间隔
             
           </span>
         </div>
@@ -1173,12 +1173,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          5 软间隔与正则化
+          5 软间隔
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        5 软间隔与正则化
+        5 软间隔
       </a>
       
         
@@ -1205,6 +1205,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+        6 支持向量回归
+      </a>
     </li>
   
 
@@ -1269,7 +1283,7 @@
               
 
 
-  <h1>5 软间隔与正则化</h1>
+  <h1>5 软间隔</h1>
 
 <p>很难确定合适的核函数使得训练样本在特征空间中线性可分，并且既便得到了一个线性可分的结果也很难断定是否是有过拟合造成的。</p>
 <p>于是引入<strong>软间隔</strong>的概念，允许支持向量机在一些样本上不满足约束 <span class="arithmatex"><span class="MathJax_Preview">y_i(w^Tx_i+b)\ge1</span><script type="math/tex">y_i(w^Tx_i+b)\ge1</script></span>。</p>
@@ -1311,7 +1325,7 @@
 \min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^2+C \sum_{i=1}^m \max(0,1-y_i(w^T\phi(x_i)+b))
 </script>
 </div>
-<p>令（<span class="arithmatex"><span class="MathJax_Preview">\xi_i</span><script type="math/tex">\xi_i</script></span> 称之为松弛变量）</p>
+<p>令（<span class="arithmatex"><span class="MathJax_Preview">\xi_i</span><script type="math/tex">\xi_i</script></span> 称之为松弛变量，惩罚因子）</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
 \xi_i=\max(0,1-y_i(w^T\phi(x_i)+b))
@@ -1337,6 +1351,7 @@
 \end{aligned}
 </script>
 </div>
+<p>这个就是<strong>软间隔支持向量机</strong>。</p>
 <div class="admonition info">
 <p class="admonition-title">注记</p>
 <p><span class="arithmatex"><span class="MathJax_Preview">\xi_i\ge 0</span><script type="math/tex">\xi_i\ge 0</script></span>，当 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)&gt;0</span><script type="math/tex">1-y_i(w^Tx_i+b)>0</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)=\xi_i</span><script type="math/tex">1-y_i(w^Tx_i+b)=\xi_i</script></span>；当 <span class="arithmatex"><span class="MathJax_Preview">1-y_i(w^Tx_i+b)\le 0</span><script type="math/tex">1-y_i(w^Tx_i+b)\le 0</script></span> 时 <span class="arithmatex"><span class="MathJax_Preview">0=\xi_i</span><script type="math/tex">0=\xi_i</script></span>，所以</p>
@@ -1350,6 +1365,13 @@
 </div>
 <p>这就是第一个约束条件的推导过程。</p>
 </div>
+<p>其也可以通过求解对偶问题来高效解决，和之前的差不多，就不细看了。</p>
+<blockquote>
+<p>求对偶问题的时候要对 <span class="arithmatex"><span class="MathJax_Preview">w,b,\xi</span><script type="math/tex">w,b,\xi</script></span> 都求导。</p>
+</blockquote>
+<p><img alt="image-20221020225414108" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020225414108.png" /></p>
+<p><img alt="image-20221020225433756" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020225433756.png" /></p>
+<p><img alt="image-20221020225456722" src="../5_%E8%BD%AF%E9%97%B4%E9%9A%94%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8C%96.assets/image-20221020225456722.png" /></p>
 
 
 
@@ -1389,6 +1411,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../6_%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/" class="md-footer__link md-footer__link--next" aria-label="下一页: 6 支持向量回归" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              6 支持向量回归
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
