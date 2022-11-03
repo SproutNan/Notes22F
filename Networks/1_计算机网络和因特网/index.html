@@ -1548,10 +1548,85 @@
     电路交换
   </a>
   
+    <nav class="md-nav" aria-label="电路交换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    电路交换中的复用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    分组交换和电路交换的对比
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    网络的网络
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    分组交换网中的时延、丢包和吞吐量
+  </a>
+  
+    <nav class="md-nav" aria-label="分组交换网中的时延、丢包和吞吐量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    时延概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    排队时延和丢包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    端到端时延
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    吞吐量
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    协议层次
+  </a>
   
 </li>
       
@@ -1689,10 +1764,85 @@
     电路交换
   </a>
   
+    <nav class="md-nav" aria-label="电路交换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    电路交换中的复用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    分组交换和电路交换的对比
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    网络的网络
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    分组交换网中的时延、丢包和吞吐量
+  </a>
+  
+    <nav class="md-nav" aria-label="分组交换网中的时延、丢包和吞吐量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    时延概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    排队时延和丢包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    端到端时延
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    吞吐量
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    协议层次
+  </a>
   
 </li>
       
@@ -1806,6 +1956,125 @@
 <li>路由器通过 IP 地址（包含在分组首部信息）的映射选择输出链路，该映射存储在路由器的<strong>转发表</strong>中</li>
 </ul>
 <h3 id="_12">电路交换</h3>
+<ul>
+<li>通信会话期间，<strong>预留</strong>通信所需资源（缓存、链路传输速率）</li>
+<li>连接期间，在链路上预留了恒定的传输速率（带宽），确保发送方以恒定速率向接收方传输数据</li>
+<li>用电话的术语，这种连接被称之为一条<strong>电路</strong></li>
+<li>一个链路分成 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 条并行的电路，链路的传输速率为 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> Mbps，则其中一个连接在连接期间获得的总传输容量为 <span class="arithmatex"><span class="MathJax_Preview">R/N</span><script type="math/tex">R/N</script></span> Mbps</li>
+<li>因特网以最大努力以实时方式交付分组，但是不做任何保证</li>
+</ul>
+<h4 id="_13">电路交换中的复用</h4>
+<p>频分复用（FDM），时分复用（TDM）</p>
+<p><img alt="image-20221102202448075" src="../1_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91.assets/image-20221102202448075.png" /></p>
+<ul>
+<li>对于 TDM，一条电路的传输速率等于帧速率 × 一个时隙中的比特数。如果每秒 8000 个帧，每个时隙 8 个比特，则每条电路传输速率是 64 kbps</li>
+<li>由于打电话的人不总是说话，有的时候专用的资源可能会被闲置、浪费</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">电路交换的例子</p>
+<p><strong>问</strong>：考虑从主机A到主机B经一个电路交换网络发送一个640000比特的文件需要多长时间。假如在该网络中所有链路使用具有24时隙的TDM，比特速率为1.536Mbps。同时假定在主机A能够开始传输该文件之前，需要500ms创建一条端到端电路。它需要多长时间才能发送该文件？</p>
+<p><strong>答</strong>：每条链路具有的传输速率是1.536Mbps/24=64kbps，因此传输该文件需要640kb/64kbps=10s。这个10s，再加上电路创建时间，这样就需要10.5s发送该文件。</p>
+<p>值得注意的是，该传输时间与链路数量无关：端到端电路不管是通过一条链路还是100条链路，传输时间都将是10s。</p>
+</div>
+<h4 id="_14">分组交换和电路交换的对比</h4>
+<p><strong>分组交换的缺点</strong></p>
+<ul>
+<li>不适合实时服务（电话、视频会议等），因为其端到端时延是可变的、不可预测的</li>
+</ul>
+<p><strong>分组交换的优点</strong></p>
+<ul>
+<li>提供比电路交换更好的带宽共享（考虑用户以概率活跃的例子、间歇性产生大量数据的例子）</li>
+<li>比电路交换更简单、更有效、实现成本更低</li>
+</ul>
+<p>趋势是当前的技术正朝着分组交换方向发展</p>
+<h3 id="_15">网络的网络</h3>
+<p>之前所讨论的网络情况：</p>
+<p><img alt="image-20221102210610701" src="../1_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91.assets/image-20221102210610701.png" /></p>
+<p><span style="color:orange">橙色点</span>为 Local ISP，因特网上各处如果需要连接，就需要所有 ISP 也互联，但是这种方式成本很高。</p>
+<p>现在的情况：</p>
+<p><img alt="image-20221102210740495" src="../1_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91.assets/image-20221102210740495.png" /></p>
+<p><span style="color:green">绿色点</span>为全球传输 ISP，多个全球传输 ISP 之间互联，每个全球传输 ISP 联系多个 Local ISP，这样就形成了等级结构。</p>
+<ul>
+<li>任何 ISP 与其他 ISP 的连接不是唯一的，连接多个 ISP 也使其具备容灾性能。</li>
+<li>这种全球传输 ISP 是由专门的公司搭建的，因此服务需要收取费用</li>
+<li>如果两个 ISP 等级相同（对等），其间的流量是不进行结算的</li>
+<li>第三方公司还能创建 IXP（Internet Exchange Point, 因特网交换点），使得多个 ISP 能够在这里一起对等</li>
+</ul>
+<p><img alt="image-20221102211404033" src="../1_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91.assets/image-20221102211404033.png" /></p>
+<h2 id="_16">分组交换网中的时延、丢包和吞吐量</h2>
+<h3 id="_17">时延概述</h3>
+<p><img alt="image-20221102211805745" src="../1_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91.assets/image-20221102211805745.png" /></p>
+<p><strong>处理时延</strong>：通常是微秒或者更低的数量级</p>
+<ul>
+<li>检查分组首部</li>
+<li>决定将该分组导向何处</li>
+<li>其他因素，如检测位级差错</li>
+</ul>
+<p><strong>排队时延</strong>：可以是毫秒到微秒量级，但是不确定</p>
+<ul>
+<li>排队分组数量是到达该队列的流量和性质的函数</li>
+</ul>
+<p><strong>传输时延</strong>：通常是微秒到毫秒量级</p>
+<ul>
+<li>假定是先到先服务方式</li>
+<li>是将所有比特从发送端推向链路所需要的时间：<span class="arithmatex"><span class="MathJax_Preview">d_{trans}=L/R</span><script type="math/tex">d_{trans}=L/R</script></span></li>
+</ul>
+<p><strong>传播时延</strong>：在广域网中为毫秒量级</p>
+<ul>
+<li>为两个路由器之间的距离 <span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> 除以传播速率 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>：<span class="arithmatex"><span class="MathJax_Preview">d_{prop}=d/s</span><script type="math/tex">d_{prop}=d/s</script></span></li>
+</ul>
+<p><strong>总时延</strong>：<span class="arithmatex"><span class="MathJax_Preview">d_{nodal}=d_{proc}+d_{queue}+d_{trans}+d_{prop}</span><script type="math/tex">d_{nodal}=d_{proc}+d_{queue}+d_{trans}+d_{prop}</script></span></p>
+<h3 id="_18">排队时延和丢包</h3>
+<p>表征排队时延常常用的是统计量，如排队时延的平均值、方差和排队时延超过某些特定值的概率</p>
+<ul>
+<li>分组到达的平均速率 —— <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>，pkt/s</li>
+<li>分组长度 —— <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>，bits/pkt</li>
+<li>传输速率 —— <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>，bits/s</li>
+<li>比特到达队列的平均速率 —— <span class="arithmatex"><span class="MathJax_Preview">La</span><script type="math/tex">La</script></span></li>
+<li>比特离开队列的平均速率 —— <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span></li>
+<li>比率 <span class="arithmatex"><span class="MathJax_Preview">La/R</span><script type="math/tex">La/R</script></span> 被称为<strong>流量强度</strong>，设计系统时如果流量强度大于 1，则排队时延将趋向无穷大</li>
+</ul>
+<p>排队容量是有限的，无穷大的时延是理想状态的，如果到达时发现队列满了，路由器将<strong>丢弃</strong>分组</p>
+<ul>
+<li>分组丢失的比例随着流量强度增加而增加</li>
+<li>一个结点的性能根据<strong>时延</strong>和<strong>丢包率</strong>来度量</li>
+<li>丢失的分组可能重传，以确保数据最终的传送</li>
+</ul>
+<h3 id="_19">端到端时延</h3>
+<p>不考虑拥塞情况，假设端与端之间有 <span class="arithmatex"><span class="MathJax_Preview">N-1</span><script type="math/tex">N-1</script></span> 台路由器
+$$
+d_{end-end}=N(d_{proc}+d_{trans}+d_{prop})
+$$</p>
+<h3 id="_20">吞吐量</h3>
+<p>考虑从主机 A 到主机 B 跨越计算机网络传送一个大文件。</p>
+<ul>
+<li>在任何时间瞬间的<strong>瞬时吞吐量</strong>是主机B接收到该文件的速率（以bps 计）</li>
+<li>如果该文件由 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> 比特组成，主机 B 接收到所有 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> 比特用去 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 秒，则文件传送的<strong>平均吞吐量</strong>为 <span class="arithmatex"><span class="MathJax_Preview">F/T</span><script type="math/tex">F/T</script></span> bps</li>
+<li>吞吐量和时延、丢包一样是一个重要的性能测度</li>
+</ul>
+<p><strong>瓶颈链路模型</strong>：吞吐量 = <span class="arithmatex"><span class="MathJax_Preview">\min\{R_1,...,R_n\}</span><script type="math/tex">\min\{R_1,...,R_n\}</script></span></p>
+<p><img alt="image-20221103150706945" src="../1_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91.assets/image-20221103150706945.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">例子</p>
+<p>假定下载一个 <span class="arithmatex"><span class="MathJax_Preview">F=32\times10^6</span><script type="math/tex">F=32\times10^6</script></span> 比特的文件，服务器具有 <span class="arithmatex"><span class="MathJax_Preview">R_s = 2</span><script type="math/tex">R_s = 2</script></span> Mbps 的传输速率，并且你有一条 <span class="arithmatex"><span class="MathJax_Preview">R_c= 1</span><script type="math/tex">R_c= 1</script></span> Mbps 的接入链路。则传输该文件所需的时间是32秒。</p>
+<p>这些吞吐量和传输时间的表达式仅是近似的，因为它们并没有考虑存储转发、处理时延和协议等问题。</p>
+</div>
+<ul>
+<li>目前因特网的核心的确超量配置了高速率的链路，从而很少出现拥塞</li>
+<li>在今天因特网中对吞吐量的限制因素通常是接入网</li>
+</ul>
+<h2 id="_21">协议层次</h2>
+<ul>
+<li>各层的所有协议被称为<strong>协议栈</strong></li>
+<li>因特网的协议栈由 5 个层次组成：物理层、链路层、网络层、运输层和应用层</li>
+</ul>
+<p><strong>应用层</strong>：HTTP、SMTP、FTP、DNS 等，应用层的信息分组称为<strong>报文</strong>（message）</p>
+<p><strong>运输层</strong>：TCP、UDP，运输层的分组称为<strong>报文段</strong>（segment）</p>
+<p><strong>网络层</strong>：IP，网络层分组称为<strong>数据报</strong>（datagram）</p>
+<p><strong>链路层</strong>：链路层分组称为<strong>帧</strong>（frame）</p>
+<p><strong>物理层</strong>：帧中的一个个比特</p>
+<p>每层转运时给数据加上首部信息封装：</p>
+<p><img alt="image-20221103161640998" src="../1_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9B%A0%E7%89%B9%E7%BD%91.assets/image-20221103161640998.png" /></p>
 
 
 
