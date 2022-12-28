@@ -1141,6 +1141,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    代码生成器的输入
+  </a>
+  
+    <nav class="md-nav" aria-label="代码生成器的输入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    流图上的（程序）点和路径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    循环
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    自然循环
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    下次引用信息
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2023,6 +2064,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    代码生成器的输入
+  </a>
+  
+    <nav class="md-nav" aria-label="代码生成器的输入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    流图上的（程序）点和路径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    循环
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    自然循环
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    下次引用信息
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2132,6 +2214,67 @@
 <p><span class="arithmatex"><span class="MathJax_Preview">MOV,R5,M</span><script type="math/tex">MOV,R5,M</script></span>，代价是 2，因为 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 是指令的第二个字</p>
 <p><span class="arithmatex"><span class="MathJax_Preview">ADD,\#1,R3</span><script type="math/tex">ADD,\#1,R3</script></span>，代价是 2，因为 #1 是指令的第二个字</p>
 <p><span class="arithmatex"><span class="MathJax_Preview">SUB,4(R0),*12(R1)</span><script type="math/tex">SUB,4(R0),*12(R1)</script></span>，代价是 3，因为 4 和 12 是指令的 2、3 个字</p>
+<h2 id="_3">代码生成器的输入</h2>
+<p>IR 的基本块流图我们已经在前面获得了。</p>
+<h3 id="_4">流图上的（程序）点和路径</h3>
+<p>流图的程序点：</p>
+<ul>
+<li>基本块中，两个相邻的语句之间为程序的一个点</li>
+<li>基本块的开始点和结束点</li>
+</ul>
+<p>流图的路径：指点序列 <span class="arithmatex"><span class="MathJax_Preview">p_1,...,p_n</span><script type="math/tex">p_1,...,p_n</script></span>，且对 <span class="arithmatex"><span class="MathJax_Preview">1\le i\le n-1</span><script type="math/tex">1\le i\le n-1</script></span>，满足</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">p_i</span><script type="math/tex">p_i</script></span> 是一个语句前的点，<span class="arithmatex"><span class="MathJax_Preview">p_{i+1}</span><script type="math/tex">p_{i+1}</script></span> 是同一基本块中位于该语句后的点</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">p_i</span><script type="math/tex">p_i</script></span> 是某基本块的结束点，<span class="arithmatex"><span class="MathJax_Preview">p_{i+1}</span><script type="math/tex">p_{i+1}</script></span> 是后继块的开始点</li>
+</ul>
+<p><img alt="image-20221228212040461" src="../%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90.assets/image-20221228212040461.png" /></p>
+<h3 id="_5">循环</h3>
+<p>结点集合 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 是一个循环 <span class="arithmatex"><span class="MathJax_Preview">\Leftrightarrow</span><script type="math/tex">\Leftrightarrow</script></span> <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 中所有结点强连通 &amp; <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 入口结点唯一</p>
+<p><strong>内循环</strong>：不包含其他循环的循环</p>
+<p><strong>支配结点</strong>：<span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的支配结点（<span class="arithmatex"><span class="MathJax_Preview">d\ \text{dom}\ n</span><script type="math/tex">d\ \text{dom}\ n</script></span>）<span class="arithmatex"><span class="MathJax_Preview">\Leftrightarrow</span><script type="math/tex">\Leftrightarrow</script></span> 从初始结点起，每条到达 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的路径都要经过 <span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span></p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">d\ \text{dom }d</span><script type="math/tex">d\ \text{dom }d</script></span></li>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> 是循环 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 的入口，则它是 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 中所有节点的支配节点</li>
+</ul>
+<p><strong>深度优先表示</strong>：</p>
+<p><img alt="image-20221228213052936" src="../%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90.assets/image-20221228213052936.png" /></p>
+<p><strong>前进边</strong>：深度优先生成树上的边，<span class="arithmatex"><span class="MathJax_Preview">m→n</span><script type="math/tex">m→n</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> 的真后代</p>
+<p><strong>后撤边</strong>：<span class="arithmatex"><span class="MathJax_Preview">m→n</span><script type="math/tex">m→n</script></span>，<span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> 在深度优先生成树上是 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的祖先，如 4→3 等</p>
+<p><strong>交叉边</strong>：<span class="arithmatex"><span class="MathJax_Preview">m→n</span><script type="math/tex">m→n</script></span>，二者在深度优先生成树上互不为对方的祖先，如 2→3、5→7</p>
+<p><strong>回边</strong>：<span class="arithmatex"><span class="MathJax_Preview">m→n</span><script type="math/tex">m→n</script></span>，且 <span class="arithmatex"><span class="MathJax_Preview">n\text{ dom }m</span><script type="math/tex">n\text{ dom }m</script></span></p>
+<p><strong>可归约的流图</strong>：它的任何深度优先生成树上，所有的后撤边都是回边</p>
+<ul>
+<li>如果把一个流图中所有回边删掉，剩余的图无环</li>
+</ul>
+<p><strong>流图的深度</strong>：任何可能的无环路径上最大后撤边数</p>
+<h3 id="_6">自然循环</h3>
+<p><strong>性质</strong></p>
+<ul>
+<li>有唯一的、支配循环所有结点的入口结点（首结点）</li>
+<li>至少存在一条<strong>回边</strong>进入该循环的首结点</li>
+</ul>
+<p><strong>回边 <span class="arithmatex"><span class="MathJax_Preview">n→d</span><script type="math/tex">n→d</script></span> 确定的自然循环</strong></p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> 加上不经过 <span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> 能到达 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的所有结点</li>
+<li>结点 <span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> 是该循环的首结点</li>
+</ul>
+<blockquote>
+<p><strong>构造算法</strong></p>
+<p>（1）<span class="arithmatex"><span class="MathJax_Preview">L_0=\{n,d\}</span><script type="math/tex">L_0=\{n,d\}</script></span>，标记 <span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> 为 ”已访问“</p>
+<p>（2）从结点 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 开始，完成对流图 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的逆向流图的深度优先搜索，把搜索过程中访问的所有结点都加入 <span class="arithmatex"><span class="MathJax_Preview">L_0</span><script type="math/tex">L_0</script></span></p>
+</blockquote>
+<h2 id="_7">下次引用信息</h2>
+<p>变量<strong>接下来被使用</strong>的信息 <span class="arithmatex"><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> 帮助寄存器的分配和释放</p>
+<p><strong>计算块 B 中下次引用信息的方法</strong></p>
+<p>从 B 中的最后一个语句开始，反向扫描到 B 的开始处。对每个语句</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">i:x=y\text{ op }z</span><script type="math/tex">i:x=y\text{ op }z</script></span></li>
+</ul>
+<p>在符号表中：</p>
+<ul>
+<li>设置 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 为不活跃和无下次引用</li>
+<li>设置 <span class="arithmatex"><span class="MathJax_Preview">y,z</span><script type="math/tex">y,z</script></span> 为活跃，并把他们的下次引用设置为语句 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span></li>
+</ul>
 
 
 
